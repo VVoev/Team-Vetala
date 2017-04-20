@@ -1,8 +1,10 @@
 var homeController = function () {
 
-    function all() {
-        $.get('views/homeView.handlebars', function (html) {
-            $('#content').html(html);
+    // context => Sammy
+    function all(context) {
+         $.get('scripts/views/homeView.handlebars', function (html) {
+             console.log(context)
+            context.$element().html(html);
         })
     }
 
@@ -10,4 +12,6 @@ var homeController = function () {
         all: all
     };
 }();
-export {homeController};
+
+
+export  {homeController}

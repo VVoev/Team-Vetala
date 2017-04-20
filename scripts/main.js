@@ -1,4 +1,4 @@
-import {homeController} from '../scripts/controllers/homeController.js'
+import {homeController} from '/scripts/controllers/homeController.js'
 
 (function () {
     let sammyApp = Sammy('#content', function () {
