@@ -25,3 +25,8 @@ footer li{
 .footer a {
   margin-left: 50px;
 }
+#logout{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
