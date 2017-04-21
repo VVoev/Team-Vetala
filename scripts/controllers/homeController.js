@@ -13,3 +13,5 @@ let homeController = function() {
         all: all
     };
 }();
+
+export { homeController };

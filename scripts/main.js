@@ -1,8 +1,4 @@
-// only for test
-
-import { some } from "./index.js";
-console.log(some.name);
-
+import { homeController } from "./controllers/homeController.js";
 
 (function() {
     let sammyApp = Sammy('#content', function() {
