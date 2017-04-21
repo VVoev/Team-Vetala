@@ -30,3 +30,7 @@ footer li{
     top: 0px;
     right: 0px;
 }
+#container{
+    margin: 0;
+    padding: 0;
+}
