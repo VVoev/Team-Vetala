@@ -14,7 +14,8 @@ const templateLoader = (() => {
         })
     }
 
-    return {get
+    return {
+        get
     };
 })();
 
