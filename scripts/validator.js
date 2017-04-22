@@ -1,3 +1,37 @@
-/**
- * Created by Vladimir on 4/22/2017.
- */
+let validator = (function () {
+
+    function checkIfFieldsAreEqual(field1, field2) {
+        if (field1.length !== field2.length) {
+            return false;
+        }
+        checkIfNullOrUndefined(field1);
+        checkIfNullOrUndefined(field2);
+        checkSymbolBySymbol(field1, field2);
+
+        return true;
+    }
+
+
+    function checkIfNullOrUndefined(field) {
+        if (field.length === 0 || field === undefined) {
+            return false;
+        }
+        return true;
+    }
+    function checkSymbolBySymbol(field1, field2) {
+        for (let letter of field1) {
+            if (field1[letter] !== field2[letter]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    return {
+        checkIfFieldsAreEqual
+    }
+})();
+
+export {validator};
+
+
