@@ -4,7 +4,7 @@ let userController = (function () {
 
     function register() {
         return new Promise((resolve, reject) => {
-            templateLoader.get('register')
+            templateLoader.get('registerView')
                 .then((template) => {
                     resolve(template());
                 })
@@ -13,7 +13,18 @@ let userController = (function () {
     }
 
     function login() {
+        return new Promise((resolve, reject) => {
+            templateLoader.get('loginView')
+                .then((template) => {
+                    resolve(template());
+                })
+                .catch(reject);
+        });
+    };
 
+    return {
+        register,
+        login
     }
 
 
