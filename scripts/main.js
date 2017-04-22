@@ -3,6 +3,7 @@ import {userController} from "./controllers/userController.js";
 import {validator} from "./validator.js";
 import {kinveyRequester} from './kinveyRequester.js';
 import {constants} from './constants/constants.js';
+
 // import {templateLoader} from './template-loader'; TODO kato se probvam da go izpolzvam ne mi zarejda failovete{ot Vlado}
 
 
@@ -35,6 +36,7 @@ import {constants} from './constants/constants.js';
                         kinveyRequester.registerUser(name, password)
                             .then(() => {
                                 document.location = '#/Home'
+                                toastr.success(constants.SUCCESS_REGISTER);
                             })
                             .catch((error) => {
                                 alert(error)
@@ -54,6 +56,7 @@ import {constants} from './constants/constants.js';
                         kinveyRequester.loginUser(loginData["name"], loginData["password"])
                             .then(() => {
                                 document.location = '#/Home';
+                                toastr.success(constants.SUCCESS_LOGIN);
                             }).catch((error) => {
                             alert(error);
                         })
