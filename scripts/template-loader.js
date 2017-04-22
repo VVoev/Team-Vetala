@@ -19,6 +19,4 @@ const templateLoader = (() => {
     };
 })();
 
-export {
-    templateLoader
-};
+export {templateLoader};
