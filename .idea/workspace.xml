@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/constants/constants.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.js" afterPath="$PROJECT_DIR$/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/system-config.js" afterPath="$PROJECT_DIR$/scripts/system-config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/validator.js" afterPath="$PROJECT_DIR$/scripts/validator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/registerView.handlebars" afterPath="$PROJECT_DIR$/templates/registerView.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/loginView.handlebars" afterPath="$PROJECT_DIR$/templates/loginView.handlebars" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/kinveyRequester.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               <folding>
                 <element signature="e#333#542#0" expanded="false" />
                 <element signature="e#836#949#0" expanded="false" />
@@ -55,7 +54,18 @@
                 <element signature="e#1647#1885#0" expanded="false" />
                 <element signature="e#1954#2200#0" expanded="false" />
                 <element signature="e#2232#2422#0" expanded="false" />
+                <marker date="1492868127277" expanded="true" signature="2435:2551" ph="{&quot;loginUser&quot;: loginUser...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginView.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/loginView.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,11 +73,21 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="60" />
+            <state relative-caret-position="-130">
+              <caret line="35" column="41" lean-forward="false" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/constants/constants.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,7 +97,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-              <folding />
+              <folding>
+                <marker date="1492860080160" expanded="true" signature="16:286" ph="{&quot;transpiler&quot;: 'plugin-babel'...}" />
+                <marker date="1492860080160" expanded="true" signature="59:284" ph="{&quot;plugin-babel&quot;: '../node_modules/systemjs-plugin-babel/plugin-babel.js'...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/templates/homeView.handlebars">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -100,17 +123,8 @@
               <folding>
                 <element signature="e#366#487#0" expanded="false" />
                 <element signature="e#537#709#0" expanded="false" />
+                <marker date="1492859161702" expanded="true" signature="29:761" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/homeController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -118,8 +132,8 @@
       <file leaf-file-name="template-loader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/template-loader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="438">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -157,12 +171,13 @@
         <option value="$PROJECT_DIR$/templates/homeView.handlebars" />
         <option value="$PROJECT_DIR$/scripts/template-loader.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/homeController.js" />
-        <option value="$PROJECT_DIR$/templates/loginView.handlebars" />
         <option value="$PROJECT_DIR$/scripts/controllers/userController.js" />
         <option value="$PROJECT_DIR$/scripts/validator.js" />
         <option value="$PROJECT_DIR$/scripts/system-config.js" />
         <option value="$PROJECT_DIR$/scripts/kinveyRequester.js" />
         <option value="$PROJECT_DIR$/templates/registerView.handlebars" />
+        <option value="$PROJECT_DIR$/templates/loginView.handlebars" />
+        <option value="$PROJECT_DIR$/scripts/constants/constants.js" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
       </list>
     </option>
@@ -208,20 +223,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Team-Vetala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team-Vetala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Team-Vetala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,7 +357,7 @@
       <workItem from="1492689987432" duration="1684000" />
       <workItem from="1492692412007" duration="456000" />
       <workItem from="1492789695009" duration="5085000" />
-      <workItem from="1492852371318" duration="12485000" />
+      <workItem from="1492852371318" duration="15385000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -365,11 +366,25 @@
       <option name="project" value="LOCAL" />
       <updated>1492857990709</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="usew can now Register after 2 hours of debuging :)">
+      <created>1492868678217</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492868678217</updated>
+    </task>
+    <task id="LOCAL-00003" summary="login initial commit">
+      <created>1492877713686</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492877713686</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19710000" />
+    <option name="totallyTimeSpent" value="22610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -419,7 +434,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="validator initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="validator initial commit" />
+    <MESSAGE value="usew can now Register after 2 hours of debuging :)" />
+    <MESSAGE value="login initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="login initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -628,14 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/loginView.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="44" lean-forward="false" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/userController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -651,15 +660,8 @@
           <folding>
             <element signature="e#366#487#0" expanded="false" />
             <element signature="e#537#709#0" expanded="false" />
+            <marker date="1492859161702" expanded="true" signature="29:761" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/template-loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,14 +669,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding />
+          <folding>
+            <marker date="1492860080160" expanded="true" signature="16:286" ph="{&quot;transpiler&quot;: 'plugin-babel'...}" />
+            <marker date="1492860080160" expanded="true" signature="59:284" ph="{&quot;plugin-babel&quot;: '../node_modules/systemjs-plugin-babel/plugin-babel.js'...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/kinveyRequester.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
             <element signature="e#333#542#0" expanded="false" />
             <element signature="e#836#949#0" expanded="false" />
@@ -684,6 +689,7 @@
             <element signature="e#1647#1885#0" expanded="false" />
             <element signature="e#1954#2200#0" expanded="false" />
             <element signature="e#2232#2422#0" expanded="false" />
+            <marker date="1492868127277" expanded="true" signature="2435:2551" ph="{&quot;loginUser&quot;: loginUser...}" />
           </folding>
         </state>
       </provider>
@@ -699,15 +705,39 @@
     <entry file="file://$PROJECT_DIR$/templates/homeView.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/template-loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/loginView.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/constants/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="60" />
+        <state relative-caret-position="-130">
+          <caret line="35" column="41" lean-forward="false" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>

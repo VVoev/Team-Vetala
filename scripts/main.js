@@ -2,7 +2,8 @@ import {homeController} from "./controllers/homeController.js";
 import {userController} from "./controllers/userController.js";
 import {validator} from "./validator.js";
 import {kinveyRequester} from './kinveyRequester.js';
-// import {templateLoader} from './template-loader';
+import {constants} from './constants/constants.js';
+// import {templateLoader} from './template-loader'; TODO kato se probvam da go izpolzvam ne mi zarejda failovete{ot Vlado}
 
 
 (function () {
@@ -46,13 +47,18 @@ import {kinveyRequester} from './kinveyRequester.js';
             userController.login()
                 .then((html) => {
                     context.$element().html(html);
+                    $('#btnLogin').on('click', function () {
+                        let loginData = {};
+                        loginData['name'] = $('#signupUser').val();
+                        loginData['password'] = $('#signupPassword').val();
+                        kinveyRequester.loginUser(loginData["name"], loginData["password"])
+                            .then(() => {
+                                document.location = '#/Home';
+                            }).catch((error) => {
+                            alert(error);
+                        })
+                    })
                 })
-            $('#btnLogin').on('click',function () {
-                let loginData = {};
-                loginData['name'] = $('#signupUser').val();
-                loginData['email'] = $('#signupPassword').val();
-            })
-
         });
 
 
