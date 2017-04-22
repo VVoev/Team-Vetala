@@ -2,6 +2,7 @@ import {homeController} from "./controllers/homeController.js";
 import {userController} from "./controllers/userController.js";
 import {validator} from "./validator.js";
 import {kinveyRequester} from './kinveyRequester.js';
+// import {templateLoader} from './template-loader';
 
 
 (function () {
@@ -46,6 +47,11 @@ import {kinveyRequester} from './kinveyRequester.js';
                 .then((html) => {
                     context.$element().html(html);
                 })
+            $('#btnLogin').on('click',function () {
+                let loginData = {};
+                loginData['name'] = $('#signupUser').val();
+                loginData['email'] = $('#signupPassword').val();
+            })
 
         });
 
