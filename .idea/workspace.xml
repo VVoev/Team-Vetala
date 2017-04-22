@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="added toastr for increasing user interface">
+    <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.js" afterPath="$PROJECT_DIR$/scripts/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -355,7 +354,7 @@
       <workItem from="1492689987432" duration="1684000" />
       <workItem from="1492692412007" duration="456000" />
       <workItem from="1492789695009" duration="5085000" />
-      <workItem from="1492852371318" duration="15792000" />
+      <workItem from="1492852371318" duration="15816000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -385,14 +384,21 @@
       <option name="project" value="LOCAL" />
       <updated>1492879297535</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="TOASTR needs to be put in bower.json file">
+      <created>1492879699727</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1492879699727</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23017000" />
+    <option name="totallyTimeSpent" value="23041000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -442,7 +448,8 @@
     <MESSAGE value="usew can now Register after 2 hours of debuging :)" />
     <MESSAGE value="login initial commit" />
     <MESSAGE value="added toastr for increasing user interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="added toastr for increasing user interface" />
+    <MESSAGE value="TOASTR needs to be put in bower.json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="TOASTR needs to be put in bower.json file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
