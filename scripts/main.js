@@ -13,6 +13,7 @@ import { constants } from './constants/constants.js';
         //Default view
         this.get('#/', homeController.viewHome);
         this.get('#/Home', homeController.viewHome);
+        this.get('#/Contact', homeController.viewContacts);
 
         this.get('#/Register', function(context) {
             userController.register()
