@@ -9,7 +9,7 @@ let homeController = function() {
 
     // context => Sammy
     function viewHome(context) {
-        tl.get("homeView")
+        tl.get("home")
             .then(template => context.$element().html(template(data)))
     }
 

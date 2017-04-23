@@ -7,7 +7,7 @@ const templateLoader = (() => {
                 resolve(Handlebars.compile(templatesCache[templateName]));
             }
 
-            $.get(`./templates/${templateName}.handlebars`, template => {
+            $.get(`./templates/${templateName}-view.handlebars`, template => {
                 templatesCache[templateName] = template;
                 resolve(Handlebars.compile(template));
             })
@@ -19,4 +19,4 @@ const templateLoader = (() => {
     };
 })();
 
-export {templateLoader};
+export { templateLoader };

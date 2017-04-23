@@ -1,10 +1,10 @@
-import {templateLoader} from '../template-loader.js';
+import { templateLoader } from '../template-loader.js';
 
-let userController = (function () {
+let userController = (function() {
 
     function register() {
         return new Promise((resolve, reject) => {
-            templateLoader.get('registerView')
+            templateLoader.get('register')
                 .then((template) => {
                     resolve(template());
                 })
@@ -14,7 +14,7 @@ let userController = (function () {
 
     function login() {
         return new Promise((resolve, reject) => {
-            templateLoader.get('loginView')
+            templateLoader.get('login')
                 .then((template) => {
                     resolve(template());
                 })
@@ -30,4 +30,4 @@ let userController = (function () {
 
 })();
 
-export {userController};
+export { userController };

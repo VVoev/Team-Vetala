@@ -1,7 +1,7 @@
-import { homeController } from "./controllers/homeController.js";
-import { userController } from "./controllers/userController.js";
+import { homeController } from "./controllers/home-controller.js";
+import { userController } from "./controllers/user-controller.js";
 import { validator } from "./validator.js";
-import { kinveyRequester } from './kinveyRequester.js';
+import { kinveyRequester } from './kinvey-requester.js';
 import { constants } from './constants/constants.js';
 
 (function() {
