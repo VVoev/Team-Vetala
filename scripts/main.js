@@ -1,14 +1,11 @@
-import {homeController} from "./controllers/homeController.js";
-import {userController} from "./controllers/userController.js";
-import {validator} from "./validator.js";
-import {kinveyRequester} from './kinveyRequester.js';
-import {constants} from './constants/constants.js';
+import { homeController } from "./controllers/homeController.js";
+import { userController } from "./controllers/userController.js";
+import { validator } from "./validator.js";
+import { kinveyRequester } from './kinveyRequester.js';
+import { constants } from './constants/constants.js';
 
-// import {templateLoader} from './template-loader'; TODO kato se probvam da go izpolzvam ne mi zarejda failovete{ot Vlado}
-
-
-(function () {
-    let sammyApp = Sammy('#content', function () {
+(function() {
+    let sammyApp = Sammy('#content', function() {
 
         // original state of this
         let carApi = this;
@@ -17,11 +14,11 @@ import {constants} from './constants/constants.js';
         this.get('#/', homeController.viewHome);
         this.get('#/Home', homeController.viewHome);
 
-        this.get('#/Register', function (context) {
+        this.get('#/Register', function(context) {
             userController.register()
                 .then((html) => {
                     context.$element().html(html);
-                    $('#btnRegister').on('click', function () {
+                    $('#btnRegister').on('click', function() {
                         let registerData = {};
                         registerData['name'] = $('#signupName').val();
                         registerData['email'] = $('#signupEmail').val();
@@ -45,11 +42,11 @@ import {constants} from './constants/constants.js';
                 })
         });
 
-        this.get('#/Login', function (context) {
+        this.get('#/Login', function(context) {
             userController.login()
                 .then((html) => {
                     context.$element().html(html);
-                    $('#btnLogin').on('click', function () {
+                    $('#btnLogin').on('click', function() {
                         let loginData = {};
                         loginData['name'] = $('#signupUser').val();
                         loginData['password'] = $('#signupPassword').val();
@@ -58,8 +55,8 @@ import {constants} from './constants/constants.js';
                                 document.location = '#/Home';
                                 toastr.success(constants.SUCCESS_LOGIN);
                             }).catch((error) => {
-                            alert(error);
-                        })
+                                alert(error);
+                            })
                     })
                 })
         });
@@ -68,7 +65,7 @@ import {constants} from './constants/constants.js';
     });
 
 
-    $(function () {
+    $(function() {
         sammyApp.run('#/')
     })
 })();
