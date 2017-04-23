@@ -9,10 +9,8 @@ let homeController = function() {
 
     // context => Sammy
     function viewHome(context) {
-        $.get('templates/homeView.handlebars', function() {
-            tl.get("homeView")
-                .then(template => context.$element().html(template(data)))
-        })
+        tl.get("homeView")
+            .then(template => context.$element().html(template(data)))
     }
 
     return {
