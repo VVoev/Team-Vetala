@@ -1,13 +1,13 @@
-import {homeController} from "./controllers/home-controller.js";
-import {userController} from "./controllers/user-controller.js";
-import {validator} from "./validator.js";
-import {kinveyRequester} from './kinvey-requester.js';
-import {constants} from './constants/constants.js';
-import {carController} from "./controllers/car-controller.js";
-import {toastrSettings} from './toastrSettings.js';
+import { homeController } from "./controllers/home-controller.js";
+import { userController } from "./controllers/user-controller.js";
+import { validator } from "./validator.js";
+import { kinveyRequester } from './kinvey-requester.js';
+import { constants } from './constants/constants.js';
+import { carController } from "./controllers/car-controller.js";
+import { toastrSettings } from './toastrSettings.js';
 
-(function () {
-    let sammyApp = Sammy('#content', function () {
+(function() {
+    let sammyApp = Sammy('#content', function() {
 
         //configuring toaster to work as you want to work
         toastr.options = toastrSettings;
@@ -22,11 +22,11 @@ import {toastrSettings} from './toastrSettings.js';
         //All other views
         this.get('#/Contact', homeController.viewContacts);
 
-        this.get('#/Register', function (context) {
+        this.get('#/Register', function(context) {
             userController.register()
                 .then((html) => {
                     context.$element().html(html);
-                    $('#btnRegister').on('click', function () {
+                    $('#btnRegister').on('click', function() {
                         let registerData = {};
                         registerData['name'] = $('#signupName').val();
                         registerData['email'] = $('#signupEmail').val();
@@ -50,11 +50,11 @@ import {toastrSettings} from './toastrSettings.js';
                 })
         });
 
-        this.get('#/Login', function (context) {
+        this.get('#/Login', function(context) {
             userController.login()
                 .then((html) => {
                     context.$element().html(html);
-                    $('#btnLogin').on('click', function () {
+                    $('#btnLogin').on('click', function() {
                         let loginData = {};
                         loginData['name'] = $('#signupUser').val();
                         loginData['password'] = $('#signupPassword').val();
@@ -68,28 +68,15 @@ import {toastrSettings} from './toastrSettings.js';
                                 userController.activateField();
 
                             }).catch((error) => {
-                            toastr.error(error.responseText);
-                        })
+                                toastr.error(error.responseText);
+                            })
                     })
                 })
         });
 
-        this.get('#/Shop', function (context) {
+        this.get('#/Shop', carController.all);
 
-            carController.all()
-                .then((html) => {
-                    context.$element().html(html);
-                    kinveyRequester.findAllCars()
-                        .then((options) => {
-                            // console.log(options);
-                            toastr.success(constants.CARS_LOADED);
-                        })
-                })
-
-
-        });
-
-        this.get('#/Logout', function (context) {
+        this.get('#/Logout', function(context) {
             sessionStorage.clear();
             userController.deactivateField();
             $('#logginUser').html('');
@@ -98,7 +85,7 @@ import {toastrSettings} from './toastrSettings.js';
 
     });
 
-    $(function () {
+    $(function() {
         sammyApp.run('#/')
     })
 

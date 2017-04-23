@@ -1,15 +1,16 @@
-import {templateLoader} from '../template-loader.js';
+import { constants } from '../constants/constants.js';
+import { kinveyRequester } from '../kinvey-requester.js';
+import { templateLoader as tl } from '../template-loader.js';
 
-let carController = (function () {
+let carController = (function() {
 
     function all(context) {
-        return new Promise((resolve, reject) => {
-            templateLoader.get('cars')
-                .then((template) => {
-                    resolve(template());
-                })
-                .catch(reject);
-        });
+        let cars;
+        Promise.all([kinveyRequester.findAllCars(), tl.get("cars")])
+            .then(([data, template]) => context.$element().html(template(data)))
+            .then((options) => {
+                toastr.success(constants.CARS_LOADED);
+            });
     }
 
     function listAllCars(context) {
@@ -22,4 +23,4 @@ let carController = (function () {
 
 })();
 
-export {carController};
+export { carController };
