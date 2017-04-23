@@ -27,12 +27,24 @@ let userController = (function () {
         sessionStorage.setItem("userID", details._id);
         sessionStorage.setItem("userName", details.username);
     }
+    
+    function activateField() {
+        $('#carsForSale').show();
+        $('.userAdditional').show();
+    }
+
+    function deactivateField () {
+        $('#carsForSale').hide();
+        $('.userAdditional').hide();
+    }
 
 
     return {
         register,
         login,
-        fillSessionStorage
+        fillSessionStorage,
+        activateField,
+        deactivateField
     }
 
 

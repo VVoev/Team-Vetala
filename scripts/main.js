@@ -58,6 +58,7 @@ import { constants } from './constants/constants.js';
                                 toastr.success(constants.SUCCESS_LOGIN);
                                 let name = sessionStorage.getItem("userName");
                                 $('#logginUser').html(`Welcome,${name}`);
+                                userController.activateField();
 
                             }).catch((error) => {
                                 toastr.error(error.responseText);
@@ -68,6 +69,7 @@ import { constants } from './constants/constants.js';
 
         this.get('#/Logout', function(context) {
             sessionStorage.clear();
+            userController.deactivateField();
             $('#logginUser').html('');
             toastr.warning(constants.SUCCESS_LOGOUT);
         })
