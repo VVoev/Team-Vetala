@@ -31,11 +31,13 @@ let userController = (function () {
     function activateField() {
         $('#carsForSale').show();
         $('.userAdditional').show();
+        $('.moreTools').hide();
     }
 
     function deactivateField () {
         $('#carsForSale').hide();
         $('.userAdditional').hide();
+        $('.moreTools').show();
     }
 
 
