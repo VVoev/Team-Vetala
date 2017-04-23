@@ -6,6 +6,9 @@ let constants = (function() {
         SUCCESS_LOGOUT: "Logout successful",
         CARS_LOADED: "Cars loaded",
         SUCCESS_ADD_VEHICLE: "Vehicle addeed successful",
+        ERROR_ALREADY_LOGGED: "You already logged in",
+        ERROR_HAVE_ACCOUNT: "You already have account",
+        ERROR_UNAUTORIZE_ADD_VEHICLE: "You must log in to add vehicle",
         CONTACTS: {
             contacts: [
                 { name: "Vlado Voev", github: "https://github.com/VVoev" },
