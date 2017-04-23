@@ -1,3 +1,5 @@
+import {carController} from "./controllers/car-controller.js";
+
 let kinveyRequester = (function () {
     const appKey = "kid_r110JsORe";
     const appSecret = "4e37e5b1ca8444ca88ed6b7c24e3f173";
@@ -39,12 +41,13 @@ let kinveyRequester = (function () {
     }
 
     function findAllCars() {
-        let b = baseUrl + "appdata/" + appKey + "/Cars";
-        console.log(b)
+        toastr.info("Loading")
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/Cars",
-            headers: getKinveyUserAuthHeaders()
+            headers: getKinveyUserAuthHeaders(),
+            sucess:carController.listAllCars,
+            error:handleAjaxError
         });
     }
 
@@ -80,6 +83,17 @@ let kinveyRequester = (function () {
             url: baseUrl + "appdata/" + appKey + "/Cars/" + carId,
             headers: getKinveyUserAuthHeaders()
         });
+    }
+
+    //function only to handle Error for AJAX
+    function handleAjaxError(response) {
+        let errorMsg = JSON.stringify(response);
+        if (response.readyState === 0)
+            errorMsg = "Cannot connect due to network error.";
+        if (response.responseJSON &&
+            response.responseJSON.description)
+            errorMsg = response.responseJSON.description;
+        toastr.error(errorMsg);
     }
 
     return {

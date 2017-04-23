@@ -4,9 +4,13 @@ import {validator} from "./validator.js";
 import {kinveyRequester} from './kinvey-requester.js';
 import {constants} from './constants/constants.js';
 import {carController} from "./controllers/car-controller.js";
+import {toastrSettings} from './toastrSettings.js';
 
 (function () {
     let sammyApp = Sammy('#content', function () {
+
+        //configuring toaster to work as you want to work
+        toastr.options = toastrSettings;
 
         // original state of this
         let carApi = this;
@@ -71,15 +75,18 @@ import {carController} from "./controllers/car-controller.js";
         });
 
         this.get('#/Shop', function (context) {
+
             carController.all()
                 .then((html) => {
                     context.$element().html(html);
                     kinveyRequester.findAllCars()
-                        .then((options)=>{
-                            toastr.info("Cars are here");
-                            console.log(options)
+                        .then((options) => {
+                            // console.log(options);
+                            toastr.success(constants.CARS_LOADED);
                         })
                 })
+
+
         });
 
         this.get('#/Logout', function (context) {

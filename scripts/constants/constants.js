@@ -4,6 +4,7 @@ let constants = (function() {
         SUCCESS_LOGIN: "You have login successful",
         SUCCESS_REGISTER: "Register successful",
         SUCCESS_LOGOUT:"Logout successful",
+        CARS_LOADED:"Cars loaded",
         CONTACTS: {
             contacts: [
                 { name: "Vlado Voev", github: "https://github.com/VVoev" },
