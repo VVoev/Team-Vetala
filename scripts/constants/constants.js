@@ -3,6 +3,7 @@ let constants = (function() {
     let messages = {
         SUCCESS_LOGIN: "You have login successful",
         SUCCESS_REGISTER: "Register successful",
+        SUCCESS_LOGOUT:"Logout successful",
         CONTACTS: {
             contacts: [
                 { name: "Vlado Voev", github: "https://github.com/VVoev" },

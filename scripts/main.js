@@ -52,15 +52,27 @@ import { constants } from './constants/constants.js';
                         loginData['name'] = $('#signupUser').val();
                         loginData['password'] = $('#signupPassword').val();
                         kinveyRequester.loginUser(loginData["name"], loginData["password"])
-                            .then(() => {
+                            .then((details) => {
+                                userController.fillSessionStorage(details);
                                 document.location = '#/Home';
                                 toastr.success(constants.SUCCESS_LOGIN);
+                                let name = sessionStorage.getItem("userName");
+                                $('#logginUser').html(`Welcome,${name}`);
+
                             }).catch((error) => {
                                 toastr.error(error.responseText);
                             })
                     })
                 })
         });
+
+        this.get('#/Logout', function(context) {
+            sessionStorage.clear();
+            $('#logginUser').html('');
+            toastr.warning(constants.SUCCESS_LOGOUT);
+        })
+
+
 
 
     });

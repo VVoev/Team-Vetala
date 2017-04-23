@@ -1,18 +1,13 @@
-import { constants } from '../constants/constants.js';
+import {constants} from '../constants/constants.js';
+import {templateLoader as tl} from '../template-loader.js';
 
-// #region testing :-)
-import { templateLoader as tl } from '../template-loader.js';
-const data = {
-    username: 'Kircho'
-};
-// #endregion
 
-let homeController = function() {
+let homeController = function () {
 
     // context => Sammy
     function viewHome(context) {
         tl.get("home")
-            .then(template => context.$element().html(template(data)));
+            .then(template => context.$element().html(template));
     }
 
     function viewContacts(context) {
@@ -26,4 +21,4 @@ let homeController = function() {
     };
 }();
 
-export { homeController };
+export {homeController};

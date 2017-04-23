@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+#logginUser{
+    color: blue;
+    font-size: 20px;
+}
 footer {
     background: #AAAAAA;
     padding: 5px 10px;

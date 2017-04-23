@@ -1,6 +1,6 @@
-import { templateLoader } from '../template-loader.js';
+import {templateLoader} from '../template-loader.js';
 
-let userController = (function() {
+let userController = (function () {
 
     function register() {
         return new Promise((resolve, reject) => {
@@ -22,12 +22,20 @@ let userController = (function() {
         });
     };
 
+    function fillSessionStorage(details) {
+        sessionStorage.setItem("authToken", details._kmd.authtoken);
+        sessionStorage.setItem("userID", details._id);
+        sessionStorage.setItem("userName", details.username);
+    }
+
+
     return {
         register,
-        login
+        login,
+        fillSessionStorage
     }
 
 
 })();
 
-export { userController };
+export {userController};
