@@ -1,11 +1,12 @@
-import { homeController } from "./controllers/home-controller.js";
-import { userController } from "./controllers/user-controller.js";
-import { validator } from "./validator.js";
-import { kinveyRequester } from './kinvey-requester.js';
-import { constants } from './constants/constants.js';
+import {homeController} from "./controllers/home-controller.js";
+import {userController} from "./controllers/user-controller.js";
+import {validator} from "./validator.js";
+import {kinveyRequester} from './kinvey-requester.js';
+import {constants} from './constants/constants.js';
+import {carController} from "./controllers/car-controller.js";
 
-(function() {
-    let sammyApp = Sammy('#content', function() {
+(function () {
+    let sammyApp = Sammy('#content', function () {
 
         // original state of this
         let carApi = this;
@@ -13,13 +14,15 @@ import { constants } from './constants/constants.js';
         //Default view
         this.get('#/', homeController.viewHome);
         this.get('#/Home', homeController.viewHome);
+
+        //All other views
         this.get('#/Contact', homeController.viewContacts);
 
-        this.get('#/Register', function(context) {
+        this.get('#/Register', function (context) {
             userController.register()
                 .then((html) => {
                     context.$element().html(html);
-                    $('#btnRegister').on('click', function() {
+                    $('#btnRegister').on('click', function () {
                         let registerData = {};
                         registerData['name'] = $('#signupName').val();
                         registerData['email'] = $('#signupEmail').val();
@@ -43,11 +46,11 @@ import { constants } from './constants/constants.js';
                 })
         });
 
-        this.get('#/Login', function(context) {
+        this.get('#/Login', function (context) {
             userController.login()
                 .then((html) => {
                     context.$element().html(html);
-                    $('#btnLogin').on('click', function() {
+                    $('#btnLogin').on('click', function () {
                         let loginData = {};
                         loginData['name'] = $('#signupUser').val();
                         loginData['password'] = $('#signupPassword').val();
@@ -61,26 +64,35 @@ import { constants } from './constants/constants.js';
                                 userController.activateField();
 
                             }).catch((error) => {
-                                toastr.error(error.responseText);
-                            })
+                            toastr.error(error.responseText);
+                        })
                     })
                 })
         });
 
-        this.get('#/Logout', function(context) {
+        this.get('#/Shop', function (context) {
+            carController.all()
+                .then((html) => {
+                    context.$element().html(html);
+                    kinveyRequester.findAllCars()
+                        .then((options)=>{
+                            toastr.info("Cars are here");
+                            console.log(options)
+                        })
+                })
+        });
+
+        this.get('#/Logout', function (context) {
             sessionStorage.clear();
             userController.deactivateField();
             $('#logginUser').html('');
             toastr.warning(constants.SUCCESS_LOGOUT);
-        })
-
-
-
+        });
 
     });
 
-
-    $(function() {
+    $(function () {
         sammyApp.run('#/')
     })
+
 })();

@@ -4,7 +4,8 @@
     <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/user-controller.js" afterPath="$PROJECT_DIR$/scripts/controllers/user-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/kinvey-requester.js" afterPath="$PROJECT_DIR$/scripts/kinvey-requester.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.js" afterPath="$PROJECT_DIR$/scripts/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,21 +23,22 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="366">
+              <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
               <folding>
-                <element signature="e#0#66#0" expanded="true" />
-                <marker date="1492953561630" expanded="true" signature="7:8" ph="..." />
+                <element signature="e#0#64#0" expanded="true" />
+                <element signature="e#3715#3901#0" expanded="false" />
+                <marker date="1492957882063" expanded="true" signature="7:8" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact-view.handlebars" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/contact-view.handlebars">
+      <file leaf-file-name="kinvey-requester.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/kinvey-requester.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="1580">
+              <caret line="79" column="55" lean-forward="false" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -52,31 +54,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/constants/constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kinvey-requester.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/kinvey-requester.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1414">
-              <caret line="87" column="4" lean-forward="false" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/user-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+            <state relative-caret-position="231">
+              <caret line="11" column="11" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="11" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="car-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/car-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cars-view.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/cars-view.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -97,8 +99,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state relative-caret-position="168">
+              <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -131,8 +133,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="handlebars" />
         <option value="JavaScript File" />
+        <option value="XSLT Stylesheet" />
+        <option value="handlebars" />
       </list>
     </option>
   </component>
@@ -171,9 +174,12 @@
         <option value="$PROJECT_DIR$/scripts/controllers/home-controller.js" />
         <option value="$PROJECT_DIR$/templates/home-view.handlebars" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/scripts/main.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/user-controller.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/templates/cars-view.handlebars" />
+        <option value="$PROJECT_DIR$/scripts/main.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/car-controller.js" />
+        <option value="$PROJECT_DIR$/scripts/kinvey-requester.js" />
       </list>
     </option>
   </component>
@@ -422,7 +428,7 @@
       <workItem from="1492692412007" duration="456000" />
       <workItem from="1492789695009" duration="5085000" />
       <workItem from="1492852371318" duration="15816000" />
-      <workItem from="1492947568825" duration="6707000" />
+      <workItem from="1492947568825" duration="9276000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -473,11 +479,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492954189483</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="navigation is almost spot on :D">
+      <created>1492954355128</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1492954355128</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29748000" />
+    <option name="totallyTimeSpent" value="32317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -533,32 +546,14 @@
     <MESSAGE value="TOASTR needs to be put in bower.json file" />
     <MESSAGE value="app is showing succesfull/unsucesfull login and register" />
     <MESSAGE value="navigation updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="navigation updated" />
+    <MESSAGE value="navigation is almost spot on :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="navigation is almost spot on :D" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/homeView.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/validator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#366#487#0" expanded="false" />
-            <element signature="e#537#709#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/template-loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -661,8 +656,9 @@
         <state relative-caret-position="51">
           <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="40" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
-            <marker date="1492953561630" expanded="true" signature="7:8" ph="..." />
+            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#3715#3901#0" expanded="false" />
+            <marker date="1492957882063" expanded="true" signature="7:8" ph="..." />
           </folding>
         </state>
       </provider>
@@ -702,8 +698,9 @@
         <state relative-caret-position="51">
           <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="40" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
-            <marker date="1492953561630" expanded="true" signature="7:8" ph="..." />
+            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#3715#3901#0" expanded="false" />
+            <marker date="1492957882063" expanded="true" signature="7:8" ph="..." />
           </folding>
         </state>
       </provider>
@@ -826,26 +823,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/kinvey-requester.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1414">
-          <caret line="87" column="4" lean-forward="false" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/constants/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/template-loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -876,31 +857,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="71" column="35" lean-forward="true" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-            <marker date="1492953561630" expanded="true" signature="7:8" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+        <state relative-caret-position="168">
+          <caret line="36" column="43" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/template-loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/user-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        <state relative-caret-position="231">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cars-view.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/car-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#3715#3901#0" expanded="false" />
+            <marker date="1492957882063" expanded="true" signature="7:8" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/kinvey-requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1580">
+          <caret line="79" column="55" lean-forward="false" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
           <folding />
         </state>
       </provider>

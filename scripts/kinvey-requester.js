@@ -39,9 +39,11 @@ let kinveyRequester = (function () {
     }
 
     function findAllCars() {
+        let b = baseUrl + "appdata/" + appKey + "/Cars";
+        console.log(b)
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/carApp",
+            url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders()
         });
     }
@@ -49,7 +51,7 @@ let kinveyRequester = (function () {
     function findCarById(carId) {
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/carApp/" + carId,
+            url: baseUrl + "appdata/" + appKey + "/Cars/" + carId,
             headers: getKinveyUserAuthHeaders()
         });
     }
@@ -57,7 +59,7 @@ let kinveyRequester = (function () {
     function createCar(make, model, price, firstRegistration) {
         return $.ajax({
             method: "POST",
-            url: baseUrl + "appdata/" + appKey + "/carApp",
+            url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders(),
             data: {make, model, price, firstRegistration}
         });
@@ -66,7 +68,7 @@ let kinveyRequester = (function () {
     function editCar(carId, make, model, price, firstRegistration) {
         return $.ajax({
             method: "PUT",
-            url: baseUrl + "appdata/" + appKey + "/carApp/" + carId,
+            url: baseUrl + "appdata/" + appKey + "/Cars/" + carId,
             headers: getKinveyUserAuthHeaders(),
             data: {make, model, price, firstRegistration}
         });
@@ -75,7 +77,7 @@ let kinveyRequester = (function () {
     function deleteCar(carId) {
         return $.ajax({
             method: "DELETE",
-            url: baseUrl + "appdata/" + appKey + "/carApp/" + carId,
+            url: baseUrl + "appdata/" + appKey + "/Cars/" + carId,
             headers: getKinveyUserAuthHeaders()
         });
     }
