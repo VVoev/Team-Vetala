@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Add new vehicle</div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Vehicle Type
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            {{#each types}}
+                                <li><a href="#">{{type}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="make">Make</label>
+                    <input type="text" id="new-car-make" name="make" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="new-car-model" name="model" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="text" id="new-car-year" name="year" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="price">Price <span class="label label-success">EUR</span></label>
+                    <input type="text" id="new-car-price" name="price" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <button id="btnAddCar" type="submit" class="btn btn-info btn-block">Add Vehicle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

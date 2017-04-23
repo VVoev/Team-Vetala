@@ -1,12 +1,16 @@
-<h1>
-    laina
+<h1>Our vehicles</h1>
+{{#this}}
     {{#this}}
-       {{#this}}
-           <ul>
-               <li>
-                   {{make}}
-               </li>
-           </ul>
-       {{/this}}
+        <div class="row">
+             <div class="col-sm-6 col-md-4">
+                 <div class="thumbnail">
+                     <img src="..." alt="...">
+                     <div class="caption">
+                         <h3>{{make}} {{model}}</h3>
+                         <p>EUR {{price}}</p>        
+                     </div>
+                 </div>
+             </div>
+         </div>
     {{/this}}
-</h1>
+{{/this}}

@@ -1,8 +1,8 @@
-import {constants} from '../constants/constants.js';
-import {templateLoader as tl} from '../template-loader.js';
+import { constants } from '../constants/constants.js';
+import { templateLoader as tl } from '../template-loader.js';
 
 
-let homeController = function () {
+let homeController = function() {
 
     // context => Sammy
     function viewHome(context) {
@@ -16,9 +16,9 @@ let homeController = function () {
     }
 
     return {
-        viewHome: viewHome,
-        viewContacts: viewContacts
+        viewHome,
+        viewContacts
     };
 }();
 
-export {homeController};
+export { homeController };

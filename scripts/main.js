@@ -76,6 +76,8 @@ import { toastrSettings } from './toastrSettings.js';
 
         this.get('#/Shop', carController.all);
 
+        this.get('#/AddCar', carController.addCar);
+
         this.get('#/Logout', function(context) {
             sessionStorage.clear();
             userController.deactivateField();

@@ -1,6 +1,6 @@
-import {templateLoader} from '../template-loader.js';
+import { templateLoader } from '../template-loader.js';
 
-let userController = (function () {
+let userController = (function() {
 
     function register() {
         return new Promise((resolve, reject) => {
@@ -27,14 +27,14 @@ let userController = (function () {
         sessionStorage.setItem("userID", details._id);
         sessionStorage.setItem("userName", details.username);
     }
-    
+
     function activateField() {
         $('#carsForSale').show();
         $('.userAdditional').show();
         $('.moreTools').hide();
     }
 
-    function deactivateField () {
+    function deactivateField() {
         $('#carsForSale').hide();
         $('.userAdditional').hide();
         $('.moreTools').show();
@@ -52,4 +52,4 @@ let userController = (function () {
 
 })();
 
-export {userController};
+export { userController };

@@ -5,7 +5,7 @@ import { templateLoader as tl } from '../template-loader.js';
 let carController = (function() {
 
     function all(context) {
-        let cars;
+        $("#carsForSale").removeClass("open");
         Promise.all([kinveyRequester.findAllCars(), tl.get("cars")])
             .then(([data, template]) => context.$element().html(template(data)))
             .then((options) => {
@@ -13,12 +13,33 @@ let carController = (function() {
             });
     }
 
-    function listAllCars(context) {
-        console.log(context)
+    function addCar(context) {
+        $("#carsForSale").removeClass("open");
+        tl.get("add-car")
+            .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
+            .then(() => {
+                $("#btnAddCar").on("click", () => {
+                    const make = $("#new-car-make").val();
+                    const model = $("#new-car-model").val();
+                    const price = $("#new-car-price").val();
+                    const year = $("#new-car-year").val();
+                    console.log(make, model, price, year);
+
+                    kinveyRequester.createCar(make, model, price, year)
+                        .then(() => {
+                            document.location = '#/Home';
+                            toastr.success(constants.SUCCESS_ADD_VEHICLE);
+                        })
+                        .catch((err) => {
+                            toastr.error(err.responseText);
+                        });
+                });
+            });
     }
 
     return {
         all,
+        addCar
     }
 
 })();
