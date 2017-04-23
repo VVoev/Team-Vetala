@@ -37,7 +37,7 @@ import { constants } from './constants/constants.js';
                                 toastr.success(constants.SUCCESS_REGISTER);
                             })
                             .catch((error) => {
-                                alert(error)
+                                toastr.error(error.responseText);
                             });
                     });
                 })
@@ -56,7 +56,7 @@ import { constants } from './constants/constants.js';
                                 document.location = '#/Home';
                                 toastr.success(constants.SUCCESS_LOGIN);
                             }).catch((error) => {
-                                alert(error);
+                                toastr.error(error.responseText);
                             })
                     })
                 })
