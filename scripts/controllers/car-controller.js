@@ -21,6 +21,14 @@ let carController = (function () {
                 target.animate({height: '100px', opacity: '0.8'}, "slow");
                 target.animate({width: '100px', opacity: '0.8'}, "slow");
             }
+            if (ev.target.nodeName === 'A') {
+                let elem = $(ev.target);
+                let hiddenElem = elem.next();
+                $(elem).click(function () {
+                    elem.hide();
+                    $(hiddenElem).slideToggle('slow');
+                });
+            }
         })
     }
 

@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="car-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="car-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/car-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="15" column="101" lean-forward="false" selection-start-line="15" selection-start-column="101" selection-end-line="15" selection-end-column="101" />
+            <state relative-caret-position="664">
+              <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -59,20 +59,20 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="204">
+              <caret line="68" column="11" lean-forward="false" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cars-view.handlebars" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cars-view.handlebars" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/cars-view.handlebars">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="14" column="79" lean-forward="false" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
+              <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
               <folding>
-                <element signature="e#603#624#0#HTML" expanded="true" />
+                <element signature="e#654#675#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,9 +182,9 @@
         <option value="$PROJECT_DIR$/scripts/kinvey-requester.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
-        <option value="$PROJECT_DIR$/templates/cars-view.handlebars" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/scripts/controllers/car-controller.js" />
+        <option value="$PROJECT_DIR$/templates/cars-view.handlebars" />
       </list>
     </option>
   </component>
@@ -448,7 +448,7 @@
       <workItem from="1492789695009" duration="5085000" />
       <workItem from="1492852371318" duration="15816000" />
       <workItem from="1492947568825" duration="13326000" />
-      <workItem from="1493023663806" duration="5294000" />
+      <workItem from="1493023663806" duration="7135000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -534,11 +534,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493026750446</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added some animation">
+      <created>1493028983817</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1493028983817</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41661000" />
+    <option name="totallyTimeSpent" value="43502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -598,7 +605,8 @@
     <MESSAGE value="refactor requestor cause it simply doesnt work" />
     <MESSAGE value="added some updates on navigation bar" />
     <MESSAGE value="added some photos" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some photos" />
+    <MESSAGE value="added some animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some animation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -799,25 +807,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="52" column="91" lean-forward="false" selection-start-line="52" selection-start-column="91" selection-end-line="52" selection-end-column="91" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#2;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add-car-view.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -854,30 +843,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cars-view.handlebars">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="79" lean-forward="false" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
+        <state relative-caret-position="248">
+          <caret line="52" column="91" lean-forward="false" selection-start-line="52" selection-start-column="91" selection-end-line="52" selection-end-column="91" />
           <folding>
-            <element signature="e#603#624#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#2;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="204">
+          <caret line="68" column="11" lean-forward="false" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add-car-view.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/car-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="15" column="101" lean-forward="false" selection-start-line="15" selection-start-column="101" selection-end-line="15" selection-end-column="101" />
+        <state relative-caret-position="664">
+          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cars-view.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="74" lean-forward="false" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+          <folding>
+            <element signature="e#654#675#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
