@@ -22,6 +22,12 @@ let constants = (function() {
                 { type: "Motorcycle" },
                 { type: "Truck" },
                 { type: "Bus" }
+            ],
+            fuelTypes: [
+                { fuelType: "petrol" },
+                { fuelType: "diesel" },
+                { fuelType: "LPG" },
+                { fuelType: "other" }
             ]
         }
     };

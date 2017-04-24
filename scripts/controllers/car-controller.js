@@ -42,8 +42,13 @@ let carController = (function () {
                     const model = $("#new-car-model").val();
                     const price = $("#new-car-price").val();
                     const year = $("#new-car-year").val();
+<<<<<<< HEAD
 
                     kinveyRequester.createCar(make, model, price, year)
+=======
+                    const info = $("new-car-info").val();
+                    kinveyRequester.createCar(make, model, price, year, info)
+>>>>>>> remotes/origin/master
                         .then(() => {
                             document.location = '#/Home';
                             toastr.success(constants.SUCCESS_ADD_VEHICLE);
