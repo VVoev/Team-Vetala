@@ -101,6 +101,7 @@ import { toastrSettings } from './toastrSettings.js';
             userController.deactivateField();
             $('#logginUser').html('');
             toastr.warning(constants.SUCCESS_LOGOUT);
+            document.location = '#/Home';
         });
 
     });

@@ -4,7 +4,9 @@
         <div class="row">
              <div class="col-sm-6 col-md-4">
                  <div class="thumbnail">
-                     <img src="..." alt="...">
+                     {{#if imageUrl}}
+                         <img src={{imageUrl}} alt="...">
+                     {{/if}}
                      <div class="caption">
                          <h3>{{make}} {{model}}</h3>
                          <p>EUR {{price}}</p>        

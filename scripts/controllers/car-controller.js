@@ -1,8 +1,8 @@
-import { constants } from '../constants/constants.js';
-import { kinveyRequester } from '../kinvey-requester.js';
-import { templateLoader as tl } from '../template-loader.js';
+import {constants} from '../constants/constants.js';
+import {kinveyRequester} from '../kinvey-requester.js';
+import {templateLoader as tl} from '../template-loader.js';
 
-let carController = (function() {
+let carController = (function () {
 
     function all(context) {
         $("#carsForSale").removeClass("open");
@@ -11,6 +11,12 @@ let carController = (function() {
             .then((options) => {
                 toastr.success(constants.CARS_LOADED);
             });
+
+        $('#content').on('click',function (ev) {
+            if(ev.target.nodeName === 'IMG'){
+                console.log(ev.target)
+            }
+        })
     }
 
     function addCar(context) {
@@ -23,7 +29,6 @@ let carController = (function() {
                     const model = $("#new-car-model").val();
                     const price = $("#new-car-price").val();
                     const year = $("#new-car-year").val();
-                    console.log(make, model, price, year);
 
                     kinveyRequester.createCar(make, model, price, year)
                         .then(() => {
@@ -44,4 +49,4 @@ let carController = (function() {
 
 })();
 
-export { carController };
+export {carController};
