@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/car-controller.js" afterPath="$PROJECT_DIR$/scripts/controllers/car-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.js" afterPath="$PROJECT_DIR$/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cars-view.handlebars" afterPath="$PROJECT_DIR$/templates/cars-view.handlebars" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -421,7 +418,7 @@
       <workItem from="1492789695009" duration="5085000" />
       <workItem from="1492852371318" duration="15816000" />
       <workItem from="1492947568825" duration="13326000" />
-      <workItem from="1493023663806" duration="3041000" />
+      <workItem from="1493023663806" duration="3067000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -493,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493024366559</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added some photos">
+      <created>1493026729749</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1493026729749</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39408000" />
+    <option name="totallyTimeSpent" value="39434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -556,7 +560,8 @@
     <MESSAGE value="navigation is almost spot on :D" />
     <MESSAGE value="refactor requestor cause it simply doesnt work" />
     <MESSAGE value="added some updates on navigation bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some updates on navigation bar" />
+    <MESSAGE value="added some photos" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some photos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
