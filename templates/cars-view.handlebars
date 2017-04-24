@@ -2,27 +2,24 @@
 {{#this}}
     {{#this}}
         <div class="row">
-             <div class="col-sm-6 col-md-4">
-                 <div class="thumbnail">
-<<<<<<< HEAD
-                     {{#if imageUrl}}
-                         <img src={{imageUrl}} alt="...">
-                     {{/if}}
-=======
-                     <img src="{{imageUrl}}" alt="...">
->>>>>>> remotes/origin/master
-                     <div class="caption">
-                         <h3>{{make}} {{model}}</h3>
-                         <p>EUR {{price}}</p>
-                         {{#if info}}
-                             <div>
-                                 <a id="additionalInfo">Double click here for more info</a>
-                                 <div id="hiddenInfo {{model}}" style="display: none">{{info}}</div>
-                             </div>
-                         {{/if}}
-                     </div>
-                 </div>
-             </div>
-         </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    {{#if imageUrl}}
+                        <img src={{imageUrl}} alt="...">
+                    {{/if}}
+
+                    <div class="caption">
+                        <h3>{{make}} {{model}}</h3>
+                        <p>EUR {{price}}</p>
+                        {{#if info}}
+                            <div>
+                                <a id="additionalInfo">Double click here for more info</a>
+                                <div id="hiddenInfo {{model}}" style="display: none">{{info}}</div>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
     {{/this}}
 {{/this}}
