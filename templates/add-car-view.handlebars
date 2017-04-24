@@ -17,6 +17,19 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Fuel Type
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            {{#each fuelTypes}}
+                                <li><a href="#">{{fuelType}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="make">Make</label>
                     <input type="text" id="new-car-make" name="make" class="form-control" />
                 </div>
@@ -33,8 +46,17 @@
                     <input type="text" id="new-car-price" name="price" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <button id="btnAddCar" type="submit" class="btn btn-info btn-block">Add Vehicle</button>
+                <label class="btn btn-default btn-file">
+                    <label for="car-image">Add vehicle image</label> 
+                    <input type="file" name="car-image" hidden>
+                </label>
                 </div>
+                <div class="form-group">
+                    <textarea id="new-car-info" class="span6" rows="3" placeholder="Vehicle detailed info..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="btnAddCar" type="submit" class="btn btn-info btn-block">Add Vehicle</button>
+                </div>                
             </form>
         </div>
     </div>

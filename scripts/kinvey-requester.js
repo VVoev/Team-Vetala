@@ -1,6 +1,6 @@
-import {carController} from "./controllers/car-controller.js";
+import { carController } from "./controllers/car-controller.js";
 
-let kinveyRequester = (function () {
+let kinveyRequester = (function() {
     const appKey = "kid_r110JsORe";
     const appSecret = "4e37e5b1ca8444ca88ed6b7c24e3f173";
     const baseUrl = "https://baas.kinvey.com/";
@@ -13,7 +13,7 @@ let kinveyRequester = (function () {
             method: "POST",
             url: baseUrl + "user/" + appKey + "/login",
             headers: kinveyAppAuthHeaders,
-            data: {username, password}
+            data: { username, password }
         });
     }
 
@@ -22,7 +22,7 @@ let kinveyRequester = (function () {
             method: "POST",
             url: baseUrl + "user/" + appKey + "/",
             headers: kinveyAppAuthHeaders,
-            data: {username, password}
+            data: { username, password }
         });
     }
 
@@ -46,8 +46,8 @@ let kinveyRequester = (function () {
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders(),
-            sucess:carController.listAllCars,
-            error:handleAjaxError
+            sucess: carController.listAllCars,
+            error: handleAjaxError
         });
     }
 
@@ -59,12 +59,12 @@ let kinveyRequester = (function () {
         });
     }
 
-    function createCar(make, model, price, firstRegistration) {
+    function createCar(make, model, price, firstRegistration, info) {
         return $.ajax({
             method: "POST",
             url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders(),
-            data: {make, model, price, firstRegistration}
+            data: { make, model, price, firstRegistration, info }
         });
     }
 
@@ -73,7 +73,7 @@ let kinveyRequester = (function () {
             method: "PUT",
             url: baseUrl + "appdata/" + appKey + "/Cars/" + carId,
             headers: getKinveyUserAuthHeaders(),
-            data: {make, model, price, firstRegistration}
+            data: { make, model, price, firstRegistration }
         });
     }
 
@@ -97,11 +97,16 @@ let kinveyRequester = (function () {
     }
 
     return {
-        loginUser, registerUser, logoutUser,
-        findAllCars, createCar, findCarById, editCar, deleteCar
+        loginUser,
+        registerUser,
+        logoutUser,
+        findAllCars,
+        createCar,
+        findCarById,
+        editCar,
+        deleteCar
     }
 
 })()
 
-export {kinveyRequester}
-
+export { kinveyRequester }
