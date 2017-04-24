@@ -1,8 +1,8 @@
-import {constants} from '../constants/constants.js';
-import {kinveyRequester} from '../kinvey-requester.js';
-import {templateLoader as tl} from '../template-loader.js';
+import { constants } from '../constants/constants.js';
+import { kinveyRequester } from '../kinvey-requester.js';
+import { templateLoader as tl } from '../template-loader.js';
 
-let carController = (function () {
+let carController = (function() {
 
     function all(context) {
         $("#carsForSale").removeClass("open");
@@ -12,19 +12,19 @@ let carController = (function () {
                 toastr.success(constants.CARS_LOADED);
             });
 
-        $('#content').on('click', function (ev) {
+        $('#content').on('click', function(ev) {
             //TODO need to find a way to make width bigger cause currently it is limited to div width
             if (ev.target.nodeName === 'IMG') {
                 let target = $(ev.target);
-                target.animate({height: '300px', opacity: '0.8'}, "slow");
-                target.animate({width: '300px', opacity: '0.8'}, "slow");
-                target.animate({height: '100px', opacity: '0.8'}, "slow");
-                target.animate({width: '100px', opacity: '0.8'}, "slow");
+                target.animate({ height: '300px', opacity: '0.8' }, "slow");
+                target.animate({ width: '300px', opacity: '0.8' }, "slow");
+                target.animate({ height: '100px', opacity: '0.8' }, "slow");
+                target.animate({ width: '100px', opacity: '0.8' }, "slow");
             }
             if (ev.target.nodeName === 'A') {
                 let elem = $(ev.target);
                 let hiddenElem = elem.next();
-                $(elem).click(function () {
+                $(elem).click(function() {
                     elem.hide();
                     $(hiddenElem).slideToggle('slow');
                 });
@@ -42,11 +42,9 @@ let carController = (function () {
                     const model = $("#new-car-model").val();
                     const price = $("#new-car-price").val();
                     const year = $("#new-car-year").val();
-
-
-                    kinveyRequester.createCar(make, model, price, year)
-
                     const info = $("new-car-info").val();
+                    const image;
+                    const fuelType;
                     kinveyRequester.createCar(make, model, price, year, info)
                         .then(() => {
                             document.location = '#/Home';
@@ -66,4 +64,4 @@ let carController = (function () {
 
 })();
 
-export {carController};
+export { carController };
