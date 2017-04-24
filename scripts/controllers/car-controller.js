@@ -1,30 +1,39 @@
-import { constants } from '../constants/constants.js';
-import { kinveyRequester } from '../kinvey-requester.js';
-import { templateLoader as tl } from '../template-loader.js';
+import {constants} from '../constants/constants.js';
+import {kinveyRequester} from '../kinvey-requester.js';
+import {templateLoader as tl} from '../template-loader.js';
 
-let carController = (function() {
+let carController = (function () {
 
     function all(context) {
         $("#carsForSale").removeClass("open");
         Promise.all([kinveyRequester.findAllCars(), tl.get("cars")])
-            .then(([data, template]) => context.$element().html(template(data)))
+            .then(([data, template]) => {
+                //dont touch the code because "maikata si ebalo"
+                let currentUser = sessionStorage.getItem("userID");
+                for (let piece of data) {
+                    if (currentUser === piece._acl.creator) {
+                        piece.currentUser = currentUser;
+                    }
+                }
+                context.$element().html(template(data))
+            })
             .then((options) => {
                 toastr.success(constants.CARS_LOADED);
             });
 
-        $('#content').on('click', function(ev) {
+        $('#content').on('click', function (ev) {
             //TODO need to find a way to make width bigger cause currently it is limited to div width
             if (ev.target.nodeName === 'IMG') {
                 let target = $(ev.target);
-                target.animate({ height: '300px', opacity: '0.8' }, "slow");
-                target.animate({ width: '300px', opacity: '0.8' }, "slow");
-                target.animate({ height: '100px', opacity: '0.8' }, "slow");
-                target.animate({ width: '100px', opacity: '0.8' }, "slow");
+                target.animate({height: '300px', opacity: '0.8'}, "slow");
+                target.animate({width: '300px', opacity: '0.8'}, "slow");
+                target.animate({height: '100px', opacity: '0.8'}, "slow");
+                target.animate({width: '100px', opacity: '0.8'}, "slow");
             }
             if (ev.target.nodeName === 'A') {
                 let elem = $(ev.target);
                 let hiddenElem = elem.next();
-                $(elem).click(function() {
+                $(elem).click(function () {
                     elem.hide();
                     $(hiddenElem).slideToggle('slow');
                 });
@@ -48,7 +57,7 @@ let carController = (function() {
                     // const fuelType;
                     kinveyRequester.createCar(make, model, price, year, info, image)
                         .then(() => {
-                            document.location = '#/Home';
+                            document.location = '#/Shop';
                             toastr.success(constants.SUCCESS_ADD_VEHICLE);
                         })
                         .catch((err) => {
@@ -65,4 +74,4 @@ let carController = (function() {
 
 })();
 
-export { carController };
+export {carController};

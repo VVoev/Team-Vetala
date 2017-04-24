@@ -96,11 +96,13 @@ import { toastrSettings } from './toastrSettings.js';
         });
 
 
-        this.get('#/Logout', function(context) {
+        this.get('#/Logout', function(context)
+        {
+            let user = sessionStorage.getItem("userName");
             sessionStorage.clear();
             userController.deactivateField();
             $('#logginUser').html('');
-            toastr.warning(constants.SUCCESS_LOGOUT);
+            toastr.warning(constants.SUCCESS_LOGOUT + " "+user);
             document.location = '#/Home';
         });
 
@@ -110,4 +112,9 @@ import { toastrSettings } from './toastrSettings.js';
         sammyApp.run('#/')
     })
 
+    return {
+        sammyApp,
+    }
+
 })();
+
