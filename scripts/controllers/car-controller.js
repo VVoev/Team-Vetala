@@ -42,10 +42,11 @@ let carController = (function() {
                     const model = $("#new-car-model").val();
                     const price = $("#new-car-price").val();
                     const year = $("#new-car-year").val();
-                    const info = $("new-car-info").val();
-                    const image;
-                    const fuelType;
-                    kinveyRequester.createCar(make, model, price, year, info)
+                    const info = $("#new-car-info").val();
+                    const image = $("#new-car-image-file").val();
+                    const imageUrl = "../images/" + image.split('\\')[2];
+                    // const fuelType;
+                    kinveyRequester.createCar(make, model, price, year, info, image)
                         .then(() => {
                             document.location = '#/Home';
                             toastr.success(constants.SUCCESS_ADD_VEHICLE);
