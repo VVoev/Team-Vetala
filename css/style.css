@@ -15,6 +15,13 @@ footer {
     border-radius: 5px;
 }
 
+.row{
+    position: relative;
+}
+.thumbnail{
+    position: relative;
+}
+
 .footer {
     position: absolute;
     right: 0;

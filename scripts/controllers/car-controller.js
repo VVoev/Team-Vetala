@@ -12,9 +12,14 @@ let carController = (function () {
                 toastr.success(constants.CARS_LOADED);
             });
 
-        $('#content').on('click',function (ev) {
-            if(ev.target.nodeName === 'IMG'){
-                console.log(ev.target)
+        $('#content').on('click', function (ev) {
+            //TODO need to find a way to make width bigger cause currently it is limited to div width
+            if (ev.target.nodeName === 'IMG') {
+                let target = $(ev.target);
+                target.animate({height: '300px', opacity: '0.8'}, "slow");
+                target.animate({width: '300px', opacity: '0.8'}, "slow");
+                target.animate({height: '100px', opacity: '0.8'}, "slow");
+                target.animate({width: '100px', opacity: '0.8'}, "slow");
             }
         })
     }

@@ -9,7 +9,11 @@
                      {{/if}}
                      <div class="caption">
                          <h3>{{make}} {{model}}</h3>
-                         <p>EUR {{price}}</p>        
+                         <p>EUR {{price}}</p>
+                         {{#if info}}
+                             <a id="additionalInfo">click here for more info</a>
+                             <div id="hiddenInfo{{model}}" style="display: none">{{info}}</div>
+                         {{/if}}
                      </div>
                  </div>
              </div>
