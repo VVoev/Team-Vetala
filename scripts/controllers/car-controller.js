@@ -67,9 +67,21 @@ let carController = (function () {
             });
     }
 
+    function editCar(context) {
+        tl.get("edit-car")
+            .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
+    }
+
+    function deleteCar(context) {
+        tl.get("delete-car")
+            .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
+    }
+
     return {
         all,
-        addCar
+        addCar,
+        editCar,
+        deleteCar
     }
 
 })();
