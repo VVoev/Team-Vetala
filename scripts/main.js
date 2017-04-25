@@ -95,7 +95,6 @@ import {toastrSettings} from './toastrSettings.js';
             }
         });
 
-
         this.get('#/Logout', function (context) {
             let user = sessionStorage.getItem("userName");
             sessionStorage.clear();
@@ -112,7 +111,6 @@ import {toastrSettings} from './toastrSettings.js';
         this.get('#/Delete',function (context) {
             carController.deleteCar(context);
         });
-
 
 
     });

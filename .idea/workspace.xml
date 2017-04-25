@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/car-controller.js" afterPath="$PROJECT_DIR$/scripts/controllers/car-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.js" afterPath="$PROJECT_DIR$/scripts/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/delete-car-view.handlebars" afterPath="$PROJECT_DIR$/templates/delete-car-view.handlebars" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +23,25 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="113" column="11" lean-forward="false" selection-start-line="113" selection-start-column="11" selection-end-line="113" selection-end-column="11" />
+            <state relative-caret-position="228">
+              <caret line="107" column="31" lean-forward="false" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
               <folding>
                 <element signature="e#887#2483#0" expanded="false" />
                 <element signature="e#2534#3933#0" expanded="false" />
+                <element signature="e#4033#4288#0" expanded="false" />
+                <element signature="e#4340#4640#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/home-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -33,10 +50,10 @@
       <file leaf-file-name="car-controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/car-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="76" column="86" lean-forward="false" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="86" />
+            <state relative-caret-position="396">
+              <caret line="91" column="5" lean-forward="true" selection-start-line="69" selection-start-column="2" selection-end-line="91" selection-end-column="5" />
               <folding>
-                <marker date="1493140156962" expanded="true" signature="203:3300" ph="{...}" />
+                <marker date="1493141776581" expanded="true" signature="203:3664" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -45,8 +62,8 @@
       <file leaf-file-name="delete-car-view.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/delete-car-view.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+            <state relative-caret-position="33">
+              <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -95,8 +112,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+            <state relative-caret-position="132">
+              <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -159,9 +176,9 @@
         <option value="$PROJECT_DIR$/templates/add-car-view.handlebars" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/templates/edit-car-view.handlebars" />
+        <option value="$PROJECT_DIR$/templates/cars-view.handlebars" />
         <option value="$PROJECT_DIR$/templates/delete-car-view.handlebars" />
         <option value="$PROJECT_DIR$/scripts/main.js" />
-        <option value="$PROJECT_DIR$/templates/cars-view.handlebars" />
         <option value="$PROJECT_DIR$/scripts/controllers/car-controller.js" />
       </list>
     </option>
@@ -414,7 +431,7 @@
       <workItem from="1493023663806" duration="7135000" />
       <workItem from="1493043933912" duration="7308000" />
       <workItem from="1493131687128" duration="33000" />
-      <workItem from="1493138241811" duration="1766000" />
+      <workItem from="1493138241811" duration="3736000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -532,10 +549,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54535000" />
+    <option name="totallyTimeSpent" value="56505000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1056" extended-state="1" />
+    <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15892291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -731,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/home-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="59" lean-forward="true" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/user-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -805,45 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add-car-view.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/delete-car-view.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="113" column="11" lean-forward="false" selection-start-line="113" selection-start-column="11" selection-end-line="113" selection-end-column="11" />
-          <folding>
-            <element signature="e#887#2483#0" expanded="false" />
-            <element signature="e#2534#3933#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cars-view.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="35" column="49" lean-forward="false" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -856,12 +831,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add-car-view.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/delete-car-view.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/home-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="107" column="31" lean-forward="false" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+          <folding>
+            <element signature="e#887#2483#0" expanded="false" />
+            <element signature="e#2534#3933#0" expanded="false" />
+            <element signature="e#4033#4288#0" expanded="false" />
+            <element signature="e#4340#4640#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/car-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="76" column="86" lean-forward="false" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="86" />
+        <state relative-caret-position="396">
+          <caret line="91" column="5" lean-forward="true" selection-start-line="69" selection-start-column="2" selection-end-line="91" selection-end-column="5" />
           <folding>
-            <marker date="1493140156962" expanded="true" signature="203:3300" ph="{...}" />
+            <marker date="1493141776581" expanded="true" signature="203:3664" ph="{...}" />
           </folding>
         </state>
       </provider>

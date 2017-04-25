@@ -68,13 +68,27 @@ let carController = (function () {
     }
 
     function editCar(context) {
-        tl.get("edit-car")
-            .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
+        let data = {};
+        $('#content').on('click',function (ev) {
+            console.log(ev.target)
+            // console.log(ev.target)
+            // tl.get("edit-car")
+            //     .then((template) => {
+            //         console.log(template);
+            //         context.$element().html(template(constants.VEHICLE_TYPES));
+            //     })
+        })
+
     }
 
     function deleteCar(context) {
+        let data = {};
+
         tl.get("delete-car")
-            .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
+            .then((template) => {
+                console.log(template);
+                context.$element().html(template(constants.VEHICLE_TYPES));
+            })
     }
 
     return {
