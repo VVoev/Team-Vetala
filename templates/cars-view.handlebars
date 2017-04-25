@@ -1,3 +1,18 @@
+<div>
+    <label for="sortOrder">Sort Order: </label>
+    <select name="sortOrder" id="sortOrder">
+        <option value="_kmd" selected="selected">Date Added</option>
+        <option value="make">Make</option>
+        <option value="price">Price</option>
+        <option value="firstRegistration">Year</option>
+    </select>
+    <label for="itemsPerPage">Items per page: </label>
+    <select name="itemsPerPage" id="itemsPerPage">
+        <option value="5">5</option>
+        <option value="10" selected="selected">10</option>
+    </select>
+</div>
+
 <h1>Our vehicles</h1>
 {{#this}}
     {{#this}}
@@ -35,3 +50,5 @@
         </div>
     {{/this}}
 {{/this}}
+
+<div id="pageNumbers"></div>

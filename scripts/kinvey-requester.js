@@ -40,12 +40,22 @@ let kinveyRequester = (function() {
         });
     }
 
-    function findAllCars() {
+    function getNumberOfCars() {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/Cars/_count"
+        });
+    }
+
+    function findAllCars(sortOrder, itemsPerPage, pageNumber) {
         toastr.info("Loading")
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders(),
+            sort: {sortOrder:1},
+            limit: itemsPerPage,
+            skip: itemsPerPage*pageNumber,
             sucess: carController.listAllCars,
             error: handleAjaxError
         });
