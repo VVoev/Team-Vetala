@@ -1,6 +1,7 @@
 let constants = (function() {
 
     let messages = {
+        SUCCESS_DELETE:"Car succesfully deleted",
         SUCCESS_LOGIN: "You have login successful",
         SUCCESS_REGISTER: "Register successful",
         SUCCESS_LOGOUT: "Logout successful",

@@ -68,8 +68,6 @@ let carController = (function () {
     }
 
     function editCar(context) {
-        let data = {};
-
         $('.caption').on('click', function (ev) {
                 let target = $(ev.target)
                 let elem = ev.target.parentNode;
@@ -82,6 +80,7 @@ let carController = (function () {
                         })
                         .then(() => {
                             $('#btn-Back').on('click', function (ev) {
+                                document.location = ('#/Shop')
                             })
                             $('#btn-Edit').on('click', function (ev) {
                                 let make = $('#make-input').val();
@@ -103,13 +102,31 @@ let carController = (function () {
     }
 
     function deleteCar(context) {
-        let data = {};
 
-        tl.get("delete-car")
-            .then((template) => {
-                console.log(template);
-                context.$element().html(template(constants.VEHICLE_TYPES));
-            })
+        $('.caption').on('click', function (ev) {
+            let target = $(ev.target)
+            let elem = ev.target.parentNode;
+            let id = ($(target).attr('id'));
+            if (($(elem).attr('id') === 'operationDelete') || ($(elem).attr('data-title') === ('Delete'))) {
+                Promise.all([kinveyRequester.findCarById(id), tl.get("delete-car")])
+                    .then(([data, template]) => {
+                        context.$element().html(template(data))
+                        toastr.success(`${data.make} ${data.model} preparing for delete`);
+                    })
+                    .then(() => {
+                        $('#btn-goBack').on('click', function (ev) {
+                            document.location = ('#/Shop')
+                        })
+                        $('#btn-Delete').on('click', function (ev) {
+                            kinveyRequester.deleteCar(id)
+                                .then(() => {
+                                    toastr.success(constants.SUCCESS_DELETE)
+                                    document.location = ('#/Shop');
+                                });
+                        })
+                    })
+            }
+        })
     }
 
     return {
