@@ -46,7 +46,6 @@ let kinveyRequester = (function() {
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders(),
-            sucess: carController.listAllCars,
             error: handleAjaxError
         });
     }
@@ -56,6 +55,20 @@ let kinveyRequester = (function() {
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/Cars/" + carId,
             headers: getKinveyUserAuthHeaders()
+        });
+    }
+
+    function findCarsCountByOwnerId(id) {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/Cars",
+            headers: getKinveyUserAuthHeaders(),
+            error: handleAjaxError,
+            dataFilter: function(data) {
+                data = JSON.parse(data);
+                data = Array.from(data).filter(x => x._acl.creator === id);
+                return JSON.stringify(data.length);
+            }
         });
     }
 
@@ -103,6 +116,7 @@ let kinveyRequester = (function() {
         findAllCars,
         createCar,
         findCarById,
+        findCarsCountByOwnerId,
         editCar,
         deleteCar
     }

@@ -46,10 +46,9 @@
                     <input type="text" id="new-car-price" name="price" class="form-control" />
                 </div>
                 <div class="form-group">
-                <label class="btn btn-default btn-file">
-                    <label for="car-image">Add vehicle image</label> 
-                    <input type="file" id="new-car-image-file" name="car-image" hidden>
-                </label>
+                    <form action="/images" class="dropzone" id="my-awesome-dropzone">
+                        <input id="new-car-image-file" type="file" name="file" />
+                    </form>            
                 </div>
                 <div class="form-group">
                     <textarea id="new-car-info" class="span6" rows="3" placeholder="Vehicle detailed info..."></textarea>

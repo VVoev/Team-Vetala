@@ -57,8 +57,14 @@ let carController = (function() {
 
         function addCar(context) {
             $("#carsForSale").removeClass("open");
+            let newFileName = "";
             tl.get("add-car")
                 .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
+                .then(() => {
+                    const currentUserId = sessionStorage.getItem("userID");
+                    kinveyRequester.findCarsCountByOwnerId(currentUserId)
+                        .then((count) => newFileName = currentUserId + "_" + (count + 1));
+                })
                 .then(() => {
                     $("#btnAddCar").on("click", () => {
                         const make = $("#new-car-make").val();
@@ -66,10 +72,11 @@ let carController = (function() {
                         const price = $("#new-car-price").val();
                         const year = $("#new-car-year").val();
                         const info = $("#new-car-info").val();
-                        const image = $("#new-car-image-file").val();
-                        const imageUrl = "../images/" + image.split('\\')[2];
-                        // const fuelType;
-                        kinveyRequester.createCar(make, model, price, year, info, image)
+                        const image = $("#new-car-image-file").val().split('.');
+                        const imageExt = image[image.length - 1];
+                        const imageUrl = "../images/" + newFileName + "." + imageExt;
+                        //const fuelType;
+                        kinveyRequester.createCar(make, model, price, year, info, imageUrl)
                             .then((data) => {
                                 document.location = '#/Shop';
                                 toastr.success(constants.SUCCESS_ADD_VEHICLE);
