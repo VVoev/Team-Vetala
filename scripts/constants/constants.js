@@ -4,6 +4,7 @@ let constants = (function() {
         SUCCESS_LOGIN: "You have login successful",
         SUCCESS_REGISTER: "Register successful",
         SUCCESS_LOGOUT: "Logout successful",
+        SUCCESS_EDITED:"Car sucessful edited",
         CARS_LOADED: "Cars loaded",
         SUCCESS_ADD_VEHICLE: "Vehicle addeed successful",
         ERROR_ALREADY_LOGGED: "You already logged in",

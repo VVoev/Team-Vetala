@@ -56,7 +56,7 @@ let carController = (function () {
                     const imageUrl = "../images/" + image.split('\\')[2];
                     // const fuelType;
                     kinveyRequester.createCar(make, model, price, year, info, image)
-                        .then(() => {
+                        .then((data) => {
                             document.location = '#/Shop';
                             toastr.success(constants.SUCCESS_ADD_VEHICLE);
                         })
@@ -69,15 +69,36 @@ let carController = (function () {
 
     function editCar(context) {
         let data = {};
-        $('#content').on('click',function (ev) {
-            console.log(ev.target)
-            // console.log(ev.target)
-            // tl.get("edit-car")
-            //     .then((template) => {
-            //         console.log(template);
-            //         context.$element().html(template(constants.VEHICLE_TYPES));
-            //     })
-        })
+
+        $('.caption').on('click', function (ev) {
+                let target = $(ev.target)
+                let elem = ev.target.parentNode;
+                let id = ($(target).attr('id'));
+                if (($(elem).attr('id') === 'operationEdit') || ($(elem).attr('data-title') === ('Edit'))) {
+                    Promise.all([kinveyRequester.findCarById(id), tl.get("edit-car")])
+                        .then(([data, template]) => {
+                            context.$element().html(template(data))
+                            toastr.success(`${data.make} ${data.model} preparing for edit`);
+                        })
+                        .then(() => {
+                            $('#btn-Back').on('click', function (ev) {
+                            })
+                            $('#btn-Edit').on('click', function (ev) {
+                                let make = $('#make-input').val();
+                                let model = $('#model-input').val();
+                                let price = $('#price-input').val();
+                                kinveyRequester.editCar(id, make, model, price)
+                                    .then(() => {
+                                        toastr.success(constants.SUCCESS_EDITED)
+                                        document.location = ('#/Shop');
+                                    });
+                            })
+                        })
+
+
+                }
+            }
+        )
 
     }
 
@@ -98,6 +119,7 @@ let carController = (function () {
         deleteCar
     }
 
-})();
+})
+();
 
 export {carController};
