@@ -1,6 +1,7 @@
 import { constants } from '../constants/constants.js';
 import { kinveyRequester } from '../kinvey-requester.js';
 import { templateLoader as tl } from '../template-loader.js';
+import * as models from "../models/models.js";
 
 let carController = (function() {
 
