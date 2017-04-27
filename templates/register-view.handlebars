@@ -20,11 +20,11 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="signupPassword">Password</label>
-                        <input id="signupPassword" type="password" name="pass_confirmation" maxlength="25" class="form-control" placeholder="" length="40" data-validation="confirmation" required >
+                        <input id="signupPassword" type="password" name="pass_confirmation" maxlength="25" class="form-control" placeholder="" length="40" data-validation="length" data-validation-length="min4" required >
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="signupPasswordagain">Password again</label>
-                        <input id="signupPasswordagain" type="password" maxlength="25" class="form-control" data-validation="length alphanumeric required" data-validation-length="min4" required>
+                        <input id="signupPasswordagain" type="password" name="pass" maxlength="25" class="form-control" data-validation="confirmation"  required>
                     </div>
                     <div class="form-group">
                         <button id="btnRegister" type="submit" class="btn btn-info btn-block">Create your account</button>
