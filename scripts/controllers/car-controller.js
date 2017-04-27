@@ -7,8 +7,11 @@ let carController = (function () {
     function all(context) {
         $("#carsForSale").removeClass("open");
 
-        let sortOrder = $('#sortOrder').val;
-        let itemsPerPage = $('#itemsPerPage').val;
+        document.getElementById('sortOptions').style.display = 'block';
+        let sortOrder = document.getElementById('sortOrder').value;
+        // console.log(sortOrder);
+        let itemsPerPage = document.getElementById('itemsPerPage').value;
+        // console.log(itemsPerPage);
         let pageNumber = 1; // to be fixed
 
         Promise.all([kinveyRequester.findAllCars(sortOrder, itemsPerPage, pageNumber), tl.get("cars")])

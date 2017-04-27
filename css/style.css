@@ -58,6 +58,9 @@ footer li{
     background-color: #efefef;
     text-align: center;
 }
+#sortOptions {
+    display: none;
+}
 /**
  * Demo Styles
  */
