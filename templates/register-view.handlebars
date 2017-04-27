@@ -12,15 +12,15 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="signupEmail">Email</label>
-                        <input id="signupEmail" type="email" maxlength="50" class="form-control">
+                        <input id="signupEmail" type="email" name="user-email" maxlength="50" class="form-control" data-validation="email required" />
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="signupEmailagain">Email again</label>
-                        <input id="signupEmailagain" type="email" maxlength="50" class="form-control" data-validation="email required">
+                        <input id="signupEmailagain" type="email" maxlength="50" class="form-control" data-validation="confirmation" data-validation-confirm="user-email">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="signupPassword">Password</label>
-                        <input id="signupPassword" type="password" maxlength="25" class="form-control" placeholder="" length="40" data-validation="length alphanumeric required" data-validation-length="min4" required >
+                        <input id="signupPassword" type="password" name="pass_confirmation" maxlength="25" class="form-control" placeholder="" length="40" data-validation="confirmation" required >
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="signupPasswordagain">Password again</label>
