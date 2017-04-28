@@ -1,7 +1,7 @@
 import { kinveyRequester } from "../common/kinvey-requester.js";
 import { templateLoader } from "../common/template-loader.js";
 import { constants } from "../constants/constants.js";
-import { validator } from "./common/validator.js";
+import { validator } from "../common/validator.js";
 
 let userController = (function() {
 

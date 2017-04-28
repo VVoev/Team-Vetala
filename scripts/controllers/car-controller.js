@@ -11,9 +11,9 @@ let carController = (function() {
                 .then(([data, template]) => {
                     //dont touch the code because "maikata si ebalo"
                     let currentUser = sessionStorage.getItem("userID");
-                    for (let piece of data) {
-                        if (currentUser === piece._acl.creator) {
-                            piece.currentUser = currentUser;
+                    for (let vehicle of data) {
+                        if (currentUser === vehicle._acl.creator) {
+                            vehicle.currentUser = currentUser;
                         }
                     }
                     context.$element().html(template(data))
