@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Add new vehicle</div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Vehicle Type
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            {{#each types}}
+                                <li><a href="#">{{type}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Fuel Type
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            {{#each fuelTypes}}
+                                <li><a href="#">{{fuelType}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="make">Make</label>
+                    <input type="text" id="new-car-make" name="make" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
+                </div>
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="new-car-model" name="model" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="text" id="new-car-year" name="year" class="form-control" data-validation="date" data-validation-format="yyyy" />
+                </div>
+                <div class="form-group">
+                    <label for="price">Price <span class="label label-success">EUR</span></label>
+                    <input type="text" id="new-car-price" name="price" class="form-control" data-validation="number" data-validation-allowing="range[0;1000000000]" />
+                </div>
+                <div class="form-group">
+                    <form action="/images" class="dropzone" id="my-awesome-dropzone">
+                        <input id="new-car-image-file" type="file" name="file" data-validation="mime size" data-validation-allowing="jpg, png, gif" data-validation-max-size="2M"/>
+                    </form>            
+                </div>
+                <div class="form-group">
+                    <textarea id="new-car-info" class="span6" rows="3" placeholder="Vehicle detailed info..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="btnAddCar" type="submit" class="btn btn-info btn-block">Add Vehicle</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+  $.validate({
+    lang: 'en'
+  });
+</script>

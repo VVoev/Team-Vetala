@@ -1,0 +1,23 @@
+{
+    "name": "team-vetala",
+    "version": "1.0.0",
+    "description": "Spa Application",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/VVoev/Team-Vetala.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/VVoev/Team-Vetala/issues"
+    },
+    "homepage": "https://github.com/VVoev/Team-Vetala#readme",
+    "dependencies": {
+        "systemjs": "0.20.12",
+        "systemjs-plugin-babel": "0.0.21"
+    }
+}
