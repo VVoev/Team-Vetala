@@ -58,7 +58,7 @@ let kinveyRequester = (function() {
         });
     }
 
-    function findCarsCountByOwnerId(id) {
+    function findLastCarIdByOwnerId(id) {
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/Cars",
@@ -67,9 +67,28 @@ let kinveyRequester = (function() {
             dataFilter: function(data) {
                 data = JSON.parse(data);
                 data = Array.from(data).filter(x => x._acl.creator === id);
-                return JSON.stringify(data.length);
+
+                return JSON.stringify(data[data.length - 1]);
             }
         });
+    }
+
+    function uploadImage(file, metadata) {
+        const kinveyInit = Kinvey.init({
+            appKey: appKey,
+            appSecret: appSecret
+        });
+
+        kinveyInit
+            .then(() => {
+                Kinvey.File.upload(file, metadata)
+                    .then(function(f) {
+                        console.log(f);
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    })
+            });
     }
 
     function createCar(make, model, price, firstRegistration, info, imageUrl) {
@@ -114,9 +133,10 @@ let kinveyRequester = (function() {
         registerUser,
         logoutUser,
         findAllCars,
+        uploadImage,
         createCar,
         findCarById,
-        findCarsCountByOwnerId,
+        findLastCarIdByOwnerId,
         editCar,
         deleteCar
     }

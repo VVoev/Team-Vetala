@@ -63,8 +63,8 @@ let carController = (function() {
                 .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
                 .then(() => {
                     const currentUserId = sessionStorage.getItem("userID");
-                    kinveyRequester.findCarsCountByOwnerId(currentUserId)
-                        .then((count) => newFileName = currentUserId + "_" + (count + 1));
+                    // kinveyRequester.findCarsCountByOwnerId(currentUserId)
+                    //     .then((count) => newFileName = currentUserId + "_" + (count + 1));
                 })
                 .then(() => {
                     $("#btnAddCar").on("click", () => {
@@ -75,10 +75,26 @@ let carController = (function() {
                         const info = $("#new-car-info").val();
                         const image = $("#new-car-image-file").val().split(".");
                         const imageExt = image[image.length - 1];
-                        const imageUrl = "../images/" + newFileName + "." + imageExt;
-                        //const fuelType;
-                        kinveyRequester.createCar(make, model, price, year, info, imageUrl)
-                            .then((data) => {
+                        //const fuelType;                        
+
+                        kinveyRequester.createCar(make, model, price, year, info)
+                            .then(() => {
+                                const file = $("#new-car-image-file")[0].files[0];
+                                // TODO: Check if file is selected...
+                                const currentUserId = sessionStorage.getItem("userID");
+                                kinveyRequester.findLastCarIdByOwnerId(currentUserId)
+                                    .then((data) => {
+                                        const metadata = {
+                                            _id: data._id,
+                                            filename: data._id + "." + imageExt,
+                                            mimeType: "image/" + imageExt,
+                                            size: file.length,
+                                            public: true
+                                        };
+
+                                        kinveyRequester.uploadImage(file, metadata);
+                                    });
+
                                 document.location = "#/Shop";
                                 toastr.success(constants.SUCCESS_ADD_VEHICLE);
                             })

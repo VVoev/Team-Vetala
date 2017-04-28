@@ -67,6 +67,11 @@ import { toastrSettings } from "./config/toastr-config.js";
             carController.deleteCar(context);
         });
 
+        // Get Home view for empty hash URLs
+        this.get("", function() {
+            this.app.runRoute("get", "#/Home");
+        });
+
 
     });
 
