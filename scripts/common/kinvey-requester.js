@@ -5,7 +5,7 @@ let kinveyRequester = (function() {
     const appSecret = "4e37e5b1ca8444ca88ed6b7c24e3f173";
     const baseUrl = "https://baas.kinvey.com/";
     const kinveyAppAuthHeaders = {
-        'Authorization': "Basic " + btoa(appKey + ":" + appSecret),
+        "Authorization": "Basic " + btoa(appKey + ":" + appSecret),
     };
 
     function loginUser(username, password) {
@@ -28,7 +28,7 @@ let kinveyRequester = (function() {
 
     function getKinveyUserAuthHeaders() {
         return {
-            'Authorization': "Kinvey " + sessionStorage.getItem('authToken'),
+            "Authorization": "Kinvey " + sessionStorage.getItem("authToken"),
         };
     }
 

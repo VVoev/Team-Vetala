@@ -1,28 +1,29 @@
-import { kinveyRequester } from '../common/kinvey-requester.js';
-import { templateLoader } from '../common/template-loader.js';
-import { constants } from '../constants/constants.js';
+import { kinveyRequester } from "../common/kinvey-requester.js";
+import { templateLoader } from "../common/template-loader.js";
+import { constants } from "../constants/constants.js";
+import { validator } from "./common/validator.js";
 
 let userController = (function() {
 
     function register(context) {
-        templateLoader.get('register')
+        templateLoader.get("register")
             .then((html) => {
                 context.$element().html(html);
-                $('#btnRegister').on('click', function() {
+                $("#btnRegister").on("click", function() {
                     let registerData = {};
-                    registerData['name'] = $('#signupName').val();
-                    registerData['email'] = $('#signupEmail').val();
-                    registerData['password'] = $('#signupPassword').val();
+                    registerData["name"] = $("#signupName").val();
+                    registerData["email"] = $("#signupEmail").val();
+                    registerData["password"] = $("#signupPassword").val();
 
                     let name = registerData.name;
                     let password = registerData.password;
 
-                    let isEmailValid = validator.checkIfFieldsAreEqual(registerData["email"], $('#signupEmailagain').val());
-                    let isPasswordValid = validator.checkIfFieldsAreEqual(registerData["password"], $('#signupPasswordagain').val());
+                    let isEmailValid = validator.checkIfFieldsAreEqual(registerData["email"], $("#signupEmailagain").val());
+                    let isPasswordValid = validator.checkIfFieldsAreEqual(registerData["password"], $("#signupPasswordagain").val());
 
                     kinveyRequester.registerUser(name, password)
                         .then(() => {
-                            document.location = '#/Home'
+                            document.location = "#/Home"
                             toastr.success(constants.SUCCESS_REGISTER);
                         })
                         .catch((error) => {
@@ -33,20 +34,20 @@ let userController = (function() {
     }
 
     function login(context) {
-        templateLoader.get('login')
+        templateLoader.get("login")
             .then((html) => {
                 context.$element().html(html);
-                $('#btnLogin').on('click', function() {
+                $("#btnLogin").on("click", function() {
                     let loginData = {};
-                    loginData['name'] = $('#signupUser').val();
-                    loginData['password'] = $('#signupPassword').val();
+                    loginData["name"] = $("#signupUser").val();
+                    loginData["password"] = $("#signupPassword").val();
                     kinveyRequester.loginUser(loginData["name"], loginData["password"])
                         .then((details) => {
                             fillSessionStorage(details);
-                            document.location = '#/Home';
+                            document.location = "#/Home";
                             toastr.success(constants.SUCCESS_LOGIN);
                             let name = sessionStorage.getItem("userName");
-                            $('#logginUser').html(`Welcome,${name}`);
+                            $("#logginUser").html(`Welcome,${name}`);
                             activateField();
 
                         }).catch((error) => {
@@ -63,15 +64,15 @@ let userController = (function() {
     }
 
     function activateField() {
-        $('#carsForSale').show();
-        $('.userAdditional').show();
-        $('.moreTools').hide();
+        $("#carsForSale").show();
+        $(".userAdditional").show();
+        $(".moreTools").hide();
     }
 
     function deactivateField() {
-        $('#carsForSale').hide();
-        $('.userAdditional').hide();
-        $('.moreTools').show();
+        $("#carsForSale").hide();
+        $(".userAdditional").hide();
+        $(".moreTools").show();
     }
 
     return {
