@@ -1,5 +1,5 @@
 import { constants } from '../constants/constants.js';
-import { templateLoader as tl } from '../template-loader.js';
+import { templateLoader as tl } from '../common/template-loader.js';
 
 
 let homeController = function() {

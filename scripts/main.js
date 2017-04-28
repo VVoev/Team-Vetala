@@ -1,10 +1,10 @@
 import { homeController } from "./controllers/home-controller.js";
 import { userController } from "./controllers/user-controller.js";
-import { validator } from "./validator.js";
-import { kinveyRequester } from './kinvey-requester.js';
-import { constants } from './constants/constants.js';
 import { carController } from "./controllers/car-controller.js";
-import { toastrSettings } from './toastrSettings.js';
+import { validator } from "./common/validator.js";
+import { kinveyRequester } from './common/kinvey-requester.js';
+import { constants } from './constants/constants.js';
+import { toastrSettings } from './config/toastr-config.js';
 
 (function() {
     let sammyApp = Sammy('#content', function() {

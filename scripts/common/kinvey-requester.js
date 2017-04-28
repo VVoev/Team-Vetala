@@ -1,4 +1,4 @@
-import { carController } from "./controllers/car-controller.js";
+import { carController } from "../controllers/car-controller.js";
 
 let kinveyRequester = (function() {
     const appKey = "kid_r110JsORe";

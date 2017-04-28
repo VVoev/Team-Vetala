@@ -1,4 +1,4 @@
-import { templateLoader } from '../template-loader.js';
+import { templateLoader } from '../common/template-loader.js';
 
 let userController = (function() {
 

@@ -1,7 +1,4 @@
-let toastrSettings = (function () {
-
-
-
+let toastrSettings = (function() {
     toastr.options = {
         tapToDismiss: true,
         toastClass: 'toast',
@@ -17,8 +14,7 @@ let toastrSettings = (function () {
         messageClass: 'toast-message'
     }
 
-
     return toastr.options;
 })();
 
-export {toastrSettings};
+export { toastrSettings };
