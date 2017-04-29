@@ -1,10 +1,12 @@
 export class Vehicle {
-    constructor(make, model, year, hp, price) {
+    constructor(make, model, firstRegistration, fuelType, hp, price, info) {
         this.make = make;
         this.model = model;
-        this.year = year;
+        this.firstRegistration = firstRegistration;
+        this.fuelType = fuelType;
         this.hp = hp;
         this.price = price;
+        this.info = info;
     }
 
     get make() {
@@ -23,12 +25,20 @@ export class Vehicle {
         this._model = value;
     }
 
-    get year() {
-        return this._year;
+    get firstRegistration() {
+        return this._firstRegistration;
     }
 
-    set year(value) {
-        this._year = value;
+    set firstRegistration(value) {
+        this._firstRegistration = value;
+    }
+
+    get fuelType() {
+        return this._fuelType;
+    }
+
+    set fuelType(value) {
+        this._fuelType = value;
     }
 
     get hp() {
@@ -45,5 +55,13 @@ export class Vehicle {
 
     set price(value) {
         this._price = value;
+    }
+
+    get info() {
+        return this._info;
+    }
+
+    set info(value) {
+        this._info = value;
     }
 }

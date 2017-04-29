@@ -65,15 +65,18 @@ let carController = (function() {
                     $("#btnAddCar").on("click", () => {
                         const make = $("#new-car-make").val();
                         const model = $("#new-car-model").val();
+                        const firstRegistration = $("#new-car-year").val();
+                        const fuelType = $("#new-car-fuel-type").val();
+                        const hp = $("#new-car-hp").val();
                         const price = $("#new-car-price").val();
-                        const year = $("#new-car-year").val();
                         const info = $("#new-car-info").val();
                         const image = $("#new-car-image-file").val().split(".");
                         const imageExt = image[image.length - 1];
                         const vehicleType = $("#new-car-vehicle-type").val();
-                        const fuelType = $("#new-car-fuel-type").val();
 
-                        kinveyRequester.createCar(make, model, vehicleType, fuelType, price, year, info)
+                        const newVehicle = models.getCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info);
+
+                        kinveyRequester.createCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info)
                             .then(() => {
                                 const file = $("#new-car-image-file")[0].files[0];
                                 // TODO: Check if file is selected...
@@ -100,9 +103,11 @@ let carController = (function() {
 
         function editCar(context) {
             const id = context.params["id"];
+            let vehicle = {};
             Promise.all([kinveyRequester.findCarById(id), tl.get("edit-car")])
                 .then(([data, template]) => {
-                    context.$element().html(template(data))
+                    context.$element().html(template(data));
+                    vehicle = data;
                     toastr.success(`${data.make} ${data.model} preparing for edit`);
                 })
                 .then(() => {
@@ -110,10 +115,10 @@ let carController = (function() {
                         document.location = ("#/Shop")
                     })
                     $("#btn-Edit").on("click", function(ev) {
-                        let make = $("#make-input").val();
-                        let model = $("#model-input").val();
-                        let price = $("#price-input").val();
-                        kinveyRequester.editCar(id, make, model, price)
+                        vehicle.make = $("#make-input").val();
+                        vehicle.model = $("#model-input").val();
+                        vehicle.price = $("#price-input").val();
+                        kinveyRequester.editCar(id, vehicle)
                             .then(() => {
                                 toastr.success(constants.SUCCESS_EDITED)
                                 document.location = ("#/Shop");

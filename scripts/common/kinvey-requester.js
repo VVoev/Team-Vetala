@@ -121,21 +121,21 @@ let kinveyRequester = (function() {
             });
     }
 
-    function createCar(make, model, vehicleType, fuelType, price, firstRegistration, info, imageUrl) {
+    function createCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info) {
         return $.ajax({
             method: "POST",
             url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders(),
-            data: { make, model, vehicleType, fuelType, price, firstRegistration, info, imageUrl }
+            data: { vehicleType, make, model, firstRegistration, fuelType, hp, price, info }
         });
     }
 
-    function editCar(carId, make, model, price, firstRegistration) {
+    function editCar(carId, vehicle) {
         return $.ajax({
             method: "PUT",
             url: baseUrl + "appdata/" + appKey + "/Cars/" + carId,
             headers: getKinveyUserAuthHeaders(),
-            data: { make, model, price, firstRegistration }
+            data: vehicle
         });
     }
 

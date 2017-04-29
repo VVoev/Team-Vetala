@@ -28,8 +28,12 @@
                     <input type="text" id="new-car-model" name="model" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
                 </div>
                 <div class="form-group">
-                    <label for="year">Year</label>
+                    <label for="year">Year of first registration</label>
                     <input type="text" id="new-car-year" name="year" class="form-control" data-validation="date" data-validation-format="yyyy" />
+                </div>
+                <div class="form-group">
+                    <label for="hp">HP</label>
+                    <input type="text" id="new-car-hp" name="hp" class="form-control" data-validation="number" data-validation-allowing="range[0;1000]" />
                 </div>
                 <div class="form-group">
                     <label for="price">Price <span class="label label-success">EUR</span></label>

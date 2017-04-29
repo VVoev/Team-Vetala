@@ -1,8 +1,8 @@
 import { Vehicle } from "./vehicle.js";
 
 export class Truck extends Vehicle {
-    constructor(make, model, year, hp, price, axes) {
-        super(make, model, year, hp, price);
+    constructor(make, model, firstRegistration, fuelType, hp, price, info, axes) {
+        super(make, model, firstRegistration, fuelType, hp, price, info);
         this.axes = axes;
     }
 
