@@ -71,28 +71,34 @@ let carController = (function() {
                         const price = $("#new-car-price").val();
                         const info = $("#new-car-info").val();
                         const image = $("#new-car-image-file").val().split(".");
-                        const imageExt = image[image.length - 1];
+
                         const vehicleType = $("#new-car-vehicle-type").val();
 
                         const newVehicle = models.getCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info);
 
                         kinveyRequester.createCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info)
                             .then(() => {
-                                const file = $("#new-car-image-file")[0].files[0];
-                                // TODO: Check if file is selected...
-                                const currentUserId = sessionStorage.getItem("userID");
-                                kinveyRequester.findLastCarIdByOwnerId(currentUserId)
-                                    .then((data) => {
-                                        const metadata = {
-                                            vehicleId: data._id,
-                                            mimeType: "image/" + imageExt,
-                                            size: file.length,
-                                            _public: true
-                                        };
+                                if (image) {
+                                    const imageExt = image[image.length - 1];
+                                    const file = $("#new-car-image-file")[0].files[0];
+                                    const currentUserId = sessionStorage.getItem("userID");
 
-                                        kinveyRequester.uploadImage(file, metadata);
-                                        toastr.success(constants.SUCCESS_ADD_VEHICLE);
-                                    });
+                                    kinveyRequester.findLastCarIdByOwnerId(currentUserId)
+                                        .then((data) => {
+                                            const metadata = {
+                                                vehicleId: data._id,
+                                                mimeType: "image/" + imageExt,
+                                                size: file.length,
+                                                _public: true
+                                            };
+
+                                            kinveyRequester.uploadImage(file, metadata);
+                                        });
+                                }
+                            })
+                            .then(() => {
+                                toastr.success(constants.SUCCESS_ADD_VEHICLE);
+                                document.location = "#/Shop";
                             })
                             .catch((err) => {
                                 toastr.error(err.responseText);

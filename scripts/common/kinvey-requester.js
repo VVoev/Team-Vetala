@@ -164,7 +164,6 @@ let kinveyRequester = (function() {
         logoutUser,
         findAllCars,
         uploadImage,
-        updateImageUrl,
         createCar,
         findCarById,
         findLastCarIdByOwnerId,
