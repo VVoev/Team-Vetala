@@ -81,18 +81,15 @@ let carController = (function() {
                                 kinveyRequester.findLastCarIdByOwnerId(currentUserId)
                                     .then((data) => {
                                         const metadata = {
-                                            _id: data._id,
-                                            filename: data._id + "." + imageExt,
+                                            vehicleId: data._id,
                                             mimeType: "image/" + imageExt,
                                             size: file.length,
-                                            public: true
+                                            _public: true
                                         };
 
                                         kinveyRequester.uploadImage(file, metadata);
+                                        toastr.success(constants.SUCCESS_ADD_VEHICLE);
                                     });
-
-                                document.location = "#/Shop";
-                                toastr.success(constants.SUCCESS_ADD_VEHICLE);
                             })
                             .catch((err) => {
                                 toastr.error(err.responseText);

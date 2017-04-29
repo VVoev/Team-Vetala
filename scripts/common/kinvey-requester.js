@@ -73,7 +73,7 @@ let kinveyRequester = (function() {
         });
     }
 
-    function uploadImage(file, metadata) {
+    function uploadImage(file, metadata, vehicleId) {
         const kinveyInit = Kinvey.init({
             appKey: appKey,
             appSecret: appSecret
@@ -82,12 +82,42 @@ let kinveyRequester = (function() {
         kinveyInit
             .then(() => {
                 Kinvey.File.upload(file, metadata)
-                    .then(function(f) {
-                        console.log(f);
+                    .then(() => {
+                        updateImageUrl(metadata.vehicleId);
                     })
                     .catch(function(error) {
                         console.log(error);
                     })
+            });
+    }
+
+    function updateImageUrl(vehicleId) {
+        const kinveyInit = Kinvey.init({
+            appKey: appKey,
+            appSecret: appSecret
+        });
+
+        const query = new Kinvey.Query();
+        query.equalTo('vehicleId', vehicleId);
+
+        kinveyInit
+            .then(() => {
+                Kinvey.File.find(query)
+                    .then((vehicleImage) => {
+                        findCarById(vehicleId)
+                            .then((vehicle) => {
+                                vehicle.imageUrl = vehicleImage[0]._downloadURL;
+                                $.ajax({
+                                        method: "PUT",
+                                        url: baseUrl + "appdata/" + appKey + "/Cars/" + vehicleId,
+                                        headers: getKinveyUserAuthHeaders(),
+                                        data: vehicle
+                                    })
+                                    .then(() => {
+                                        document.location = "#/Shop";
+                                    });
+                            });
+                    });
             });
     }
 
@@ -134,6 +164,7 @@ let kinveyRequester = (function() {
         logoutUser,
         findAllCars,
         uploadImage,
+        updateImageUrl,
         createCar,
         findCarById,
         findLastCarIdByOwnerId,
