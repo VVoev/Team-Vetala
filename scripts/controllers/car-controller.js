@@ -62,11 +62,6 @@ let carController = (function() {
             tl.get("add-car")
                 .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
                 .then(() => {
-                    const currentUserId = sessionStorage.getItem("userID");
-                    // kinveyRequester.findCarsCountByOwnerId(currentUserId)
-                    //     .then((count) => newFileName = currentUserId + "_" + (count + 1));
-                })
-                .then(() => {
                     $("#btnAddCar").on("click", () => {
                         const make = $("#new-car-make").val();
                         const model = $("#new-car-model").val();
@@ -75,9 +70,10 @@ let carController = (function() {
                         const info = $("#new-car-info").val();
                         const image = $("#new-car-image-file").val().split(".");
                         const imageExt = image[image.length - 1];
-                        //const fuelType;                        
+                        const vehicleType = $("#new-car-vehicle-type").val();
+                        const fuelType = $("#new-car-fuel-type").val();
 
-                        kinveyRequester.createCar(make, model, price, year, info)
+                        kinveyRequester.createCar(make, model, vehicleType, fuelType, price, year, info)
                             .then(() => {
                                 const file = $("#new-car-image-file")[0].files[0];
                                 // TODO: Check if file is selected...

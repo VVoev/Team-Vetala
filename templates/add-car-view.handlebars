@@ -4,30 +4,20 @@
         <div class="panel-body">
             <form>
                 <div class="form-group">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Vehicle Type
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            {{#each types}}
-                                <li><a href="#">{{type}}</a></li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                    <label for="vehicle-type">Vehicle Type</label>
+                    <select id="new-car-vehicle-type" name="vehicle-type" class="form-control">
+                        {{#each types}}
+                            <option value="{{type}}">{{type}}</option>
+                        {{/each}}
+                    </select>                    
                 </div>
                 <div class="form-group">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Fuel Type
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            {{#each fuelTypes}}
-                                <li><a href="#">{{fuelType}}</a></li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                    <label for="fuel-type">Fuel Type</label>
+                    <select id="new-car-fuel-type" name="fuel-type" class="form-control">                        
+                        {{#each fuelTypes}}
+                            <option value="{{fuelType}}">{{fuelType}}</option>>
+                        {{/each}}
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="make">Make</label>

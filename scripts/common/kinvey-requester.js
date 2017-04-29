@@ -91,12 +91,12 @@ let kinveyRequester = (function() {
             });
     }
 
-    function createCar(make, model, price, firstRegistration, info, imageUrl) {
+    function createCar(make, model, vehicleType, fuelType, price, firstRegistration, info, imageUrl) {
         return $.ajax({
             method: "POST",
             url: baseUrl + "appdata/" + appKey + "/Cars",
             headers: getKinveyUserAuthHeaders(),
-            data: { make, model, price, firstRegistration, info, imageUrl }
+            data: { make, model, vehicleType, fuelType, price, firstRegistration, info, imageUrl }
         });
     }
 
