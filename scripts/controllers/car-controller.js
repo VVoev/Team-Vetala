@@ -51,9 +51,42 @@ let carController = (function() {
                         $(hiddenElem).slideToggle("slow");
                     });
                 }
-            })
+            });
+        }
 
+        function resizeImage(image) {
+            let fr = new FileReader;
+            let img = new Image;
+            let canvas = document.createElement("canvas");
 
+            fr.readAsDataURL(image);
+            fr.onload = function() {
+                img.onload = function() {
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > constants.MAX_IMAGE_WIDTH) {
+                            height *= constants.MAX_IMAGE_WIDTH / width;
+                            width = constants.MAX_IMAGE_WIDTH;
+                        }
+                    } else {
+                        if (height > constants.MAX_IMAGE_HEIGHT) {
+                            width *= constants.MAX_IMAGE_HEIGHT / height;
+                            height = constants.MAX_IMAGE_HEIGHT;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    let ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, width, height);
+                };
+
+                img.src = fr.result;
+            };
+
+            return canvas;
         }
 
         function addCar(context) {
@@ -76,22 +109,23 @@ let carController = (function() {
 
                         const newVehicle = models.getCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info);
 
+                        const file = $("#new-car-image-file")[0].files[0];
+
                         kinveyRequester.createCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info)
                             .then(() => {
                                 if (image) {
-                                    const imageExt = image[image.length - 1];
                                     const file = $("#new-car-image-file")[0].files[0];
                                     const currentUserId = sessionStorage.getItem("userID");
-
                                     kinveyRequester.findLastCarIdByOwnerId(currentUserId)
                                         .then((data) => {
                                             const metadata = {
                                                 vehicleId: data._id,
-                                                mimeType: "image/" + imageExt,
+                                                mimeType: file.type,
                                                 size: file.length,
                                                 _public: true
                                             };
 
+                                            // const resizedImage = resizeImage(file);
                                             kinveyRequester.uploadImage(file, metadata);
                                         });
                                 }

@@ -11,6 +11,8 @@ let constants = (function() {
         ERROR_ALREADY_LOGGED: "You already logged in",
         ERROR_HAVE_ACCOUNT: "You already have account",
         ERROR_UNAUTORIZE_ADD_VEHICLE: "You must log in to add vehicle",
+        MAX_IMAGE_WIDTH: 640,
+        MAX_IMAGE_HEIGHT: 360,
         CONTACTS: {
             contacts: [
                 { name: "Vlado Voev", github: "https://github.com/VVoev" },
