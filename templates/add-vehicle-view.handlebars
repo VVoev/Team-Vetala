@@ -5,7 +5,7 @@
             <form>
                 <div class="form-group">
                     <label for="vehicle-type">Vehicle Type</label>
-                    <select id="new-car-vehicle-type" name="vehicle-type" class="form-control">
+                    <select id="new-vehicle-type" name="vehicle-type" class="form-control">
                         {{#each types}}
                             <option value="{{type}}">{{type}}</option>
                         {{/each}}
@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label for="fuel-type">Fuel Type</label>
-                    <select id="new-car-fuel-type" name="fuel-type" class="form-control">                        
+                    <select id="new-vehicle-fuel-type" name="fuel-type" class="form-control">                        
                         {{#each fuelTypes}}
                             <option value="{{fuelType}}">{{fuelType}}</option>>
                         {{/each}}
@@ -21,34 +21,34 @@
                 </div>
                 <div class="form-group">
                     <label for="make">Make</label>
-                    <input type="text" id="new-car-make" name="make" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
+                    <input type="text" id="new-vehicle-make" name="make" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
                 </div>
                 <div class="form-group">
                     <label for="model">Model</label>
-                    <input type="text" id="new-car-model" name="model" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
+                    <input type="text" id="new-vehicle-model" name="model" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
                 </div>
                 <div class="form-group">
                     <label for="year">Year of first registration</label>
-                    <input type="text" id="new-car-year" name="year" class="form-control" data-validation="date" data-validation-format="yyyy" />
+                    <input type="text" id="new-vehicle-year" name="year" class="form-control" data-validation="date" data-validation-format="yyyy" />
                 </div>
                 <div class="form-group">
                     <label for="hp">HP</label>
-                    <input type="text" id="new-car-hp" name="hp" class="form-control" data-validation="number" data-validation-allowing="range[0;1000]" />
+                    <input type="text" id="new-vehicle-hp" name="hp" class="form-control" data-validation="number" data-validation-allowing="range[0;1000]" />
                 </div>
                 <div class="form-group">
                     <label for="price">Price <span class="label label-success">EUR</span></label>
-                    <input type="text" id="new-car-price" name="price" class="form-control" data-validation="number" data-validation-allowing="range[0;1000000000]" />
+                    <input type="text" id="new-vehicle-price" name="price" class="form-control" data-validation="number" data-validation-allowing="range[0;1000000000]" />
                 </div>
                 <div class="form-group">
                     <form>
-                        <input id="new-car-image-file" type="file" name="file" accept="image/*" />
+                        <input id="new-vehicle-image-file" type="file" name="file" accept="image/*" />
                     </form>            
                 </div>
                 <div class="form-group">
-                    <textarea id="new-car-info" class="span6" rows="3" placeholder="Vehicle detailed info..."></textarea>
+                    <textarea id="new-vehicle-info" class="span6" rows="3" placeholder="Vehicle detailed info..."></textarea>
                 </div>
                 <div class="form-group">
-                    <button id="btnAddCar" type="submit" class="btn btn-info btn-block">Add Vehicle</button>
+                    <button id="btnAddVehicle" type="submit" class="btn btn-info btn-block">Add Vehicle</button>
                 </div>                
             </form>
         </div>

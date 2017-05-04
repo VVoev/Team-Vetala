@@ -1,6 +1,6 @@
 import { kinveyRequester } from "../common/kinvey-requester.js";
 import { templateLoader } from "../common/template-loader.js";
-import { constants } from "../constants/constants.js";
+import { constants } from "../common/constants.js";
 import { validator } from "../common/validator.js";
 
 let userController = (function() {
@@ -64,13 +64,13 @@ let userController = (function() {
     }
 
     function activateField() {
-        $("#carsForSale").show();
+        $("#vehiclesForSale").show();
         $(".userAdditional").show();
         $(".moreTools").hide();
     }
 
     function deactivateField() {
-        $("#carsForSale").hide();
+        $("#vehiclesForSale").hide();
         $(".userAdditional").hide();
         $(".moreTools").show();
     }

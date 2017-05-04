@@ -31,11 +31,11 @@
                 <ul class="nav navbar-nav">
                     <li class="moreTools"><a href="#/Login">Login</a></li>
                     <li class="moreTools"><a href="#/Register">Register</a></li>
-                    <li class="userAdditional" style="display: none" id="carsForSale">
+                    <li class="userAdditional" style="display: none" id="vehiclesForSale">
                         <a href="/#Dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#/Shop">See Our Cars</a></li>
-                            <li><a href="#/AddCar">Add your own car for sell</a></li>
+                            <li><a href="#/Shop">See Our Vehicles</a></li>
+                            <li><a href="#/AddVehicle">Add your own vehicle for sell</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                             <li role="separator" class="divider"></li>
@@ -53,7 +53,7 @@
                 </ul>
                 <form class="navbar-form navbar-right userAdditional" style="display: none">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="carSearch" placeholder="Search">
+                        <input type="text" class="form-control" id="vehicleSearch" placeholder="Search">
                     </div>
                 </form>
             </div>
@@ -73,7 +73,9 @@
     <script src="./bower_components/toastr/toastr.min.js"></script>
     <script src="./bower_components/jquery-form-validator/form-validator/jquery.form-validator.min.js"></script>
     <script src="./bower_components/kinvey/kinvey-html5.min.js"></script>
+    <script src="./bower_components/crypto-js/crypto-js.js"></script>
     <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./scripts/config/toastr-config.js"></script>
     <script src="./scripts/config/systemjs-config.js"></script>
 
     <footer class="footer">

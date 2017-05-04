@@ -1,13 +1,13 @@
-import { constants } from "../constants/constants.js";
+import { constants } from "../common/constants.js";
 import { kinveyRequester } from "../common/kinvey-requester.js";
 import { templateLoader as tl } from "../common/template-loader.js";
 import * as models from "../models/models.js";
 
-let carController = (function() {
+let vehicleController = (function() {
 
         function all(context) {
-            $("#carsForSale").removeClass("open");
-            Promise.all([kinveyRequester.findAllCars(), tl.get("cars")])
+            $("#vehiclesForSale").removeClass("open");
+            Promise.all([kinveyRequester.findAllVehicles(), tl.get("vehicles")])
                 .then(([data, template]) => {
                     //dont touch the code because "maikata si ebalo"
                     let currentUser = sessionStorage.getItem("userID");
@@ -19,7 +19,7 @@ let carController = (function() {
                     context.$element().html(template(data))
                 })
                 .then((options) => {
-                    toastr.success(constants.CARS_LOADED);
+                    toastr.success(constants.VEHICLES_LOADED);
                 })
                 .then(() => {
                     $(".caption").on("click", function(ev) {
@@ -89,34 +89,34 @@ let carController = (function() {
             return canvas;
         }
 
-        function addCar(context) {
-            $("#carsForSale").removeClass("open");
+        function addVehicle(context) {
+            $("#vehiclesForSale").removeClass("open");
             let newFileName = "";
-            tl.get("add-car")
+            tl.get("add-vehicle")
                 .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
                 .then(() => {
-                    $("#btnAddCar").on("click", () => {
-                        const make = $("#new-car-make").val();
-                        const model = $("#new-car-model").val();
-                        const firstRegistration = $("#new-car-year").val();
-                        const fuelType = $("#new-car-fuel-type").val();
-                        const hp = $("#new-car-hp").val();
-                        const price = $("#new-car-price").val();
-                        const info = $("#new-car-info").val();
-                        const image = $("#new-car-image-file").val().split(".");
+                    $("#btnAddVehicle").on("click", () => {
+                        const make = $("#new-vehicle-make").val();
+                        const model = $("#new-vehicle-model").val();
+                        const firstRegistration = $("#new-vehicle-year").val();
+                        const fuelType = $("#new-vehicle-fuel-type").val();
+                        const hp = $("#new-vehicle-hp").val();
+                        const price = $("#new-vehicle-price").val();
+                        const info = $("#new-vehicle-info").val();
+                        const image = $("#new-vehicle-image-file").val().split(".");
 
-                        const vehicleType = $("#new-car-vehicle-type").val();
+                        const vehicleType = $("#new-vehicle-type").val();
 
                         const newVehicle = models.getCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info);
 
-                        const file = $("#new-car-image-file")[0].files[0];
+                        const file = $("#new-vehicle-image-file")[0].files[0];
 
-                        kinveyRequester.createCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info)
+                        kinveyRequester.createVehicle(vehicleType, make, model, firstRegistration, fuelType, hp, price, info)
                             .then(() => {
                                 if (image) {
-                                    const file = $("#new-car-image-file")[0].files[0];
+                                    const file = $("#new-vehicle-image-file")[0].files[0];
                                     const currentUserId = sessionStorage.getItem("userID");
-                                    kinveyRequester.findLastCarIdByOwnerId(currentUserId)
+                                    kinveyRequester.findLastVehicleIdByOwnerId(currentUserId)
                                         .then((data) => {
                                             const metadata = {
                                                 vehicleId: data._id,
@@ -141,10 +141,10 @@ let carController = (function() {
                 });
         }
 
-        function editCar(context) {
+        function editVehicle(context) {
             const id = context.params["id"];
             let vehicle = {};
-            Promise.all([kinveyRequester.findCarById(id), tl.get("edit-car")])
+            Promise.all([kinveyRequester.findVehicleById(id), tl.get("edit-vehicle")])
                 .then(([data, template]) => {
                     context.$element().html(template(data));
                     vehicle = data;
@@ -158,7 +158,7 @@ let carController = (function() {
                         vehicle.make = $("#make-input").val();
                         vehicle.model = $("#model-input").val();
                         vehicle.price = $("#price-input").val();
-                        kinveyRequester.editCar(id, vehicle)
+                        kinveyRequester.editVehicle(id, vehicle)
                             .then(() => {
                                 toastr.success(constants.SUCCESS_EDITED)
                                 document.location = ("#/Shop");
@@ -168,9 +168,9 @@ let carController = (function() {
                 .catch((err) => toastr.error(err));
         }
 
-        function deleteCar(context) {
+        function deleteVehicle(context) {
             const id = context.params["id"];
-            Promise.all([kinveyRequester.findCarById(id), tl.get("delete-car")])
+            Promise.all([kinveyRequester.findVehicleById(id), tl.get("delete-vehicle")])
                 .then(([data, template]) => {
                     context.$element().html(template(data))
                     toastr.success(`${data.make} ${data.model} preparing for delete`);
@@ -180,7 +180,7 @@ let carController = (function() {
                         document.location = ("#/Shop")
                     })
                     $("#btn-Delete").on("click", function(ev) {
-                        kinveyRequester.deleteCar(id)
+                        kinveyRequester.deleteVehicle(id)
                             .then(() => {
                                 toastr.success(constants.SUCCESS_DELETE)
                                 document.location = ("#/Shop");
@@ -192,12 +192,12 @@ let carController = (function() {
 
         return {
             all,
-            addCar,
-            editCar,
-            deleteCar
+            addVehicle,
+            editVehicle,
+            deleteVehicle
         }
 
     })
     ();
 
-export { carController };
+export { vehicleController };

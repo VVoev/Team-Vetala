@@ -1,4 +1,4 @@
-import { constants } from "../constants/constants.js";
+import { constants } from "../common/constants.js";
 import { templateLoader as tl } from "../common/template-loader.js";
 
 
