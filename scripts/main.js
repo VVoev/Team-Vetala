@@ -15,7 +15,7 @@ import { constants } from "./common/constants.js";
         this.get("#/Register", function(context) {
             if (validator.isUserLoggedIn()) {
                 toastr.error(constants.ERROR_HAVE_ACCOUNT);
-                document.location = "#/Home"
+                document.location = "#/Home";
             } else {
                 userController.register(context);
             }
@@ -24,7 +24,7 @@ import { constants } from "./common/constants.js";
         this.get("#/Login", function(context) {
             if (validator.isUserLoggedIn()) {
                 toastr.error(constants.ERROR_ALREADY_LOGGED);
-                document.location = "#/Home"
+                document.location = "#/Home";
             } else {
                 userController.login(context);
             }
@@ -45,16 +45,25 @@ import { constants } from "./common/constants.js";
         this.get("#/AddVehicle", function(context) {
             if (!validator.isUserLoggedIn()) {
                 toastr.error(constants.ERROR_UNAUTORIZED);
-                document.location = "#/Home"
+                document.location = "#/Home";
             } else {
                 vehicleController.addVehicle(context);
+            }
+        });
+
+        this.get("#/VehicleDetails/", function(context) {
+            if (!validator.isUserLoggedIn()) {
+                toastr.error(constants.ERROR_UNAUTORIZED);
+                document.location = "#/Home";
+            } else {
+                vehicleController.vehicleDetails(context);
             }
         });
 
         this.get("#/Edit/", function(context) {
             if (!validator.isUserLoggedIn()) {
                 toastr.error(constants.ERROR_UNAUTORIZED);
-                document.location = "#/Home"
+                document.location = "#/Home";
             } else {
                 vehicleController.editVehicle(context);
             }
@@ -63,22 +72,20 @@ import { constants } from "./common/constants.js";
         this.get("#/Delete/", function(context) {
             if (!validator.isUserLoggedIn()) {
                 toastr.error(constants.ERROR_UNAUTORIZED);
-                document.location = "#/Home"
+                document.location = "#/Home";
             } else {
                 vehicleController.deleteVehicle(context);
             }
         });
 
         // Get Home view for empty hash URLs
-        this.get("", function() {
-            this.app.runRoute("get", "#/Home");
-        });
+        this.get("", function() {});
 
 
     });
 
     $(function() {
-        sammyApp.run("#/")
+        sammyApp.run("#/");
     })
 
     $(document).ready(function() {
@@ -86,7 +93,7 @@ import { constants } from "./common/constants.js";
     });
 
     return {
-        sammyApp,
+        sammyApp
     }
 
 })();

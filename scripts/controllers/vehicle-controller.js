@@ -23,14 +23,20 @@ let vehicleController = (function() {
                 })
                 .then(() => {
                     $(".caption").on("click", function(ev) {
+                        const selectedVehicleId = $(this).attr("id");
                         if ($(ev.target).hasClass("editLink")) {
-                            document.location = "#/Edit";
+                            document.location = "#/Edit/?id=" + selectedVehicleId;
                         }
 
                         if ($(ev.target).hasClass("deleteLink")) {
-                            document.location = "#/Delete";
+                            document.location = "#/Delete/?id=" + selectedVehicleId;
+                        }
+
+                        if ($(ev.target).hasClass("vehicleDetails")) {
+                            document.location = "#/VehicleDetails/?id=" + selectedVehicleId;
                         }
                     });
+
 
                 });
 
@@ -52,6 +58,21 @@ let vehicleController = (function() {
                     });
                 }
             });
+        }
+
+        function vehicleDetails(context) {
+            const id = context.params["id"];
+            Promise.all([tl.get("vehicle-details"), kinveyRequester.findVehicleById(id)])
+                .then(([template, data]) => {
+                    context.$element().html(template(data));
+
+                })
+                .then(() => {
+                    $("#btn-Back").on("click", function(ev) {
+                        document.location = ("#/Shop")
+                    });
+                })
+                .catch((err) => toastr.error(err.responseText));
         }
 
         function resizeImage(image) {
@@ -153,7 +174,8 @@ let vehicleController = (function() {
                 .then(() => {
                     $("#btn-Back").on("click", function(ev) {
                         document.location = ("#/Shop")
-                    })
+                    });
+
                     $("#btn-Edit").on("click", function(ev) {
                         vehicle.make = $("#make-input").val();
                         vehicle.model = $("#model-input").val();
@@ -178,7 +200,8 @@ let vehicleController = (function() {
                 .then(() => {
                     $("#btn-goBack").on("click", function(ev) {
                         document.location = ("#/Shop")
-                    })
+                    });
+
                     $("#btn-Delete").on("click", function(ev) {
                         kinveyRequester.deleteVehicle(id)
                             .then(() => {
@@ -192,6 +215,7 @@ let vehicleController = (function() {
 
         return {
             all,
+            vehicleDetails,
             addVehicle,
             editVehicle,
             deleteVehicle

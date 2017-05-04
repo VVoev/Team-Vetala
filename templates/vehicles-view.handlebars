@@ -4,23 +4,19 @@
         <div class="row">
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
+
                     {{#if imageUrl}}
                         <img src="{{imageUrl}}" alt="...">
                         {{else}}
                         <img src="../images/noimage.jpg" alt="...">
                     {{/if}}
-                    <div class="caption">
+                    <div id="{{_id}}" class="caption">
                         <h3>{{make}} {{model}}</h3>
                         <p>EUR {{price}}</p>
-                        {{#if info}}
-                            <div>
-                                <a id="additionalInfo">Double click here for more info</a>
-                                <div id="hiddenInfo {{model}}" style="display: none">{{info}}</div>
-                            </div>
-                        {{/if}}
+                        
                         {{#if currentUser}}
                             <div>
-                                <a href="#/Edit/?id={{_id}}" class="editLink">
+                                <a class="editLink">
                                     <td>Edit
                                         <p data-placement="top" data-toggle="tooltip" title="Edit">
                                             <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
@@ -32,7 +28,7 @@
                                 </a>
                             </div>
                             <div>
-                                <a href="#/Delete/?id={{_id}}" class="deleteLink">
+                                <a  class="deleteLink">
                                     <td>Delete
                                         <p data-placement="top" data-toggle="tooltip" title="Delete">
                                             <button class="btn btn-danger btn-xs" data-title="Delete"
@@ -46,6 +42,9 @@
                             </div>
                         {{/if}}
 
+                        <div>
+                            <a  class="vehicleDetails" >Vehicle Details</a>
+                        </div>
                     </div>
                 </div>
             </div>

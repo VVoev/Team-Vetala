@@ -92,8 +92,7 @@ let userController = (function() {
         init,
         register,
         login,
-        logout,
-        fillSessionStorage
+        logout
     }
 
 })();
