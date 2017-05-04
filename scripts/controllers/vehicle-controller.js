@@ -65,7 +65,6 @@ let vehicleController = (function() {
             Promise.all([tl.get("vehicle-details"), kinveyRequester.findVehicleById(id)])
                 .then(([template, data]) => {
                     context.$element().html(template(data));
-
                 })
                 .then(() => {
                     $("#btn-Back").on("click", function(ev) {
