@@ -31,12 +31,11 @@ import { constants } from "./common/constants.js";
         });
 
         this.get("#/Logout", function(context) {
-            let user = sessionStorage.getItem("userName");
-            sessionStorage.clear();
-            userController.deactivateField();
-            $("#logginUser").html("");
-            toastr.warning(constants.SUCCESS_LOGOUT + " " + user);
-            document.location = "#/Home";
+            if (!validator.isUserLoggedIn()) {
+                toastr.error(constants.ERROR_UNAUTORIZED);
+            } else {
+                userController.logout();
+            }
         });
 
         this.get("#/Contact", homeController.viewContacts);
@@ -45,7 +44,7 @@ import { constants } from "./common/constants.js";
 
         this.get("#/AddVehicle", function(context) {
             if (!validator.isUserLoggedIn()) {
-                toastr.error(constants.ERROR_UNAUTORIZE_ADD_VEHICLE);
+                toastr.error(constants.ERROR_UNAUTORIZED);
                 document.location = "#/Home"
             } else {
                 vehicleController.addVehicle(context);
@@ -53,11 +52,21 @@ import { constants } from "./common/constants.js";
         });
 
         this.get("#/Edit/", function(context) {
-            vehicleController.editVehicle(context);
+            if (!validator.isUserLoggedIn()) {
+                toastr.error(constants.ERROR_UNAUTORIZED);
+                document.location = "#/Home"
+            } else {
+                vehicleController.editVehicle(context);
+            }
         });
 
         this.get("#/Delete/", function(context) {
-            vehicleController.deleteVehicle(context);
+            if (!validator.isUserLoggedIn()) {
+                toastr.error(constants.ERROR_UNAUTORIZED);
+                document.location = "#/Home"
+            } else {
+                vehicleController.deleteVehicle(context);
+            }
         });
 
         // Get Home view for empty hash URLs
@@ -71,6 +80,10 @@ import { constants } from "./common/constants.js";
     $(function() {
         sammyApp.run("#/")
     })
+
+    $(document).ready(function() {
+        userController.init();
+    });
 
     return {
         sammyApp,

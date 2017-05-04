@@ -10,7 +10,7 @@ let constants = (function() {
         SUCCESS_ADD_VEHICLE: "Vehicle addeed successful",
         ERROR_ALREADY_LOGGED: "You already logged in",
         ERROR_HAVE_ACCOUNT: "You already have account",
-        ERROR_UNAUTORIZE_ADD_VEHICLE: "You must log in to add vehicle",
+        ERROR_UNAUTORIZED: "You must log in to do this",
         MAX_IMAGE_WIDTH: 640,
         MAX_IMAGE_HEIGHT: 360,
         CONTACTS: {

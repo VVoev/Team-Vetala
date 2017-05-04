@@ -5,6 +5,23 @@ import { validator } from "../common/validator.js";
 
 let userController = (function() {
 
+    function init() {
+        if (validator.isUserLoggedIn()) {
+            $("#functions-panel").show();
+            $("#user-info").html(sessionStorage.userName);
+            $("#login-link").hide();
+            $("#logout-link").show();
+            $("#register-link").hide();
+
+        } else {
+            $("#functions-panel").hide();
+            $("#user-info").html("");
+            $("#login-link").show();
+            $("#logout-link").hide();
+            $("#register-link").show();
+        }
+    }
+
     function register(context) {
         templateLoader.get("register")
             .then((html) => {
@@ -23,8 +40,9 @@ let userController = (function() {
 
                     kinveyRequester.registerUser(name, password)
                         .then(() => {
-                            document.location = "#/Home"
+                            document.location = "#/Login"
                             toastr.success(constants.SUCCESS_REGISTER);
+                            init();
                         })
                         .catch((error) => {
                             toastr.error(error.responseText);
@@ -47,8 +65,7 @@ let userController = (function() {
                             document.location = "#/Home";
                             toastr.success(constants.SUCCESS_LOGIN);
                             let name = sessionStorage.getItem("userName");
-                            $("#logginUser").html(`Welcome,${name}`);
-                            activateField();
+                            init();
 
                         }).catch((error) => {
                             toastr.error(error.responseText);
@@ -57,30 +74,26 @@ let userController = (function() {
             });
     }
 
+    function logout() {
+        let user = sessionStorage.getItem("userName");
+        sessionStorage.clear();
+        init();
+        toastr.warning(constants.SUCCESS_LOGOUT + " " + user);
+        document.location = "#/Home";
+    }
+
     function fillSessionStorage(details) {
         sessionStorage.setItem("authToken", details._kmd.authtoken);
         sessionStorage.setItem("userID", details._id);
         sessionStorage.setItem("userName", details.username);
     }
 
-    function activateField() {
-        $("#vehiclesForSale").show();
-        $(".userAdditional").show();
-        $(".moreTools").hide();
-    }
-
-    function deactivateField() {
-        $("#vehiclesForSale").hide();
-        $(".userAdditional").hide();
-        $(".moreTools").show();
-    }
-
     return {
+        init,
         register,
         login,
-        fillSessionStorage,
-        activateField,
-        deactivateField
+        logout,
+        fillSessionStorage
     }
 
 })();
