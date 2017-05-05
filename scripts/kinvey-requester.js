@@ -51,7 +51,7 @@ let kinveyRequester = (function() {
         toastr.info("Loading")
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Cars",
+            url: baseUrl + "appdata/" + appKey + "/Cars?limit=" + itemsPerPage,
             headers: getKinveyUserAuthHeaders(),
             sort: {sortOrder:1},
             limit: itemsPerPage,

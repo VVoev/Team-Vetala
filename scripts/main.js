@@ -118,3 +118,9 @@ import { toastrSettings } from './toastrSettings.js';
 
 })();
 
+document.getElementById('sortOptions').addEventListener('change', () => {
+    event.preventDefault()
+    console.log('work');
+    carController.all();
+    // debugger;
+});
