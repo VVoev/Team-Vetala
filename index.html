@@ -69,8 +69,27 @@
         <!-- /.container-fluid -->
     </nav>
 
+    <div id="sortOptions">
+        <label for="sortOrder">Sort Order: </label>
+        <select name="sortOrder" id="sortOrder">
+            <option value="_kmd" selected="selected">Date Added</option>
+            <option value="make">Make</option>
+            <option value="price">Price</option>
+            <option value="firstRegistration">Year</option>
+        </select>
+        <label for="itemsPerPage">Items per page: </label>
+        <select name="itemsPerPage" id="itemsPerPage">
+            <option value="5">5</option>
+            <option value="2" selected="selected">2</option>
+        </select>
+    </div>
+
     <div id="content" class="container">
 
+    </div>
+
+    <div id="pagination">
+        
     </div>
 
     <!--LIBS-->

@@ -10,8 +10,17 @@ let vehicleController = (function () {
 
     function all(context) {
         $("#vehiclesForSale").removeClass("open");
-        Promise.all([kinveyRequester.findAllVehicles(), tl.get("vehicles")])
+
+        document.getElementById('sortOptions').style.display = 'block';
+        let sortOrder = document.getElementById('sortOrder').value;
+        // console.log(sortOrder);
+        let itemsPerPage = document.getElementById('itemsPerPage').value;
+        // console.log(itemsPerPage);
+        let pageNumber = 1; // to be fixed with pagination
+
+        Promise.all([kinveyRequester.findAllVehicles(sortOrder, itemsPerPage, pageNumber), tl.get("vehicles")])
             .then(([data, template]) => {
+                console.log(data);
                 //dont touch the code because "maikata si ebalo"
                 let currentUser = sessionStorage.getItem("userID");
                 for (let vehicle of data) {
@@ -96,6 +105,8 @@ let vehicleController = (function () {
     }
 
 function vehicleDetails(context) {
+    document.getElementById('sortOptions').style.display = 'none';
+
     const id = context.params["id"];
     Promise.all([tl.get("vehicle-details"), kinveyRequester.findVehicleById(id)])
         .then(([template, data]) => {
@@ -145,6 +156,8 @@ function resizeImage(image) {
 }
 
 function addVehicle(context) {
+    document.getElementById('sortOptions').style.display = 'none';
+
     $("#vehiclesForSale").removeClass("open");
     let newFileName = "";
     tl.get("add-vehicle")
@@ -197,6 +210,8 @@ function addVehicle(context) {
 }
 
 function editVehicle(context) {
+    document.getElementById('sortOptions').style.display = 'none';
+
     const id = context.params["id"];
     let vehicle = {};
     Promise.all([kinveyRequester.findVehicleById(id), tl.get("edit-vehicle")])
@@ -225,6 +240,8 @@ function editVehicle(context) {
 }
 
 function deleteVehicle(context) {
+    document.getElementById('sortOptions').style.display = 'none';
+
     const id = context.params["id"];
     Promise.all([kinveyRequester.findVehicleById(id), tl.get("delete-vehicle")])
         .then(([data, template]) => {
@@ -246,7 +263,6 @@ function deleteVehicle(context) {
         })
         .catch((err) => toastr.error(err));
 }
-
 
 return {
     all,

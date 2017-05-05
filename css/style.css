@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+#sortOptions {
+    /*display: none;*/
+    padding-left: 150px;
+}
+
 #logginUser {
     color: blue;
     font-size: 20px;

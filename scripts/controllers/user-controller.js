@@ -6,6 +6,8 @@ import { validator } from "../common/validator.js";
 let userController = (function() {
 
     function init() {
+        document.getElementById('sortOptions').style.display = 'none';
+
         if (validator.isUserLoggedIn()) {
             $("#functions-panel").show();
             $("#user-info").html(sessionStorage.userName);
@@ -23,6 +25,8 @@ let userController = (function() {
     }
 
     function register(context) {
+        document.getElementById('sortOptions').style.display = 'none';
+
         templateLoader.get("register")
             .then((html) => {
                 context.$element().html(html);
@@ -52,6 +56,8 @@ let userController = (function() {
     }
 
     function login(context) {
+        document.getElementById('sortOptions').style.display = 'none';
+
         templateLoader.get("login")
             .then((html) => {
                 context.$element().html(html);
@@ -75,6 +81,8 @@ let userController = (function() {
     }
 
     function logout() {
+        document.getElementById('sortOptions').style.display = 'none';
+
         let user = sessionStorage.getItem("userName");
         sessionStorage.clear();
         init();
@@ -83,6 +91,8 @@ let userController = (function() {
     }
 
     function fillSessionStorage(details) {
+        document.getElementById('sortOptions').style.display = 'none';
+
         sessionStorage.setItem("authToken", details._kmd.authtoken);
         sessionStorage.setItem("userID", details._id);
         sessionStorage.setItem("userName", details.username);

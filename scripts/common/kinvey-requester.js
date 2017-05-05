@@ -40,11 +40,18 @@ let kinveyRequester = (function() {
         });
     }
 
-    function findAllVehicles() {
+    function getNumberOfVehicles() {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/Cars/_count"
+        });
+    }
+
+    function findAllVehicles(sortOrder, itemsPerPage, pageNumber) {
         toastr.info("Loading")
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Cars",
+            url: baseUrl + "appdata/" + appKey + "/Cars?sort=" + sortOrder + "&limit=" + itemsPerPage + "&skip=" + ((pageNumber - 1)*itemsPerPage),
             headers: getKinveyUserAuthHeaders(),
             error: handleAjaxError
         });
@@ -162,6 +169,7 @@ let kinveyRequester = (function() {
         loginUser,
         registerUser,
         logoutUser,
+        getNumberOfVehicles,
         findAllVehicles,
         uploadImage,
         createVehicle,
