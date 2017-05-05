@@ -57,6 +57,23 @@ let vehicleController = (function () {
                 });
             }
         });
+
+        
+        let search = $('#vehicleSearch');
+        search.keyup(function (ev) {
+            let text = search.val();
+            let searchedCars = [];
+            $("#vehiclesForSale").removeClass("open");
+            Promise.all([kinveyRequester.findAllVehicles(), tl.get("vehicles")])
+                .then(([cars,template]) => {
+                    for (let car of cars) {
+                        if (car.make.indexOf(text) >= 0) {
+                            searchedCars.push(car);
+                        }
+                    }
+                    context.$element().html(template(searchedCars))
+                })
+        });
     }
 
     function vehicleDetails(context) {
@@ -212,26 +229,6 @@ let vehicleController = (function () {
     }
 
 
-    let search = $('#vehicleSearch');
-    search.keyup(function (ev) {
-        let text = search.val();
-        $("#vehiclesForSale").removeClass("open");
-        Promise.all([kinveyRequester.findAllVehicles(), tl.get("vehicles")])
-            .then(([data, template]) => {
-                console.log(data);
-                
-                //dont touch the code because "maikata si ebalo"
-                let currentUser = sessionStorage.getItem("userID");
-                for (let vehicle of data) {
-                    if (currentUser === vehicle._acl.creator) {
-                        vehicle.currentUser = currentUser;
-                    }
-                }
-                context.$element().html(template(data))
-            })
-
-
-    });
 
     return {
         all,
