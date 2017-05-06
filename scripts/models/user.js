@@ -1,6 +1,22 @@
 export class User {
-    constructor(username, password) {
-        this.username = user;
-        this.password = pass;
+    constructor(user, pass) {
+        this.user = user;
+        this.pass = pass;
+    }
+
+    get user() {
+        return this.username;
+    }
+
+    set user(value) {
+        this.username = value;
+    }
+
+    get pass() {
+        return this.password;
+    }
+
+    set pass(value) {
+        this.password = CryptoJS.SHA1(value).toString();
     }
 }

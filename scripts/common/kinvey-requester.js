@@ -7,22 +7,26 @@ let kinveyRequester = (function() {
     const kinveyAppAuthHeaders = {
         "Authorization": "Basic " + btoa(appKey + ":" + appSecret),
     };
+    const kinveyInit = Kinvey.init({
+        appKey: appKey,
+        appSecret: appSecret
+    });
 
-    function loginUser(username, password) {
+    function loginUser(user) {
         return $.ajax({
             method: "POST",
             url: baseUrl + "user/" + appKey + "/login",
             headers: kinveyAppAuthHeaders,
-            data: { username, password }
+            data: user
         });
     }
 
-    function registerUser(username, password) {
+    function registerUser(user) {
         return $.ajax({
             method: "POST",
             url: baseUrl + "user/" + appKey + "/",
             headers: kinveyAppAuthHeaders,
-            data: { username, password }
+            data: user
         });
     }
 
@@ -51,7 +55,7 @@ let kinveyRequester = (function() {
         toastr.info("Loading")
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Cars?sort=" + sortOrder + "&limit=" + itemsPerPage + "&skip=" + ((pageNumber - 1)*itemsPerPage),
+            url: baseUrl + "appdata/" + appKey + "/Cars?sort=" + sortOrder + "&limit=" + itemsPerPage + "&skip=" + ((pageNumber - 1) * itemsPerPage),
             headers: getKinveyUserAuthHeaders(),
             error: handleAjaxError
         });
@@ -81,11 +85,6 @@ let kinveyRequester = (function() {
     }
 
     function uploadImage(file, metadata, vehicleId) {
-        const kinveyInit = Kinvey.init({
-            appKey: appKey,
-            appSecret: appSecret
-        });
-
         kinveyInit
             .then(() => {
                 Kinvey.File.upload(file, metadata)
@@ -99,11 +98,6 @@ let kinveyRequester = (function() {
     }
 
     function updateImageUrl(vehicleId) {
-        const kinveyInit = Kinvey.init({
-            appKey: appKey,
-            appSecret: appSecret
-        });
-
         const query = new Kinvey.Query();
         query.equalTo('vehicleId', vehicleId);
 
