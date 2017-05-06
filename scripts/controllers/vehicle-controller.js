@@ -32,7 +32,9 @@ let vehicleController = (function () {
                         vehicle.currentUser = currentUser;
                     }
                 }
-                context.$element().html(template(data))
+
+                $("#content").html(template(data));
+                // context.$element().html(template(data));
                 allVehicles = data.slice();
             })
             .then((options) => {

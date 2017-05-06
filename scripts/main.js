@@ -120,7 +120,7 @@ import {constants} from "./common/constants.js";
 })();
 
 document.getElementById('sortOptions').addEventListener('change', () => {
-    event.preventDefault()
+    event.preventDefault();
     //console.log('work');
     vehicleController.all();
     // debugger;
