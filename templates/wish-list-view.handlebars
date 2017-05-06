@@ -1,58 +1,57 @@
 <h3>
-    here is your wish list
+    Your wish list below:
 </h3>
 {{#this}}
-    {{#this}}
-        <div class="container">
-            <div class="row">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Vehicle details</div>
-                    <div class="panel-body">
-                        <div class="media">
-                            <div class="media-left media-middle">
-                                {{#if imageUrl}}
-                                    <img class="media-object" src="{{imageUrl}}" alt="...">
-                                {{else}}
-                                    <img class="media-object" src="../images/noimage.jpg" alt="...">
-                                {{/if}}
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Vehicle details</div>
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            {{#if imageUrl}}
+                                <img class="media-object" src="{{imageUrl}}" alt="...">
+                            {{else}}
+                                <img class="media-object" src="../images/noimage.jpg" alt="...">
+                            {{/if}}
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">{{make}} {{model}}</h3>
+                            <div class="form-group">
+                                <label>Vehicle Type: </label>
+                                <span>{{vehicleType}}</span>
                             </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">{{make}} {{model}}</h3>
-                                <div class="form-group">
-                                    <label>Vehicle Type: </label>
-                                    <span>{{vehicleType}}</span>
-                                </div>
-                                <div class="form-group">
-                                    <label>Year of first registration: </label>
-                                    <span>{{firstRegistration}}</span>
-                                </div>
-                                <div class="form-group">
-                                    <label>HP: </label>
-                                    <span>{{hp}}</span>
-                                </div>
-                                <div class="form-group">
-                                    <label>Fuel Type: </label>
-                                    <span>{{fuelType}}</span>
-                                </div>
-                                <div class="form-group">
-                                    <label>INFO: </label>
-                                    <span>{{info}}</span>
-                                </div>
-                                <div class="form-group">
-                                    <h4>Price (EUR): <span class="label label-default">{{price}}</span></h4>
-                                </div>
-                                <div class="form-group">
-                                    <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId"
-                                            width="450" height="80" style="border:none;overflow:hidden"
-                                            scrolling="no" frameborder="0" allowTransparency="true">
-                                    </iframe>
-                                </div>
+                            <div class="form-group">
+                                <label>Year of first registration: </label>
+                                <span>{{firstRegistration}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label>HP: </label>
+                                <span>{{hp}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Fuel Type: </label>
+                                <span>{{fuelType}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label>INFO: </label>
+                                <span>{{info}}</span>
+                            </div>
+                            <div class="form-group">
+                                <h4>Price (EUR): <span class="label label-default">{{price}}</span></h4>
+                            </div>
+                            <div class="form-group">
+                                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId"
+                                        width="450" height="80" style="border:none;overflow:hidden"
+                                        scrolling="no" frameborder="0" allowTransparency="true">
+                                </iframe>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-danger" id="btn-Back">Back</button>
-    {{/this}}
+    </div>
 {{/this}}
+
+<button type="button" class="btn btn-danger" id="btn-Back">Back</button>

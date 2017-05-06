@@ -8,7 +8,9 @@ let vehicleController = (function () {
     let allVehicles = [];
     let userAds = [];
 
+    // it is for wishList
     let wishData = new Set();
+    let allCars = new Set();
 
 
     function all(context) {
@@ -23,10 +25,10 @@ let vehicleController = (function () {
 
         Promise.all([kinveyRequester.findAllVehicles(sortOrder, itemsPerPage, pageNumber), tl.get("vehicles")])
             .then(([data, template]) => {
-                console.log(data);
                 //dont touch the code because "maikata si ebalo"
                 let currentUser = sessionStorage.getItem("userID");
                 for (let vehicle of data) {
+                    allCars.add(vehicle);
                     if (currentUser === vehicle._acl.creator) {
                         userAds.push(vehicle);
                         vehicle.currentUser = currentUser;
@@ -119,23 +121,21 @@ let vehicleController = (function () {
 
     function userWishList(context) {
         $('#sortOptions').hide();
-        let allData = [];
+        let cleanData = [];
 
-        (function getData() {
-            for (let id of wishData) {
-                kinveyRequester.findVehicleById(id)
-                    .then((x) => {
-                        allData.push(x);
-                    })
+        for (let wish of wishData) {
+            for (let car of allCars) {
+                if (wish === car._id) {
+                    cleanData.push(car);
+                }
             }
-        }());
+        }
+        wishData.clear();
+        allCars.clear();
 
-        console.log(allData)
         tl.get("wish-list")
             .then((template) => {
-                console.log(wishData)
-                console.log(allData)
-                context.$element().html(template(allData))
+                context.$element().html(template(cleanData))
             })
             .then(() => {
                 $("#btn-Back").on("click", function (ev) {
