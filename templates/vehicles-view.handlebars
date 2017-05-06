@@ -7,28 +7,28 @@
 
                     {{#if imageUrl}}
                         <img src="{{imageUrl}}" alt="...">
-                        {{else}}
+                    {{else}}
                         <img src="../images/noimage.jpg" alt="...">
                     {{/if}}
                     <div id="{{_id}}" class="caption">
                         <h3>{{make}} {{model}}</h3>
                         <p>EUR {{price}}</p>
-                        
+
                         {{#if currentUser}}
                             <div>
                                 <a class="editLink">
-                                    <td>Edit
+                                        <td>Edit
                                         <p data-placement="top" data-toggle="tooltip" title="Edit">
                                             <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
                                                     data-target="#edit">
-                                                    <span class="glyphicon glyphicon-pencil editLink"> </span>
+                                                <span class="glyphicon glyphicon-pencil editLink"> </span>
                                             </button>
                                         </p>
                                     </td>
                                 </a>
                             </div>
                             <div>
-                                <a  class="deleteLink">
+                                <a class="deleteLink">
                                     <td>Delete
                                         <p data-placement="top" data-toggle="tooltip" title="Delete">
                                             <button class="btn btn-danger btn-xs" data-title="Delete"
@@ -41,9 +41,11 @@
                                 </a>
                             </div>
                         {{/if}}
-
                         <div>
-                            <a  class="vehicleDetails" >Vehicle Details</a>
+                            <a class="vehicleDetails">Vehicle Details</a>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary btn-xs" id="add-to-wish-list"><span class="wishList">+ Add to Wish List</span></button>
                         </div>
                     </div>
                 </div>

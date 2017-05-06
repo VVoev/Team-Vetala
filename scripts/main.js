@@ -88,6 +88,16 @@ import {constants} from "./common/constants.js";
             }
         });
 
+        this.get("#/UserChoise",function (context) {
+            if (!validator.isUserLoggedIn()) {
+                toastr.error(constants.ERROR_UNAUTORIZED);
+                document.location = "#/Home";
+            }
+            else {
+                vehicleController.userWishList(context);
+            }
+        })
+
         // Get Home view for empty hash URLs
         this.get("", function () {
         });
@@ -115,3 +125,4 @@ document.getElementById('sortOptions').addEventListener('change', () => {
     vehicleController.all();
     // debugger;
 });
+
