@@ -261,30 +261,25 @@ let vehicleController = (function() {
                     const firstRegistration = $("#vehicle-year").val();
                     const hp = $("#vehicle-hp").val();
                     const price = $("#vehicle-price").val();
+                    const info = $("#vehicle-info").val();
+                    const fuelType = $("#vehicle-fuel-type").val();
+
+                    const vehicleType = $("#vehicle-v-type").val();
+                    const imageUrl = $("#vehicle-image-url").val();
                     //const type = $("#vehicle-type").val();
                     //const axes = $("#vehicle-axes")[0].val();
                     //const seats = $("#vehicle-seats").val();
-                    const info = $("#new-vehicle-info").val();
+                    let newVehicle = {};
 
-                    let newVehicle = {
-                        _make: make,
-                        _model: model,
-                        _firstRegistration: firstRegistration,
-                        _hp: hp,
-                        _price: price,
-                        // _type: type,
-                        // _axes: axes,
-                        // _seats: seats,
-                        _info: info
+                    try {
+                        newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                    } catch (ex) {
+                        toastr.error(ex.message);
+                        return;
+                    }
 
-                    };
-
-                    // try {
-                    //     newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
-                    // } catch (ex) {
-                    //     toastr.error(ex.message);
-                    //     return;
-                    // }
+                    newVehicle["_vehicleType"] = vehicleType;
+                    newVehicle["_imageUrl"] = imageUrl;
 
                     kinveyRequester.editVehicle(id, newVehicle)
                         .then(() => {
@@ -307,20 +302,19 @@ let vehicleController = (function() {
             })
             .then(() => {
                 $("#btn-goBack").on("click", function(ev) {
-                    document.location = ("#/Shop")
+                    document.location = ("#/Shop");
                 });
 
                 $("#btn-Delete").on("click", function(ev) {
+                    kinveyRequester.deleteImageByVehicleId(id);
                     kinveyRequester.deleteVehicle(id)
                         .then(() => {
-                            toastr.success(constants.SUCCESS_DELETE)
+                            toastr.success(constants.SUCCESS_DELETE);
                             document.location = ("#/Shop");
-                        });
+                        })
+                        .catch(() => toastr.error(err.responseText));
                 });
-
-
-            })
-            .catch((err) => toastr.error(err));
+            });
     }
 
     return {

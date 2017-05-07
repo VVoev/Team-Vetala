@@ -230,6 +230,19 @@ let kinveyRequester = (function() {
         });
     }
 
+    function deleteImageByVehicleId(vehicleId) {
+        const query = new Kinvey.Query();
+        query.equalTo('vehicleId', vehicleId);
+
+        kinveyInit
+            .then(() => {
+                Kinvey.File.find(query)
+                    .then((vehicleImage) => {
+                        Kinvey.File.destroy(vehicleImage[0]._id);
+                    });
+            });
+    }
+
     return {
         loginUser,
         registerUser,
@@ -247,7 +260,8 @@ let kinveyRequester = (function() {
         addToWishList,
         getUserWishList,
         getFullUserWishList,
-        deleteVehicleFromWishList
+        deleteVehicleFromWishList,
+        deleteImageByVehicleId
     }
 
 })()
