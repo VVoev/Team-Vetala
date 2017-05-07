@@ -38,25 +38,21 @@
                 <div class="form-group">
                     <label for="price">Price <span class="label label-success">EUR</span></label>
                     <input type="text" id="new-vehicle-price" name="price" class="form-control" data-validation="number" data-validation-allowing="range[0;1000000000]" />
-                </div>
-                {{#if type}}
-                    <div class="form-group">
+                </div>                
+                    <div id="motorcycleType" class="form-group hidden">
                         <label for="type">Motorcycle Type: </label>
                         <input type="text" id="new-vehicle-type" name="type" class="form-control" data-validation="length alphanumeric" data-validation-length="min2" />
                     </div>
-                {{/if}}
-                {{#if axes}}
-                    <div class="form-group">
+                
+                    <div id="truckAxes" class="form-group hidden">
                         <label for="axes">Truck axes: </label>
                         <input type="text" id="new-vehicle-axes" name="axes" class="form-control" data-validation="number" data-validation-allowing="range[2;10]" />
                     </div>
-                {{/if}}
-                {{#if seats}}
-                    <div class="form-group">
+                
+                    <div id="busSeats" class="form-group hidden">
                         <label for="seats">Bus seats: </label>
                         <input type="text" id="new-vehicle-type" name="seats" class="form-control" data-validation="number" data-validation-allowing="range[1;100]" />
-                    </div>
-                {{/if}}
+                    </div>                
                 <div class="form-group">
                     <form>
                         <input id="new-vehicle-image-file" type="file" name="file" accept="image/*" />

@@ -185,6 +185,39 @@ let vehicleController = (function() {
         tl.get("add-vehicle")
             .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
             .then(() => {
+                $("#new-vehicle-type").on("change", function() {
+                    const selected = $(this).val();
+                    const motorcycleType = $("#motorcycleType");
+                    const truckAxes = $("#truckAxes");
+                    const busSeats = $("#busSeats");
+
+                    switch (selected) {
+                        case "Car":
+                            motorcycleType.addClass("hidden");
+                            truckAxes.addClass("hidden");
+                            busSeats.addClass("hidden");
+                            break;
+                        case "Motorcycle":
+                            motorcycleType.removeClass("hidden");
+                            truckAxes.addClass("hidden");
+                            busSeats.addClass("hidden");
+                            break;
+                        case "Truck":
+                            motorcycleType.addClass("hidden");
+                            truckAxes.removeClass("hidden");
+                            busSeats.addClass("hidden");
+                            break;
+                        case "Bus":
+                            motorcycleType.addClass("hidden");
+                            truckAxes.addClass("hidden");
+                            busSeats.removeClass("hidden");
+                            break;
+                        default:
+                            break;
+                    }
+
+                });
+
                 $("#btnAddVehicle").on("click", () => {
                     const make = $("#new-vehicle-make").val();
                     const model = $("#new-vehicle-model").val();
@@ -194,11 +227,27 @@ let vehicleController = (function() {
                     const price = $("#new-vehicle-price").val();
                     const info = $("#new-vehicle-info").val();
                     const image = $("#new-vehicle-image-file")[0].files[0];
+
                     const vehicleType = $("#new-vehicle-type").val();
+
                     let newVehicle = {};
 
                     try {
-                        newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                        switch (vehicleType) {
+                            case "Car":
+                                return models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                            case "Motorcycle":
+                                const type = $("#motorcycleType").val();
+                                return models.getMotorcycle(make, model, firstRegistration, fuelType, hp, price, info, type);
+                            case "Truck":
+                                const axes = $("#truckAxes").val();
+                                return models.getTruck(make, model, firstRegistration, fuelType, hp, price, info, axes);
+                            case "Bus":
+                                const seats = $("#busSeats").val();
+                                return models.getBus(make, model, firstRegistration, fuelType, hp, price, info, seats);
+                            default:
+                                break;
+                        }
                     } catch (ex) {
                         toastr.error(ex.message);
                         return;
@@ -266,13 +315,25 @@ let vehicleController = (function() {
 
                     const vehicleType = $("#vehicle-v-type").val();
                     const imageUrl = $("#vehicle-image-url").val();
-                    //const type = $("#vehicle-type").val();
-                    //const axes = $("#vehicle-axes")[0].val();
-                    //const seats = $("#vehicle-seats").val();
+
                     let newVehicle = {};
 
                     try {
-                        newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                        switch (vehicleType) {
+                            case "Car":
+                                return models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                            case "Motorcycle":
+                                const type = $("#vehicle-type").val();
+                                return models.getMotorcycle(make, model, firstRegistration, fuelType, hp, price, info, type);
+                            case "Truck":
+                                const axes = $("#vehicle-axes")[0].val();
+                                return models.getTruck(make, model, firstRegistration, fuelType, hp, price, info, axes);
+                            case "Bus":
+                                const seats = $("#vehicle-seats").val();
+                                return models.getBus(make, model, firstRegistration, fuelType, hp, price, info, seats);
+                            default:
+                                break;
+                        }
                     } catch (ex) {
                         toastr.error(ex.message);
                         return;
