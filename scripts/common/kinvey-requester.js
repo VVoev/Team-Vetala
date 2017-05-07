@@ -208,6 +208,22 @@ let kinveyRequester = (function() {
         });
     }
 
+    function getFullUserWishList() {
+        const userId = sessionStorage.getItem("userID");
+
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/WishList",
+            headers: getKinveyUserAuthHeaders(),
+            dataFilter: function(data) {
+                data = JSON.parse(data);
+                data = Array.from(data).filter(x => x.userId === userId);
+
+                return JSON.stringify(data);
+            }
+        });
+    }
+
     function deleteVehicleFromWishList(wishListId) {
         return $.ajax({
             method: "DELETE",
@@ -232,6 +248,7 @@ let kinveyRequester = (function() {
         deleteVehicle,
         addToWishList,
         getUserWishList,
+        getFullUserWishList,
         deleteVehicleFromWishList
     }
 

@@ -3,10 +3,14 @@
 </h3>
 
 {{#this}}
-    <div class="container">
+    <div class="container" id="{{_id}}">
         <div class="row">
             <div class="panel panel-primary">
-                <div class="panel-heading">Vehicle details</div>
+                <div class="panel-heading">Vehicle details 
+                    <a class="text-danger pull-right remove-wish">
+                        <span class="glyphicon glyphicon-trash"></span>Remove from wishes
+                    </a>
+                </div>
                 <div class="panel-body">
                     <div class="media">
                         <div class="media-left media-middle">

@@ -129,6 +129,23 @@ let vehicleController = (function() {
                         $("#btn-Back").on("click", function(ev) {
                             document.location = ("#/Shop")
                         });
+
+                        $(".remove-wish").on("click", function(ev) {
+                            const userId = sessionStorage.getItem("userID");
+                            const vehicleId = $(ev.target).parents(".container").attr("id");
+                            kinveyRequester.getFullUserWishList()
+                                .then((wishes) => {
+                                    for (let wish of wishes) {
+                                        if (wish.userId === userId && wish.vehicleId === vehicleId) {
+                                            kinveyRequester.deleteVehicleFromWishList(wish._id)
+                                                .then(() => toastr.success(constants.SUCCESS_DELETE))
+                                                .then(() => document.location = ("#/UserChoise"))
+                                                .catch((err) => toastr.error(err.responseText));
+                                        }
+                                    };
+                                })
+                                .catch((err) => toastr.error(err.responseText));
+                        });
                     })
                     .catch((err) => toastr.error(err.responseText));
             })
