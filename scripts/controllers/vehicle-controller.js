@@ -55,7 +55,6 @@ let vehicleController = (function() {
                     if ($(ev.target).hasClass("vehicleDetails")) {
                         document.location = "#/VehicleDetails/?id=" + selectedVehicleId;
                     }
-
                 });
             });
 
@@ -99,15 +98,34 @@ let vehicleController = (function() {
     }
 
     function seeYourAds(context) {
-        tl.get("your-ads")
-            .then((template) => {
-                console.log(userAds)
-                context.$element().html(template(userAds))
+        $("#vehiclesForSale").removeClass("open");
+
+        const userId = sessionStorage.getItem("userID");
+
+        Promise.all([kinveyRequester.findVehiclesByOwnerId(userId), tl.get("your-ads")])
+            .then(([data, template]) => {
+                context.$element().html(template(data));
+
+                $(".caption").on("click", function(ev) {
+                    const selectedVehicleId = $(this).attr("id");
+                    if ($(ev.target).hasClass("editLink")) {
+                        document.location = "#/Edit/?id=" + selectedVehicleId;
+                    }
+
+                    if ($(ev.target).hasClass("wishList")) {
+                        addToWishList(selectedVehicleId);
+                    }
+
+                    if ($(ev.target).hasClass("deleteLink")) {
+                        document.location = "#/Delete/?id=" + selectedVehicleId;
+                    }
+
+                    if ($(ev.target).hasClass("vehicleDetails")) {
+                        document.location = "#/VehicleDetails/?id=" + selectedVehicleId;
+                    }
+                });
             })
-            .then(() => {
-                //after displayed it again go to clear stage otherwise lead to bugs...
-                userAds = [];
-            })
+            .catch((err) => toastr.error(err.responseText));
     }
 
     function addToWishList(vehicleId) {
@@ -173,8 +191,6 @@ let vehicleController = (function() {
                     .catch((err) => toastr.error(err.responseText));
             })
             .catch((err) => toastr.error(err.responseText));
-
-
     }
 
     function addVehicle(context) {

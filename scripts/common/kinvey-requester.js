@@ -91,7 +91,7 @@ let kinveyRequester = (function() {
         });
     }
 
-    function findLastVehicleIdByOwnerId(id) {
+    function findLastVehicleIdByOwnerId(ownerId) {
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/Vehicles",
@@ -99,9 +99,24 @@ let kinveyRequester = (function() {
             error: handleAjaxError,
             dataFilter: function(data) {
                 data = JSON.parse(data);
-                data = Array.from(data).filter(x => x._acl.creator === id);
+                data = Array.from(data).filter(x => x._acl.creator === ownerId);
 
                 return JSON.stringify(data[data.length - 1]);
+            }
+        });
+    }
+
+    function findVehiclesByOwnerId(ownerId) {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/Vehicles",
+            headers: getKinveyUserAuthHeaders(),
+            error: handleAjaxError,
+            dataFilter: function(data) {
+                data = JSON.parse(data);
+                data = Array.from(data).filter(x => x._acl.creator === ownerId);
+
+                return JSON.stringify(data);
             }
         });
     }
@@ -255,6 +270,7 @@ let kinveyRequester = (function() {
         findVehicleById,
         findVehiclesById,
         findLastVehicleIdByOwnerId,
+        findVehiclesByOwnerId,
         editVehicle,
         deleteVehicle,
         addToWishList,
