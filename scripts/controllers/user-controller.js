@@ -86,10 +86,14 @@ let userController = (function() {
                             fillSessionStorage(details);
                             document.location = "#/Home";
                             $("#signupPassword").val("");
-                            toastr.success(constants.SUCCESS_LOGIN);
                             init();
-
-                        }).catch((error) => {
+                        })
+                        .then(() => {
+                            Kinvey.User.login(user)
+                                .then(() => toastr.success(constants.SUCCESS_LOGIN))
+                                .catch((err) => toastr.error(err.responseText));
+                        })
+                        .catch((error) => {
                             toastr.error(constants.INVALID_USER_OR_PASS);
                         });
                 });
@@ -102,8 +106,13 @@ let userController = (function() {
         let user = sessionStorage.getItem("userName");
         sessionStorage.clear();
         init();
-        toastr.warning(constants.SUCCESS_LOGOUT + " " + user);
-        document.location = "#/Home";
+        Kinvey.User.logout()
+            .then(() => {
+                toastr.warning(constants.SUCCESS_LOGOUT + " " + user);
+                document.location = "#/Home";
+            })
+            .catch((err) => toastr.error(err.responseText));
+
     }
 
     function fillSessionStorage(details) {

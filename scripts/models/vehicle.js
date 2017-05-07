@@ -36,8 +36,9 @@ export class Vehicle {
     }
 
     set firstRegistration(value) {
-        validator.validateInteger(value);
-        validator.validateNumberInRange(value, 1900, new Date().getFullYear());
+        const now = new Date().getFullYear();
+        validator.validateInteger(+value);
+        //validator.validateNumberInRange(+value, 1900, +now);
 
         this._firstRegistration = +value;
     }
@@ -55,8 +56,8 @@ export class Vehicle {
     }
 
     set hp(value) {
-        validator.validateInteger(value);
-        validator.validateNumberInRange(value, 0, 1000);
+        validator.validateInteger(+value);
+        validator.validateNumberInRange(+value, 0, 1000);
 
         this._hp = +value;
     }
@@ -66,7 +67,7 @@ export class Vehicle {
     }
 
     set price(value) {
-        validator.validateNumberInRange(value, 0, Number.MAX_VALUE);
+        validator.validateNumberInRange(+value, 0, Number.MAX_VALUE);
 
         this._price = +value;
     }
