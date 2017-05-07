@@ -113,6 +113,7 @@ let kinveyRequester = (function() {
                     .then(() => {
                         updateImageUrl(metadata.vehicleId);
                     })
+                    .then(() => document.location = "#/Shop")
                     .catch(function(error) {
                         console.log(error);
                     })
@@ -121,7 +122,7 @@ let kinveyRequester = (function() {
 
     function updateImageUrl(vehicleId) {
         const query = new Kinvey.Query();
-        query.equalTo('_vehicleId', vehicleId);
+        query.equalTo('vehicleId', vehicleId);
 
         kinveyInit
             .then(() => {
@@ -131,14 +132,11 @@ let kinveyRequester = (function() {
                             .then((vehicle) => {
                                 vehicle._imageUrl = vehicleImage[0]._downloadURL;
                                 $.ajax({
-                                        method: "PUT",
-                                        url: baseUrl + "appdata/" + appKey + "/Vehicles/" + vehicleId,
-                                        headers: getKinveyUserAuthHeaders(),
-                                        data: vehicle
-                                    })
-                                    .then(() => {
-                                        document.location = "#/Shop";
-                                    });
+                                    method: "PUT",
+                                    url: baseUrl + "appdata/" + appKey + "/Vehicles/" + vehicleId,
+                                    headers: getKinveyUserAuthHeaders(),
+                                    data: vehicle
+                                });
                             });
                     });
             });

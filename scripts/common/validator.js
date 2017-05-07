@@ -42,7 +42,7 @@ let validator = (function() {
     }
 
     function validateNumberInRange(value, minValue, maxValue) {
-        if (!value || Number.isNaN(value) || value < minValue || value | maxValue) {
+        if (!value || Number.isNaN(value) || value < minValue || value > maxValue) {
             throw new Error(constants.INVALID_INPUT);
         }
     }

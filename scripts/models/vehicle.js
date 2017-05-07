@@ -38,7 +38,7 @@ export class Vehicle {
     set firstRegistration(value) {
         const now = new Date().getFullYear();
         validator.validateInteger(+value);
-        //validator.validateNumberInRange(+value, 1900, +now);
+        validator.validateNumberInRange(+value, 1900, +now);
 
         this._firstRegistration = +value;
     }
