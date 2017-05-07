@@ -12,6 +12,9 @@ let constants = (function() {
         ERROR_ALREADY_LOGGED: "You already logged in",
         ERROR_HAVE_ACCOUNT: "You already have account",
         ERROR_UNAUTORIZED: "You must log in to do this",
+        INVALID_INPUT: "Invalid input data",
+        INVALID_USER_OR_PASS: "Invalid username or password",
+        INVALID_EMAIL: "Invalid e-mail address given",
         MAX_IMAGE_WIDTH: 640,
         MAX_IMAGE_HEIGHT: 360,
         CONTACTS: {

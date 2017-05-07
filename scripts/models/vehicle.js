@@ -1,3 +1,5 @@
+import { validator } from "../common/validator.js";
+
 export class Vehicle {
     constructor(make, model, firstRegistration, fuelType, hp, price, info) {
         this.make = make;
@@ -14,7 +16,9 @@ export class Vehicle {
     }
 
     set make(value) {
-        this._make = value;
+        validator.validateStringLength(value, 2, 12);
+
+        this._make = value.trim();
     }
 
     get model() {
@@ -22,7 +26,9 @@ export class Vehicle {
     }
 
     set model(value) {
-        this._model = value;
+        validator.validateStringLength(value, 2, 12);
+
+        this._model = value.trim();
     }
 
     get firstRegistration() {
@@ -30,7 +36,10 @@ export class Vehicle {
     }
 
     set firstRegistration(value) {
-        this._firstRegistration = value;
+        validator.validateInteger(value);
+        validator.validateNumberInRange(value, 1900, new Date().getFullYear());
+
+        this._firstRegistration = +value;
     }
 
     get fuelType() {
@@ -46,7 +55,10 @@ export class Vehicle {
     }
 
     set hp(value) {
-        this._hp = value;
+        validator.validateInteger(value);
+        validator.validateNumberInRange(value, 0, 1000);
+
+        this._hp = +value;
     }
 
     get price() {
@@ -54,7 +66,9 @@ export class Vehicle {
     }
 
     set price(value) {
-        this._price = value;
+        validator.validateNumberInRange(value, 0, Number.MAX_VALUE);
+
+        this._price = +value;
     }
 
     get info() {
@@ -62,6 +76,6 @@ export class Vehicle {
     }
 
     set info(value) {
-        this._info = value;
+        this._info = value.trim();
     }
 }

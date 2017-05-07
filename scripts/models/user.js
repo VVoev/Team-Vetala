@@ -1,3 +1,5 @@
+import { validator } from "../common/validator.js";
+
 export class User {
     constructor(user, pass) {
         this.user = user;
@@ -9,7 +11,9 @@ export class User {
     }
 
     set user(value) {
-        this.username = value;
+        validator.validateUserName(value);
+
+        this.username = value.trim();
     }
 
     get pass() {
@@ -17,6 +21,8 @@ export class User {
     }
 
     set pass(value) {
-        this.password = CryptoJS.SHA1(value).toString();
+        validator.validatePassword(value);
+
+        this.password = CryptoJS.SHA1(value.trim()).toString();
     }
 }

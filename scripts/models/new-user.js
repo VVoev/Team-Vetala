@@ -1,4 +1,5 @@
 import { User } from "./user.js";
+import { validator } from "../common/validator.js";
 
 export class NewUser extends User {
     constructor(user, pass, mail) {
@@ -11,6 +12,8 @@ export class NewUser extends User {
     }
 
     set mail(value) {
-        this.email = value;
+        validator.validateEmail(value);
+
+        this.email = value.trim();
     }
 }

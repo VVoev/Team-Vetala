@@ -90,7 +90,7 @@ let userController = (function() {
                             init();
 
                         }).catch((error) => {
-                            toastr.error(error.responseText);
+                            toastr.error(constants.INVALID_USER_OR_PASS);
                         });
                 });
             });

@@ -1,4 +1,5 @@
 import { Vehicle } from "./vehicle.js";
+import { validator } from "../common/validator.js";
 
 export class Truck extends Vehicle {
     constructor(make, model, firstRegistration, fuelType, hp, price, info, axes) {
@@ -11,6 +12,8 @@ export class Truck extends Vehicle {
     }
 
     set axes(value) {
-        this._axes = value;
+        validator.validateStringLength(value, 2, 10);
+
+        this._axes = +value;
     }
 }

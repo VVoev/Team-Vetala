@@ -1,4 +1,5 @@
 import { Vehicle } from "./vehicle.js";
+import { validator } from "../common/validator.js";
 
 export class Motorcycle extends Vehicle {
     constructor(make, model, firstRegistration, fuelType, hp, price, info, type) {
@@ -11,6 +12,8 @@ export class Motorcycle extends Vehicle {
     }
 
     set type(value) {
-        this._type = value;
+        validator.validateStringLength(value, 2, 10);
+
+        this._type = value.trim();
     }
 }
