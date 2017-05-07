@@ -248,7 +248,6 @@ let vehicleController = (function() {
         Promise.all([kinveyRequester.findVehicleById(id), tl.get("edit-vehicle")])
             .then(([data, template]) => {
                 context.$element().html(template(data));
-                vehicle = data;
                 toastr.success(`${data._make} ${data._model} preparing for edit`);
             })
             .then(() => {
@@ -257,10 +256,37 @@ let vehicleController = (function() {
                 });
 
                 $("#btn-Edit").on("click", function(ev) {
-                    vehicle.make = $("#make-input").val();
-                    vehicle.model = $("#model-input").val();
-                    vehicle.price = $("#price-input").val();
-                    kinveyRequester.editVehicle(id, vehicle)
+                    const make = $("#vehicle-make").val();
+                    const model = $("#vehicle-model").val();
+                    const firstRegistration = $("#vehicle-year").val();
+                    const hp = $("#vehicle-hp").val();
+                    const price = $("#vehicle-price").val();
+                    //const type = $("#vehicle-type").val();
+                    //const axes = $("#vehicle-axes")[0].val();
+                    //const seats = $("#vehicle-seats").val();
+                    const info = $("#new-vehicle-info").val();
+
+                    let newVehicle = {
+                        _make: make,
+                        _model: model,
+                        _firstRegistration: firstRegistration,
+                        _hp: hp,
+                        _price: price,
+                        // _type: type,
+                        // _axes: axes,
+                        // _seats: seats,
+                        _info: info
+
+                    };
+
+                    // try {
+                    //     newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                    // } catch (ex) {
+                    //     toastr.error(ex.message);
+                    //     return;
+                    // }
+
+                    kinveyRequester.editVehicle(id, newVehicle)
                         .then(() => {
                             toastr.success(constants.SUCCESS_EDITED)
                             document.location = ("#/Shop");

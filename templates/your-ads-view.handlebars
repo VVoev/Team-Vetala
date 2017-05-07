@@ -5,14 +5,14 @@
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
 
-                    {{#if imageUrl}}
-                        <img src="{{imageUrl}}" alt="...">
+                    {{#if _imageUrl}}
+                        <img src="{{_imageUrl}}" alt="...">
                     {{else}}
                         <img src="../images/noimage.jpg" alt="...">
                     {{/if}}
                     <div id="{{_id}}" class="caption">
-                        <h3>{{make}} {{model}}</h3>
-                        <p>EUR {{price}}</p>
+                        <h3>{{_make}} {{_model}}</h3>
+                        <p>EUR {{_price}}</p>
 
                         {{#if currentUser}}
                             <div>

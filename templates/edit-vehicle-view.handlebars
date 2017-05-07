@@ -1,25 +1,57 @@
-<div class="form-group row">
-    <label for="example-text-input" class="col-2 col-form-label">Make</label>
-    <div class="col-10">
-        <input class="form-control" type="text" value="{{_make}}" id="make-input" data-validation="length alphanumeric required" data-validation-length="min2" />
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Add new vehicle</div>
+        <div class="panel-body">
+            <form>                
+                <div class="form-group">
+                    <label for="make">Make</label>
+                    <input type="text" id="vehicle-make" name="make" value="{{_make}}" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
+                </div>
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="vehicle-model" name="model" value="{{_model}}" class="form-control" data-validation="length alphanumeric required" data-validation-length="min2" />
+                </div>
+                <div class="form-group">
+                    <label for="year">Year of first registration</label>
+                    <input type="text" id="vehicle-year" name="year" value="{{_firstRegistration}}" class="form-control" data-validation="date" data-validation-format="yyyy" />
+                </div>
+                <div class="form-group">
+                    <label for="hp">HP</label>
+                    <input type="text" id="vehicle-hp" name="hp" value="{{_hp}}" class="form-control" data-validation="number" data-validation-allowing="range[0;1000]" />
+                </div>
+                <div class="form-group">
+                    <label for="price">Price <span class="label label-success">EUR</span></label>
+                    <input type="text" id="vehicle-price" name="price" value="{{_price}}" class="form-control" data-validation="number" data-validation-allowing="range[0;1000000000]" />
+                </div>
+                {{#if type}}
+                    <div class="form-group">
+                        <label for="type">Motorcycle Type: </label>
+                        <input type="text" id="vehicle-type" name="type" value="{{_type}}" class="form-control" data-validation="length alphanumeric" data-validation-length="min2" />
+                    </div>
+                {{/if}}
+                {{#if axes}}
+                    <div class="form-group">
+                        <label for="axes">Truck axes: </label>
+                        <input type="text" id="vehicle-axes" name="axes" value="{{_axes}}" class="form-control" data-validation="number" data-validation-allowing="range[2;10]" />
+                    </div>
+                {{/if}}
+                {{#if seats}}
+                    <div class="form-group">
+                        <label for="seats">Bus seats: </label>
+                        <input type="text" id="vehicle-type" name="seats" value="{{_seats}}" class="form-control" data-validation="number" data-validation-allowing="range[1;100]" />
+                    </div>
+                {{/if}}
+                <div class="form-group">
+                    <textarea id="vehicle-info" class="span6" rows="3" placeholder="Vehicle detailed info...">{{_info}}</textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-danger" id="btn-Back">Go Back</button>
+                    <button type="button" class="btn btn-success" id="btn-Edit">Edit Vehicle</button>  
+                </div>                
+            </form>
+        </div>
     </div>
 </div>
-<div class="form-group row">
-    <label for="example-search-input" class="col-2 col-form-label">Model</label>
-    <div class="col-10">
-        <input class="form-control" type="text" value="{{_model}}" id="model-input" data-validation="length alphanumeric required" data-validation-length="min2" />
-    </div>
-</div>
-<div class="form-group row">
-    <label for="example-price-input" class="col-2 col-form-label">Price</label>
-    <div class="col-10">
-        <input class="form-control" type="text" value="{{_price}}" id="price-input" data-validation="number" data-validation-allowing="range[0;1000000000]" />
-    </div>
-</div>
-
-<button type="button" class="btn btn-success" id="btn-Edit">Edit</button>
-<button type="button" class="btn btn-danger" id="btn-Back">Back</button>
-
 <script>
   $.validate({
     lang: 'en'
