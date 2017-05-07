@@ -80,13 +80,14 @@ let vehicleController = (function() {
 
         let search = $('#vehicleSearch');
         search.keyup(function(ev) {
-            let text = search.val();
+            let text = search.val().toLowerCase();
             let searchedVehicles = [];
             $("#vehiclesForSale").removeClass("open");
             tl.get("vehicles")
                 .then((template) => {
                     for (let vehicle of allVehicles) {
-                        let match = vehicle.make.indexOf(text) >= 0 || vehicle.model.indexOf(text) >= 0;
+                        let match = vehicle._make.toLowerCase().indexOf(text) >= 0 ||
+                            vehicle._model.toLowerCase().indexOf(text) >= 0;
                         if (match) {
                             searchedVehicles.push(vehicle);
                         }
