@@ -77,6 +77,20 @@ let kinveyRequester = (function() {
         });
     }
 
+    function findVehiclesById(vehiclesIdArray) {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/Vehicles/",
+            headers: getKinveyUserAuthHeaders(),
+            dataFilter: function(data) {
+                data = JSON.parse(data);
+                data = Array.from(data).filter(x => vehiclesIdArray.indexOf(x._id) !== -1);
+
+                return JSON.stringify(data);
+            }
+        });
+    }
+
     function findLastVehicleIdByOwnerId(id) {
         return $.ajax({
             method: "GET",
@@ -187,7 +201,7 @@ let kinveyRequester = (function() {
             headers: getKinveyUserAuthHeaders(),
             dataFilter: function(data) {
                 data = JSON.parse(data);
-                data = Array.from(data).filter(x => x.userId === userId);
+                data = Array.from(data).filter(x => x.userId === userId).map(x => x.vehicleId);
 
                 return JSON.stringify(data);
             }
@@ -212,6 +226,7 @@ let kinveyRequester = (function() {
         uploadImage,
         createVehicle,
         findVehicleById,
+        findVehiclesById,
         findLastVehicleIdByOwnerId,
         editVehicle,
         deleteVehicle,

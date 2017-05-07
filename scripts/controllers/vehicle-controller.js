@@ -116,30 +116,24 @@ let vehicleController = (function() {
             .catch((err) => toastr.error(err.responseText));
     }
 
-
     function userWishList(context) {
         $('#sortOptions').hide();
-        let wishes = [];
+
         kinveyRequester.getUserWishList()
             .then((data) => {
-                for (let wish of data) {
-                    kinveyRequester.findVehicleById(wish.vehicleId)
-                        .then((vehicle) => wishes.push(vehicle));
-                }
-            })
-            .then(() => {
-                tl.get("wish-list")
-                    .then((template) => context.$element().html(template(wishes)))
-            })
-            .then(() => {
-                console.log(wishes);
-                $("#btn-Back").on("click", function(ev) {
-                    document.location = ("#/Shop")
-                });
+                Promise.all([kinveyRequester.findVehiclesById(data), tl.get("wish-list")])
+                    .then(([vehicles, template]) => {
+                        context.$element().html(template(vehicles));
+                    })
+                    .then(() => {
+                        $("#btn-Back").on("click", function(ev) {
+                            document.location = ("#/Shop")
+                        });
+                    })
+                    .catch((err) => toastr.error(err.responseText));
             })
             .catch((err) => toastr.error(err.responseText));
     }
-
 
     function vehicleDetails(context) {
         document.getElementById('sortOptions').style.display = 'none';
