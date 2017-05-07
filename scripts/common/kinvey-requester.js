@@ -40,14 +40,22 @@ let kinveyRequester = (function() {
         return $.ajax({
             method: "POST",
             url: baseUrl + "user/" + appKey + "/_logout",
-            headers: getKinveyUserAuthHeaders(),
+            headers: getKinveyUserAuthHeaders()
+        });
+    }
+
+    function getUser(userId) {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "user/" + appKey + "/" + userId,
+            headers: getKinveyUserAuthHeaders()
         });
     }
 
     function getNumberOfVehicles() {
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Cars/_count"
+            url: baseUrl + "appdata/" + appKey + "/Vehicles/_count"
         });
     }
 
@@ -55,7 +63,7 @@ let kinveyRequester = (function() {
         toastr.info("Loading")
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Cars?sort=" + sortOrder + "&limit=" + itemsPerPage + "&skip=" + ((pageNumber - 1) * itemsPerPage),
+            url: baseUrl + "appdata/" + appKey + "/Vehicles?sort=" + sortOrder + "&limit=" + itemsPerPage + "&skip=" + ((pageNumber - 1) * itemsPerPage),
             headers: getKinveyUserAuthHeaders(),
             error: handleAjaxError
         });
@@ -64,7 +72,7 @@ let kinveyRequester = (function() {
     function findVehicleById(vehicleId) {
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Cars/" + vehicleId,
+            url: baseUrl + "appdata/" + appKey + "/Vehicles/" + vehicleId,
             headers: getKinveyUserAuthHeaders()
         });
     }
@@ -72,7 +80,7 @@ let kinveyRequester = (function() {
     function findLastVehicleIdByOwnerId(id) {
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Cars",
+            url: baseUrl + "appdata/" + appKey + "/Vehicles",
             headers: getKinveyUserAuthHeaders(),
             error: handleAjaxError,
             dataFilter: function(data) {
@@ -84,7 +92,7 @@ let kinveyRequester = (function() {
         });
     }
 
-    function uploadImage(file, metadata, vehicleId) {
+    function uploadImage(file, metadata) {
         kinveyInit
             .then(() => {
                 Kinvey.File.upload(file, metadata)
@@ -99,7 +107,7 @@ let kinveyRequester = (function() {
 
     function updateImageUrl(vehicleId) {
         const query = new Kinvey.Query();
-        query.equalTo('vehicleId', vehicleId);
+        query.equalTo('_vehicleId', vehicleId);
 
         kinveyInit
             .then(() => {
@@ -107,10 +115,10 @@ let kinveyRequester = (function() {
                     .then((vehicleImage) => {
                         findVehicleById(vehicleId)
                             .then((vehicle) => {
-                                vehicle.imageUrl = vehicleImage[0]._downloadURL;
+                                vehicle._imageUrl = vehicleImage[0]._downloadURL;
                                 $.ajax({
                                         method: "PUT",
-                                        url: baseUrl + "appdata/" + appKey + "/Cars/" + vehicleId,
+                                        url: baseUrl + "appdata/" + appKey + "/Vehicles/" + vehicleId,
                                         headers: getKinveyUserAuthHeaders(),
                                         data: vehicle
                                     })
@@ -122,19 +130,19 @@ let kinveyRequester = (function() {
             });
     }
 
-    function createVehicle(vehicleType, make, model, firstRegistration, fuelType, hp, price, info) {
+    function createVehicle(vehicle) {
         return $.ajax({
             method: "POST",
-            url: baseUrl + "appdata/" + appKey + "/Cars",
+            url: baseUrl + "appdata/" + appKey + "/Vehicles",
             headers: getKinveyUserAuthHeaders(),
-            data: { vehicleType, make, model, firstRegistration, fuelType, hp, price, info }
+            data: vehicle
         });
     }
 
     function editVehicle(vehicleId, vehicle) {
         return $.ajax({
             method: "PUT",
-            url: baseUrl + "appdata/" + appKey + "/Cars/" + vehicleId,
+            url: baseUrl + "appdata/" + appKey + "/Vehicles/" + vehicleId,
             headers: getKinveyUserAuthHeaders(),
             data: vehicle
         });
@@ -143,7 +151,7 @@ let kinveyRequester = (function() {
     function deleteVehicle(vehicleId) {
         return $.ajax({
             method: "DELETE",
-            url: baseUrl + "appdata/" + appKey + "/Cars/" + vehicleId,
+            url: baseUrl + "appdata/" + appKey + "/Vehicles/" + vehicleId,
             headers: getKinveyUserAuthHeaders()
         });
     }
@@ -163,6 +171,7 @@ let kinveyRequester = (function() {
         loginUser,
         registerUser,
         logoutUser,
+        getUser,
         getNumberOfVehicles,
         findAllVehicles,
         uploadImage,

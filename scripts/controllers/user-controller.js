@@ -39,7 +39,7 @@ let userController = (function() {
                     registerData["password"] = $("#signupPassword").val();
 
                     try {
-                        user = models.getUser(registerData.name, registerData.password, registerData.email);
+                        user = models.getNewUser(registerData.name, registerData.password, registerData.email);
                     } catch (ex) {
                         toastr.error(ex.message);
                         return;

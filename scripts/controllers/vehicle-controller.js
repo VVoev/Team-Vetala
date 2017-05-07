@@ -150,23 +150,32 @@ let vehicleController = (function() {
             document.getElementById('sortOptions').style.display = 'none';
 
             const id = context.params["id"];
-            Promise.all([tl.get("vehicle-details"), kinveyRequester.findVehicleById(id)])
-                .then(([template, data]) => {
-                    context.$element().html(template(data));
-                })
-                .then(() => {
-                    $("#btn-Back").on("click", function(ev) {
-                        document.location = ("#/Shop")
-                    });
+
+            kinveyRequester.findVehicleById(id)
+                .then((vehicle) => {
+                    const ownerId = vehicle._acl.creator;
+                    Promise.all([tl.get("vehicle-details"), kinveyRequester.getUser(ownerId)])
+                        .then(([template, user]) => {
+                            const data = { vehicle, user };
+                            context.$element().html(template(data));
+                        })
+                        .then(() => {
+                            $("#btn-Back").on("click", function(ev) {
+                                document.location = ("#/Shop")
+                            });
+                        })
+                        .catch((err) => toastr.error(err.responseText));
                 })
                 .catch((err) => toastr.error(err.responseText));
+
+
         }
 
         function addVehicle(context) {
             document.getElementById('sortOptions').style.display = 'none';
 
             $("#vehiclesForSale").removeClass("open");
-            let newFileName = "";
+
             tl.get("add-vehicle")
                 .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
                 .then(() => {
@@ -178,15 +187,21 @@ let vehicleController = (function() {
                         const hp = $("#new-vehicle-hp").val();
                         const price = $("#new-vehicle-price").val();
                         const info = $("#new-vehicle-info").val();
-                        const image = $("#new-vehicle-image-file").val().split(".");
-
+                        const image = $("#new-vehicle-image-file")[0].files[0];
                         const vehicleType = $("#new-vehicle-type").val();
+                        let newVehicle = {};
 
-                        const newVehicle = models.getCar(vehicleType, make, model, firstRegistration, fuelType, hp, price, info);
+                        try {
+                            newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                        } catch (ex) {
+                            toastr.error(ex.message);
+                            return;
+                        }
 
-                        const file = $("#new-vehicle-image-file")[0].files[0];
+                        newVehicle["_vehicleType"] = vehicleType;
+                        newVehicle["_imageUrl"] = "";
 
-                        kinveyRequester.createVehicle(vehicleType, make, model, firstRegistration, fuelType, hp, price, info)
+                        kinveyRequester.createVehicle(newVehicle)
                             .then(() => {
                                 if (image) {
                                     const currentUserId = sessionStorage.getItem("userID");
@@ -194,11 +209,11 @@ let vehicleController = (function() {
                                         .then((data) => {
                                             const metadata = {
                                                 vehicleId: data._id,
-                                                mimeType: file.type,
+                                                mimeType: image.type,
                                                 _public: true
                                             };
 
-                                            imageTools.default.resize(file, {
+                                            imageTools.default.resize(image, {
                                                 width: constants.MAX_IMAGE_WIDTH,
                                                 height: constants.MAX_IMAGE_HEIGHT
                                             }, function(blob) {
@@ -228,7 +243,7 @@ let vehicleController = (function() {
                 .then(([data, template]) => {
                     context.$element().html(template(data));
                     vehicle = data;
-                    toastr.success(`${data.make} ${data.model} preparing for edit`);
+                    toastr.success(`${data._make} ${data._model} preparing for edit`);
                 })
                 .then(() => {
                     $("#btn-Back").on("click", function(ev) {
@@ -256,7 +271,7 @@ let vehicleController = (function() {
             Promise.all([kinveyRequester.findVehicleById(id), tl.get("delete-vehicle")])
                 .then(([data, template]) => {
                     context.$element().html(template(data))
-                    toastr.success(`${data.make} ${data.model} preparing for delete`);
+                    toastr.success(`${data._make} ${data._model} preparing for delete`);
                 })
                 .then(() => {
                     $("#btn-goBack").on("click", function(ev) {
