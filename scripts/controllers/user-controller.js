@@ -1,10 +1,10 @@
-import { kinveyRequester } from "../common/kinvey-requester.js";
-import { templateLoader } from "../common/template-loader.js";
-import { constants } from "../common/constants.js";
-import { validator } from "../common/validator.js";
+import {kinveyRequester} from "../common/kinvey-requester.js";
+import {templateLoader} from "../common/template-loader.js";
+import {constants} from "../common/constants.js";
+import {validator} from "../common/validator.js";
 import * as models from "../models/models.js";
 
-let userController = (function() {
+let userController = (function () {
 
     function init() {
         document.getElementById('sortOptions').style.display = 'none';
@@ -31,7 +31,7 @@ let userController = (function() {
         templateLoader.get("register")
             .then((html) => {
                 context.$element().html(html);
-                $("#btnRegister").on("click", function() {
+                $("#btnRegister").on("click", function () {
                     let registerData = {};
                     let user = {};
                     registerData["name"] = $("#signupName").val();
@@ -68,7 +68,7 @@ let userController = (function() {
         templateLoader.get("login")
             .then((html) => {
                 context.$element().html(html);
-                $("#btnLogin").on("click", function() {
+                $("#btnLogin").on("click", function () {
                     let loginData = {};
                     let user = {};
                     loginData["name"] = $("#signupUser").val();
@@ -132,4 +132,18 @@ let userController = (function() {
 
 })();
 
-export { userController };
+let login = userController.login,
+    register = userController.register,
+    init = userController.init,
+    logout = userController.logout;
+
+export {
+    login,
+    register,
+    init,
+    logout
+}
+
+
+export {userController};
+
