@@ -55,7 +55,8 @@ let kinveyRequester = (function() {
     function getNumberOfVehicles() {
         return $.ajax({
             method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/Vehicles/_count"
+            url: baseUrl + "appdata/" + appKey + "/Vehicles/_count",
+            headers: getKinveyUserAuthHeaders()
         });
     }
 

@@ -14,13 +14,11 @@ let vehicleController = (function() {
 
         document.getElementById('sortOptions').style.display = 'block';
         let sortOrder = document.getElementById('sortOrder').value;
-        // console.log(sortOrder);
-        let itemsPerPage = document.getElementById('itemsPerPage').value;
-        // console.log(itemsPerPage);
-        let pageNumber = 1; // to be fixed with pagination
+        let itemsPerPage = +document.getElementById('itemsPerPage').value;
+        let pageNumber = document.getElementById('pageNumber').value;
 
-        Promise.all([kinveyRequester.findAllVehicles(sortOrder, itemsPerPage, pageNumber), tl.get("vehicles")])
-            .then(([data, template]) => {
+        Promise.all([kinveyRequester.findAllVehicles(sortOrder, itemsPerPage, pageNumber), kinveyRequester.getNumberOfVehicles(), tl.get("vehicles")])
+            .then(([data, numberOfVehicles, template]) => {
                 //dont touch the code because "maikata si ebalo"
                 let currentUser = sessionStorage.getItem("userID");
                 for (let vehicle of data) {
@@ -30,8 +28,19 @@ let vehicleController = (function() {
                     }
                 }
 
+                let count = +numberOfVehicles.count;
+                let i = 0;
+                document.getElementById("pageNumber").innerHTML = "";
+                while (i*itemsPerPage < count) {
+                    i += 1;
+                    let nextPage = document.createElement("option");
+                    nextPage.innerHTML = i;
+                    nextPage.setAttribute("value", i);
+                    document.getElementById("pageNumber").appendChild(nextPage);
+                }
+                i = 0;
+
                 $("#content").html(template(data));
-                // context.$element().html(template(data));
                 allVehicles = data.slice();
             })
             .then((options) => {

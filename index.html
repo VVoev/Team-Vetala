@@ -73,23 +73,24 @@
         <label for="sortOrder">Sort Order: </label>
         <select name="sortOrder" id="sortOrder">
             <option value="_kmd" selected="selected">Date Added</option>
-            <option value="make">Make</option>
-            <option value="price">Price</option>
-            <option value="firstRegistration">Year</option>
+            <option value="_make">Make</option>
+            <option value="_model">Price</option>
+            <option value="_firstRegistration">Year</option>
         </select>
         <label for="itemsPerPage">Items per page: </label>
         <select name="itemsPerPage" id="itemsPerPage">
-            <option value="5">5</option>
-            <option value="2" selected="selected">2</option>
+            <option value="5" selected="selected">5</option>
+            <option value="10">10</option>
+            <option value="20">10</option>            
+        </select>
+        <label for="pageNumber">Page Number: </label>
+        <select name="pageNumber" id="pageNumber">
+            <option class="pageNumber" value="1" selected="selected">1</option>
         </select>
     </div>
 
     <div id="content" class="container">
 
-    </div>
-
-    <div id="pagination">
-        
     </div>
 
     <!--LIBS-->
