@@ -263,15 +263,19 @@ let vehicleController = (function () {
                         switch (vehicleType) {
                             case "Car":
                                 newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                                break;
                             case "Motorcycle":
                                 const type = $("#motorcycleType").val();
                                 newVehicle = models.getMotorcycle(make, model, firstRegistration, fuelType, hp, price, info, type);
+                                break;
                             case "Truck":
                                 const axes = $("#truckAxes").val();
                                 newVehicle = models.getTruck(make, model, firstRegistration, fuelType, hp, price, info, axes);
+                                break;
                             case "Bus":
                                 const seats = $("#busSeats").val();
                                 newVehicle = models.getBus(make, model, firstRegistration, fuelType, hp, price, info, seats);
+                                break;
                             default:
                                 break;
                         }
@@ -349,15 +353,19 @@ let vehicleController = (function () {
                         switch (vehicleType) {
                             case "Car":
                                 newVehicle = models.getCar(make, model, firstRegistration, fuelType, hp, price, info);
+                                break;
                             case "Motorcycle":
                                 const type = $("#vehicle-type").val();
                                 newVehicle = models.getMotorcycle(make, model, firstRegistration, fuelType, hp, price, info, type);
+                                break;
                             case "Truck":
                                 const axes = $("#vehicle-axes")[0].val();
                                 newVehicle = models.getTruck(make, model, firstRegistration, fuelType, hp, price, info, axes);
+                                break;
                             case "Bus":
                                 const seats = $("#vehicle-seats").val();
                                 newVehicle = models.getBus(make, model, firstRegistration, fuelType, hp, price, info, seats);
+                                break;
                             default:
                                 break;
                         }

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" afterPath="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/index.html" afterPath="$PROJECT_DIR$/tests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/tests.js" afterPath="$PROJECT_DIR$/tests/tests.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="vehicle-controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/vehicle-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="359" column="44" lean-forward="false" selection-start-line="359" selection-start-column="44" selection-end-line="359" selection-end-column="44" />
+            <state relative-caret-position="331">
+              <caret line="277" column="38" lean-forward="false" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -184,7 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dropdown</find>
       <find>s</find>
       <find>sea</find>
       <find>redirect</find>
@@ -214,6 +210,7 @@
       <find>all</find>
       <find>newv</find>
       <find>edit</find>
+      <find>addvehicle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -552,7 +549,7 @@
       <workItem from="1494228133857" duration="7254000" />
       <workItem from="1494248829188" duration="605000" />
       <workItem from="1494250914871" duration="6859000" />
-      <workItem from="1494313472073" duration="2370000" />
+      <workItem from="1494313472073" duration="2722000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -691,7 +688,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119562000" />
+    <option name="totallyTimeSpent" value="119914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1071,8 +1068,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/vehicle-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="359" column="44" lean-forward="false" selection-start-line="359" selection-start-column="44" selection-end-line="359" selection-end-column="44" />
+        <state relative-caret-position="331">
+          <caret line="277" column="38" lean-forward="false" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
           <folding />
         </state>
       </provider>
