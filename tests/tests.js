@@ -1,10 +1,10 @@
-import { vehicleController } from '../scripts/controllers/vehicle-controller.js';
-import { templateLoader as tl } from '../scripts/common/template-loader.js'
-import { userController } from '../scripts/controllers/user-controller.js';
-import { homeController } from '../scripts/controllers/home-controller.js';
-import * as models from '../scripts/models/models.js';
+import { vehicleController } from "../scripts/controllers/vehicle-controller.js";
+import { templateLoader as tl } from "../scripts/common/template-loader.js"
+import { userController } from "../scripts/controllers/user-controller.js";
+import { homeController } from "../scripts/controllers/home-controller.js";
+import * as models from "../scripts/models/models.js";
 
-mocha.setup('bdd');
+mocha.setup("bdd");
 const expect = chai.expect;
 
 describe("Our App Tests", function() {
@@ -75,7 +75,7 @@ describe("Our App Tests", function() {
     });
 
     describe("Controllers Tests", () => {
-        describe('HomeController tests', () => {
+        describe("HomeController tests", () => {
             let templateStub;
 
             beforeEach(() => {
@@ -87,19 +87,48 @@ describe("Our App Tests", function() {
                 templateStub.restore();
             });
 
-            it('expect to call templateLoader get once', () => {
+            it("expect viewhome() to call templateLoader get once", () => {
                 homeController.viewHome();
                 expect(templateStub).to.have.been.calledOnce;
             });
 
-            it('expect to call templateLoader get with correct name for the home page template', () => {
+            it("expect viewHome() to call templateLoader get with correct name for the home page template", () => {
                 homeController.viewHome();
-                expect(templateStub).to.have.been.calledWith('home');
+                expect(templateStub).to.have.been.calledWith("home");
             });
         });
 
         describe("User Controller Tests", () => {
+            let templateStub;
 
+            beforeEach(() => {
+                templateStub = sinon.stub(tl, "get")
+                    .returns(Promise.resolve("html"));
+            });
+
+            afterEach(() => {
+                templateStub.restore();
+            });
+
+            it("expect register() to call templateLoader get once", () => {
+                userController.register();
+                expect(templateStub).to.have.been.calledOnce;
+            });
+
+            it("expect register() to call templateLoader get with correct name for the home page template", () => {
+                userController.register();
+                expect(templateStub).to.have.been.calledWith("register");
+            });
+
+            it("expect login() to call templateLoader get once", () => {
+                userController.login();
+                expect(templateStub).to.have.been.calledOnce;
+            });
+
+            it("expect login() to call templateLoader get with correct name for the home page template", () => {
+                userController.login();
+                expect(templateStub).to.have.been.calledWith("login");
+            });
         });
 
         describe("Vehicle Controller Tests", () => {
