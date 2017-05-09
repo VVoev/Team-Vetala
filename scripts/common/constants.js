@@ -1,6 +1,7 @@
 let constants = (function() {
 
     let messages = {
+        HOST: window.location.hostname,
         SUCCESS_ADD_TO_WISHLIST: "Car added succesful to wish list",
         SUCCESS_DELETE: "Vehicle succesfully deleted",
         SUCCESS_LOGIN: "You have login successful",

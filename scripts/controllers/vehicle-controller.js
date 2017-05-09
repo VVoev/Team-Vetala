@@ -174,7 +174,7 @@ let vehicleController = (function() {
                 const ownerId = vehicle._acl.creator;
                 Promise.all([tl.get("vehicle-details"), kinveyRequester.getUser(ownerId)])
                     .then(([template, user]) => {
-                        const data = { vehicle, user };
+                        const data = { vehicle, user, constants };
                         context.$element().html(template(data));
                     })
                     .then(() => {
