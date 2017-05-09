@@ -1,6 +1,7 @@
 import {vehicleController} from '../scripts/controllers/vehicle-controller.js';
 import {templateLoader} from '../scripts/common/template-loader.js'
 import {userController} from '../scripts/controllers/user-controller.js';
+import {homeController} from '../scripts/controllers/home-controller.js';
 import * as models from '../scripts/models/models.js';
 
 mocha.setup('bdd');
@@ -37,59 +38,89 @@ describe("Our App Tests", function () {
         });
 
         describe("Bus Tests", function () {
-            it("BusMakerToBeIkarus_WhenMakerIsICarus",function () {
-                let bus = models.getBus("Ikarus","440x",2010,"diesel",450,99000,"PartyBus",44);
+            it("BusMakerToBeIkarus_WhenMakerIsICarus", function () {
+                let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
-            it("BusModelToBe440x_WhenModels440x",function () {
-                let bus = models.getBus("Ikarus","440x",2010,"diesel",450,99000,"PartyBus",44);
+            it("BusModelToBe440x_WhenModels440x", function () {
+                let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
-            it("BusFuelTypeToBeDiesel_WhenIsDiesel",function () {
-                let bus = models.getBus("Ikarus","440x",2010,"diesel",450,99000,"PartyBus",44);
+            it("BusFuelTypeToBeDiesel_WhenIsDiesel", function () {
+                let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
-            it("BusPriceToBe990000_WhenPriceIs99000Euro",function () {
-                let bus = models.getBus("Ikarus","440x",2010,"diesel",450,99000,"PartyBus",44);
+            it("BusPriceToBe990000_WhenPriceIs99000Euro", function () {
+                let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
-            it("BusMakerToBeChanged_WhenMakerIsChanged",function () {
-                let bus = models.getBus("Ikarus","440x",2010,"diesel",450,99000,"PartyBus",44);
+            it("BusMakerToBeChanged_WhenMakerIsChanged", function () {
+                let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 bus.make = "Man";
                 expect(bus.make).to.equal("Man");
             })
         });
+    });
 
-        describe("User Tests", function () {
-           it("ExpectNewUSerToBeCreatedSuccesfully_WhenCreatingNewUser",function () {
-               let user = models.getNewUser("Vlado","1","vlado@abv.bg");
-               //not passing i dont know why
-               assert.equal(user.name,"Vlado");
-           })
-        });
+    describe("User Tests",function () {
+        it("User can be created succesfully",function () {
+            let user = models.getNewUser("Vlado","123456","vlado@abv.bg");
+            expect(user.user).to.be.equal("Vlado");
+        })
+        it("User can be change his nickname succesfully",function () {
+            let user = models.getNewUser("Vlado","123456","vlado@abv.bg");
+            user.user = "Petar";
+            expect(user.user).to.be.equal("Petar");
+        })
+        it("User cannot be created be if email is invalid",function () {
+            try
+            {
+                let user = models.getNewUser("vlado","123456","hskjashjak")
+            }
+            catch (ex){
+                assert.throws(ex , 'function throws a reference error');
+            }
+        })
+    })
 
-        describe("Kinvey requests",function () {
-            beforeEach(function() {
-                sinon.stub(vehicleController.all, 'vehicleController.All')
-                    .returns(Promise.resolve(data.result));
 
-                sinon.stub(templates, 'get')
-                    .returns(Promise.resolve(SOME_TEMPLATE));
+
+        describe('HomeController tests', () => {
+            describe('show tests', () => {
+                let template;
+
+                beforeEach(() => {
+                    template = sinon.spy();
+                    sinon.stub(templateLoader, 'get')
+                        .returns(Promise.resolve(template));
+                });
+
+                afterEach(() => {
+                    templateLoader.get.restore();
+                    $.fn.html.restore();
+                });
+
+
             });
 
-            it("expect vehicleController.all() to be called exactly once", function(done) {
-                vehicleController.all()
-                    .then((data) => {
-                        console.log(data)
+            it('expect to call templateLoader get once', (done) => {
+                homeController.viewHome
+                    .then(() => {
+                        expect(templateLoader.get('home')).to.have.been.calledOnce;
                     })
                     .then(done, done);
             });
-        })
+
+            it('expect to call templateLoader get with correct name for the home page template', (done) => {
+                homeController.viewHome
+                    .then(() => {
+                        expect(templateLoader.get).to.have.been.calledWith('home');
+                    })
+                    .then(done, done);
+            });
+        });
 
 
-
-
-    });
 
 });
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" afterPath="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/tests.js" afterPath="$PROJECT_DIR$/tests/tests.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tests.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="72" column="69" lean-forward="false" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
+            <state relative-caret-position="294">
+              <caret line="80" column="22" lean-forward="false" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
               <folding>
                 <element signature="e#0#79#0" expanded="true" />
               </folding>
@@ -39,7 +39,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vehicle-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home-controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/home-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template-loader.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/common/template-loader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vehicle-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/vehicle-controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="331">
@@ -62,78 +82,9 @@
       <file leaf-file-name="kinvey-requester.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/common/kinvey-requester.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="17">
               <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-              <folding>
-                <marker date="1494313482858" expanded="true" signature="109:8752" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="1512:1699" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="1536:1691" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="1767:2106" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="1822:2098" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="2148:2341" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="2172:2333" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="2390:2806" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="2414:2798" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="2594:2788" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="2857:3314" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="2881:3306" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="3096:3296" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="3360:3800" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="3384:3792" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="3599:3782" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="3843:4253" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="3888:4245" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="3973:4056" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="4163:4230" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="4294:5126" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="4429:5118" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="4515:5102" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="4615:5078" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="4738:5046" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="5164:5372" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="5188:5364" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="5419:5639" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="5443:5631" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="5679:5875" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="5703:5867" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="5961:6293" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="6333:6613" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="6415:6605" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="6646:7123" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="6728:7115" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="6907:7105" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="7160:7615" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="7242:7607" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="7421:7597" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="7668:7865" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="7692:7857" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
-                <marker date="1494313482858" expanded="true" signature="7914:8248" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="8049:8240" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="8135:8224" ph="{...}" />
-                <marker date="1494313482858" expanded="true" signature="8261:8749" ph="{&quot;loginUser&quot;: loginUser...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/models/models.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="46" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="truck.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/models/truck.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -253,8 +204,8 @@
         <option value="$PROJECT_DIR$/tests/systemjs-config.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/tests/index.html" />
-        <option value="$PROJECT_DIR$/tests/tests.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" />
+        <option value="$PROJECT_DIR$/tests/tests.js" />
       </list>
     </option>
   </component>
@@ -549,7 +500,7 @@
       <workItem from="1494228133857" duration="7254000" />
       <workItem from="1494248829188" duration="605000" />
       <workItem from="1494250914871" duration="6859000" />
-      <workItem from="1494313472073" duration="2722000" />
+      <workItem from="1494313472073" duration="5590000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -688,7 +639,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119914000" />
+    <option name="totallyTimeSpent" value="122782000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -893,20 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/home-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/common/template-loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests.html" />
     <entry file="file://$PROJECT_DIR$/scripts/controllers/user-controller.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -956,7 +893,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -993,75 +930,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/common/kinvey-requester.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding>
-            <marker date="1494313482858" expanded="true" signature="109:8752" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="1512:1699" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="1536:1691" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="1767:2106" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="1822:2098" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="2148:2341" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="2172:2333" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="2390:2806" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="2414:2798" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="2594:2788" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="2857:3314" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="2881:3306" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="3096:3296" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="3360:3800" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="3384:3792" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="3599:3782" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="3843:4253" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="3888:4245" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="3973:4056" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="4163:4230" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="4294:5126" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="4429:5118" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="4515:5102" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="4615:5078" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="4738:5046" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="5164:5372" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="5188:5364" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="5419:5639" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="5443:5631" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="5679:5875" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="5703:5867" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="5961:6293" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="6333:6613" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="6415:6605" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="6646:7123" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="6728:7115" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="6907:7105" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="7160:7615" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="7242:7607" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="7421:7597" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="7668:7865" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="7692:7857" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
-            <marker date="1494313482858" expanded="true" signature="7914:8248" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="8049:8240" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="8135:8224" ph="{...}" />
-            <marker date="1494313482858" expanded="true" signature="8261:8749" ph="{&quot;loginUser&quot;: loginUser...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/tests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="72" column="69" lean-forward="false" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/common/template-loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/home-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1071,6 +959,24 @@
         <state relative-caret-position="331">
           <caret line="277" column="38" lean-forward="false" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/common/kinvey-requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="80" column="22" lean-forward="false" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
