@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f483c51-e79d-46f7-8e4a-3847aefe2fc1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" afterPath="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/index.html" afterPath="$PROJECT_DIR$/tests/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/tests.js" afterPath="$PROJECT_DIR$/tests/tests.js" />
     </list>
@@ -30,13 +30,90 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tests.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/tests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="64" column="72" lean-forward="false" selection-start-line="64" selection-start-column="72" selection-end-line="64" selection-end-column="72" />
+            <state relative-caret-position="1512">
+              <caret line="72" column="69" lean-forward="false" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
               <folding>
                 <element signature="e#0#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vehicle-controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/vehicle-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="359" column="44" lean-forward="false" selection-start-line="359" selection-start-column="44" selection-end-line="359" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kinvey-requester.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/common/kinvey-requester.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+              <folding>
+                <marker date="1494313482858" expanded="true" signature="109:8752" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="1512:1699" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="1536:1691" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="1767:2106" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="1822:2098" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="2148:2341" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="2172:2333" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="2390:2806" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="2414:2798" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="2594:2788" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="2857:3314" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="2881:3306" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="3096:3296" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="3360:3800" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="3384:3792" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="3599:3782" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="3843:4253" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="3888:4245" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="3973:4056" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="4163:4230" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="4294:5126" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="4429:5118" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="4515:5102" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="4615:5078" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="4738:5046" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="5164:5372" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="5188:5364" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="5419:5639" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="5443:5631" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="5679:5875" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="5703:5867" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="5961:6293" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="6333:6613" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="6415:6605" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="6646:7123" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="6728:7115" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="6907:7105" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="7160:7615" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="7242:7607" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="7421:7597" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="7668:7865" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="7692:7857" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
+                <marker date="1494313482858" expanded="true" signature="7914:8248" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="8049:8240" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="8135:8224" ph="{...}" />
+                <marker date="1494313482858" expanded="true" signature="8261:8749" ph="{&quot;loginUser&quot;: loginUser...}" />
               </folding>
             </state>
           </provider>
@@ -48,18 +125,6 @@
             <state relative-caret-position="170">
               <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="46" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new-user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/models/new-user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -79,28 +144,8 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-86">
+            <state relative-caret-position="34">
               <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vehicle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/models/vehicle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="car.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/models/car.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -109,8 +154,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+            <state relative-caret-position="391">
+              <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -139,8 +184,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ki</find>
-      <find>dropd</find>
       <find>dropdown</find>
       <find>s</find>
       <find>sea</find>
@@ -161,7 +204,6 @@
       <find>userwishlist</find>
       <find>wish</find>
       <find>btn-dele</find>
-      <find>edit</find>
       <find>toas</find>
       <find>findv</find>
       <find>sear</find>
@@ -169,6 +211,9 @@
       <find>type</find>
       <find>model</find>
       <find>bac</find>
+      <find>all</find>
+      <find>newv</find>
+      <find>edit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,13 +251,13 @@
         <option value="$PROJECT_DIR$/scripts/common/constants.js" />
         <option value="$PROJECT_DIR$/templates/your-ads-view.handlebars" />
         <option value="$PROJECT_DIR$/templates/wish-list-view.handlebars" />
-        <option value="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/user-controller.js" />
         <option value="$PROJECT_DIR$/tests/tests.html" />
         <option value="$PROJECT_DIR$/tests/systemjs-config.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/tests/index.html" />
         <option value="$PROJECT_DIR$/tests/tests.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/vehicle-controller.js" />
       </list>
     </option>
   </component>
@@ -245,6 +290,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -339,16 +385,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Team-Vetala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Team-Vetala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/TeamWork-JavaScript-Applications" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
@@ -488,7 +551,8 @@
       <workItem from="1494164365990" duration="760000" />
       <workItem from="1494228133857" duration="7254000" />
       <workItem from="1494248829188" duration="605000" />
-      <workItem from="1494250914871" duration="3419000" />
+      <workItem from="1494250914871" duration="6859000" />
+      <workItem from="1494313472073" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="validator initial commit">
       <created>1492857990709</created>
@@ -627,7 +691,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113752000" />
+    <option name="totallyTimeSpent" value="119562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -797,13 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/common/kinvey-requester.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/common/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -839,13 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/home-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -861,18 +911,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests.html" />
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/vehicle-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3720">
-          <caret line="163" column="38" lean-forward="false" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/user-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="27" selection-end-line="134" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1662">
           <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,9 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -936,10 +972,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/index.html">
+    <entry file="file://$PROJECT_DIR$/scripts/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -952,21 +988,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/models/user.js">
+    <entry file="file://$PROJECT_DIR$/tests/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-86">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="391">
+          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/common/kinvey-requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" lean-forward="false" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding>
+            <marker date="1494313482858" expanded="true" signature="109:8752" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="1512:1699" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="1536:1691" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="1767:2106" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="1822:2098" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="2148:2341" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="2172:2333" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="2390:2806" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="2414:2798" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="2594:2788" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="2857:3314" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="2881:3306" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="3096:3296" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="3360:3800" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="3384:3792" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="3599:3782" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="3843:4253" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="3888:4245" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="3973:4056" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="4163:4230" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="4294:5126" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="4429:5118" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="4515:5102" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="4615:5078" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="4738:5046" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="5164:5372" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="5188:5364" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="5419:5639" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="5443:5631" ph="{&quot;method&quot;: &quot;PUT&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="5679:5875" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="5703:5867" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="5961:6293" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="6333:6613" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="6415:6605" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="6646:7123" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="6728:7115" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="6907:7105" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="7160:7615" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="7242:7607" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="7421:7597" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="7668:7865" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="7692:7857" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
+            <marker date="1494313482858" expanded="true" signature="7914:8248" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="8049:8240" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="8135:8224" ph="{...}" />
+            <marker date="1494313482858" expanded="true" signature="8261:8749" ph="{&quot;loginUser&quot;: loginUser...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="64" column="72" lean-forward="false" selection-start-line="64" selection-start-column="72" selection-end-line="64" selection-end-column="72" />
+        <state relative-caret-position="1512">
+          <caret line="72" column="69" lean-forward="false" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
           <folding>
             <element signature="e#0#79#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/vehicle-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="359" column="44" lean-forward="false" selection-start-line="359" selection-start-column="44" selection-end-line="359" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

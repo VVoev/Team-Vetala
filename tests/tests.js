@@ -63,8 +63,28 @@ describe("Our App Tests", function () {
         describe("User Tests", function () {
            it("ExpectNewUSerToBeCreatedSuccesfully_WhenCreatingNewUser",function () {
                let user = models.getNewUser("Vlado","1","vlado@abv.bg");
+               //not passing i dont know why
+               assert.equal(user.name,"Vlado");
            })
         });
+
+        describe("Kinvey requests",function () {
+            beforeEach(function() {
+                sinon.stub(vehicleController.all, 'vehicleController.All')
+                    .returns(Promise.resolve(data.result));
+
+                sinon.stub(templates, 'get')
+                    .returns(Promise.resolve(SOME_TEMPLATE));
+            });
+
+            it("expect vehicleController.all() to be called exactly once", function(done) {
+                vehicleController.all()
+                    .then((data) => {
+                        console.log(data)
+                    })
+                    .then(done, done);
+            });
+        })
 
 
 
