@@ -1,10 +1,10 @@
-import {constants} from "../common/constants.js";
-import {kinveyRequester} from "../common/kinvey-requester.js";
-import {templateLoader as tl} from "../common/template-loader.js";
+import { constants } from "../common/constants.js";
+import { kinveyRequester } from "../common/kinvey-requester.js";
+import { templateLoader as tl } from "../common/template-loader.js";
 import * as models from "../models/models.js";
 import * as imageTools from "../common/image-tools.js";
 
-let vehicleController = (function () {
+let vehicleController = (function() {
 
     let allVehicles = [];
     let userAds = [];
@@ -47,7 +47,7 @@ let vehicleController = (function () {
                 toastr.success(constants.VEHICLES_LOADED);
             })
             .then(() => {
-                $(".caption").on("click", function (ev) {
+                $(".caption").on("click", function(ev) {
                     const selectedVehicleId = $(this).attr("id");
                     if ($(ev.target).hasClass("editLink")) {
                         document.location = "#/Edit/?id=" + selectedVehicleId;
@@ -67,28 +67,8 @@ let vehicleController = (function () {
                 });
             });
 
-
-        $("#content").on("click", function (ev) {
-            //TODO need to find a way to make width bigger cause currently it is limited to div width
-            if (ev.target.nodeName === "IMG") {
-                let target = $(ev.target);
-                target.animate({height: "300px", opacity: "0.8"}, "slow");
-                target.animate({width: "300px", opacity: "0.8"}, "slow");
-                target.animate({height: "100px", opacity: "0.8"}, "slow");
-                target.animate({width: "100px", opacity: "0.8"}, "slow");
-            }
-            if (ev.target.nodeName === "A") {
-                let elem = $(ev.target);
-                let hiddenElem = elem.next();
-                $(elem).click(function () {
-                    elem.hide();
-                    $(hiddenElem).slideToggle("slow");
-                });
-            }
-        });
-
         let search = $('#vehicleSearch');
-        search.keyup(function (ev) {
+        search.keyup(function(ev) {
             let text = search.val().toLowerCase();
             let searchedVehicles = [];
             $("#vehiclesForSale").removeClass("open");
@@ -116,7 +96,7 @@ let vehicleController = (function () {
             .then(([data, template]) => {
                 context.$element().html(template(data));
 
-                $(".caption").on("click", function (ev) {
+                $(".caption").on("click", function(ev) {
                     const selectedVehicleId = $(this).attr("id");
                     if ($(ev.target).hasClass("editLink")) {
                         document.location = "#/Edit/?id=" + selectedVehicleId;
@@ -154,11 +134,11 @@ let vehicleController = (function () {
                         context.$element().html(template(vehicles));
                     })
                     .then(() => {
-                        $("#btn-Back").on("click", function (ev) {
+                        $("#btn-Back").on("click", function(ev) {
                             document.location = ("#/Shop")
                         });
 
-                        $(".remove-wish").on("click", function (ev) {
+                        $(".remove-wish").on("click", function(ev) {
                             const userId = sessionStorage.getItem("userID");
                             const vehicleId = $(ev.target).parents(".container").attr("id");
                             kinveyRequester.getFullUserWishList()
@@ -170,8 +150,7 @@ let vehicleController = (function () {
                                                 .then(() => document.location = ("#/UserChoise"))
                                                 .catch((err) => toastr.error(err.responseText));
                                         }
-                                    }
-                                    ;
+                                    };
                                 })
                                 .catch((err) => toastr.error(err.responseText));
                         });
@@ -191,11 +170,11 @@ let vehicleController = (function () {
                 const ownerId = vehicle._acl.creator;
                 Promise.all([tl.get("vehicle-details"), kinveyRequester.getUser(ownerId)])
                     .then(([template, user]) => {
-                        const data = {vehicle, user};
+                        const data = { vehicle, user };
                         context.$element().html(template(data));
                     })
                     .then(() => {
-                        $("#btn-Back").on("click", function (ev) {
+                        $("#btn-Back").on("click", function(ev) {
                             document.location = ("#/Shop")
                         });
                     })
@@ -212,7 +191,7 @@ let vehicleController = (function () {
         tl.get("add-vehicle")
             .then(template => context.$element().html(template(constants.VEHICLE_TYPES)))
             .then(() => {
-                $("#new-vehicle-type").on("change", function () {
+                $("#new-vehicle-type").on("change", function() {
                     const selected = $(this).val();
                     const motorcycleType = $("#motorcycleType");
                     const truckAxes = $("#truckAxes");
@@ -302,7 +281,7 @@ let vehicleController = (function () {
                                         imageTools.default.resize(image, {
                                             width: constants.MAX_IMAGE_WIDTH,
                                             height: constants.MAX_IMAGE_HEIGHT
-                                        }, function (blob) {
+                                        }, function(blob) {
                                             kinveyRequester.uploadImage(blob, metadata);
                                         });
 
@@ -311,7 +290,6 @@ let vehicleController = (function () {
                         })
                         .then(() => {
                             toastr.success(constants.SUCCESS_ADD_VEHICLE);
-                            document.location = "#/Shop";
                         })
                         .catch((err) => {
                             toastr.error(err.responseText);
@@ -331,11 +309,11 @@ let vehicleController = (function () {
                 toastr.success(`${data._make} ${data._model} preparing for edit`);
             })
             .then(() => {
-                $("#btn-Back").on("click", function (ev) {
+                $("#btn-Back").on("click", function(ev) {
                     document.location = ("#/Shop")
                 });
 
-                $("#btn-Edit").on("click", function (ev) {
+                $("#btn-Edit").on("click", function(ev) {
                     const make = $("#vehicle-make").val();
                     const model = $("#vehicle-model").val();
                     const firstRegistration = $("#vehicle-year").val();
@@ -397,11 +375,11 @@ let vehicleController = (function () {
                 toastr.success(`${data._make} ${data._model} preparing for delete`);
             })
             .then(() => {
-                $("#btn-goBack").on("click", function (ev) {
+                $("#btn-goBack").on("click", function(ev) {
                     document.location = ("#/Shop");
                 });
 
-                $("#btn-Delete").on("click", function (ev) {
+                $("#btn-Delete").on("click", function(ev) {
                     kinveyRequester.deleteImageByVehicleId(id);
                     kinveyRequester.deleteVehicle(id)
                         .then(() => {
@@ -425,4 +403,4 @@ let vehicleController = (function () {
 
 })();
 
-export {vehicleController};
+export { vehicleController };

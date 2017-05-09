@@ -12,9 +12,6 @@ export class Bus extends Vehicle {
     }
 
     set seats(value) {
-        validator.validateInteger(value);
-        validator.validateNumberInRange(value, 1, 100);
-
         this._seats = +value;
     }
 }
