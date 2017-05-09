@@ -12,14 +12,13 @@ let vehicleController = (function() {
     function all(context) {
         $("#vehiclesForSale").removeClass("open");
 
-        document.getElementById('sortOptions').style.display = 'block';
-        let sortOrder = document.getElementById('sortOrder').value;
-        let itemsPerPage = +document.getElementById('itemsPerPage').value;
-        let pageNumber = document.getElementById('pageNumber').value;
+        $("#sortOptions").show();
+        let sortOrder = $("#sortOrder").val();
+        let itemsPerPage = +$("#itemsPerPage").val();
+        let pageNumber = $("#pageNumber").val();
 
         Promise.all([kinveyRequester.findAllVehicles(sortOrder, itemsPerPage, pageNumber), kinveyRequester.getNumberOfVehicles(), tl.get("vehicles")])
             .then(([data, numberOfVehicles, template]) => {
-                //dont touch the code because "maikata si ebalo"
                 let currentUser = sessionStorage.getItem("userID");
                 for (let vehicle of data) {
                     if (currentUser === vehicle._acl.creator) {
@@ -30,18 +29,23 @@ let vehicleController = (function() {
 
                 let count = +numberOfVehicles.count;
                 let i = 0;
-                document.getElementById("pageNumber").innerHTML = "";
+                $("#pageNumber").html("");
                 while (i * itemsPerPage < count) {
                     i += 1;
-                    let nextPage = document.createElement("option");
-                    nextPage.innerHTML = i;
-                    nextPage.setAttribute("value", i);
-                    document.getElementById("pageNumber").appendChild(nextPage);
+                    let nextPage = $("<option></option>");
+                    nextPage.html(i);
+                    nextPage.attr("value", i);
+                    $("#pageNumber").append(nextPage);
                 }
                 i = 0;
 
                 $("#content").html(template(data));
                 allVehicles = data.slice();
+
+                $("sortOptions").on("change", () => {
+                    event.preventDefault();
+                    vehicleController.all();
+                });
             })
             .then((options) => {
                 toastr.success(constants.VEHICLES_LOADED);
@@ -67,7 +71,7 @@ let vehicleController = (function() {
                 });
             });
 
-        let search = $('#vehicleSearch');
+        let search = $("#vehicleSearch");
         search.keyup(function(ev) {
             let text = search.val().toLowerCase();
             let searchedVehicles = [];
@@ -125,7 +129,7 @@ let vehicleController = (function() {
     }
 
     function userWishList(context) {
-        $('#sortOptions').hide();
+        $("#sortOptions").hide();
 
         kinveyRequester.getUserWishList()
             .then((data) => {
@@ -161,7 +165,7 @@ let vehicleController = (function() {
     }
 
     function vehicleDetails(context) {
-        document.getElementById('sortOptions').style.display = 'none';
+        document.getElementById("sortOptions").style.display = "none";
 
         const id = context.params["id"];
 
@@ -184,7 +188,7 @@ let vehicleController = (function() {
     }
 
     function addVehicle(context) {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         $("#vehiclesForSale").removeClass("open");
 
@@ -299,7 +303,7 @@ let vehicleController = (function() {
     }
 
     function editVehicle(context) {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         const id = context.params["id"];
         let vehicle = {};
@@ -366,7 +370,7 @@ let vehicleController = (function() {
     }
 
     function deleteVehicle(context) {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         const id = context.params["id"];
         Promise.all([kinveyRequester.findVehicleById(id), tl.get("delete-vehicle")])

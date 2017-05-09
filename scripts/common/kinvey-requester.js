@@ -137,7 +137,7 @@ let kinveyRequester = (function() {
 
     function updateImageUrl(vehicleId) {
         const query = new Kinvey.Query();
-        query.equalTo('vehicleId', vehicleId);
+        query.equalTo("vehicleId", vehicleId);
 
         kinveyInit
             .then(() => {
@@ -248,7 +248,7 @@ let kinveyRequester = (function() {
 
     function deleteImageByVehicleId(vehicleId) {
         const query = new Kinvey.Query();
-        query.equalTo('vehicleId', vehicleId);
+        query.equalTo("vehicleId", vehicleId);
 
         kinveyInit
             .then(() => {

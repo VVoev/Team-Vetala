@@ -1,13 +1,13 @@
-import {kinveyRequester} from "../common/kinvey-requester.js";
-import {templateLoader} from "../common/template-loader.js";
-import {constants} from "../common/constants.js";
-import {validator} from "../common/validator.js";
+import { kinveyRequester } from "../common/kinvey-requester.js";
+import { templateLoader } from "../common/template-loader.js";
+import { constants } from "../common/constants.js";
+import { validator } from "../common/validator.js";
 import * as models from "../models/models.js";
 
-let userController = (function () {
+let userController = (function() {
 
     function init() {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         if (validator.isUserLoggedIn()) {
             $("#functions-panel").show();
@@ -26,12 +26,12 @@ let userController = (function () {
     }
 
     function register(context) {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         templateLoader.get("register")
             .then((html) => {
                 context.$element().html(html);
-                $("#btnRegister").on("click", function () {
+                $("#btnRegister").on("click", function() {
                     let registerData = {};
                     let user = {};
                     registerData["name"] = $("#signupName").val();
@@ -63,12 +63,12 @@ let userController = (function () {
     }
 
     function login(context) {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         templateLoader.get("login")
             .then((html) => {
                 context.$element().html(html);
-                $("#btnLogin").on("click", function () {
+                $("#btnLogin").on("click", function() {
                     let loginData = {};
                     let user = {};
                     loginData["name"] = $("#signupUser").val();
@@ -101,7 +101,7 @@ let userController = (function () {
     }
 
     function logout() {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         let user = sessionStorage.getItem("userName");
         sessionStorage.clear();
@@ -116,7 +116,7 @@ let userController = (function () {
     }
 
     function fillSessionStorage(details) {
-        document.getElementById('sortOptions').style.display = 'none';
+        $("#sortOptions").hide();
 
         sessionStorage.setItem("authToken", details._kmd.authtoken);
         sessionStorage.setItem("userID", details._id);
@@ -145,5 +145,4 @@ export {
 }
 
 
-export {userController};
-
+export { userController };

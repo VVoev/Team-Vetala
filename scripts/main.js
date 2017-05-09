@@ -96,7 +96,7 @@ import { constants } from "./common/constants.js";
             }
         })
 
-        // Get Home view for empty hash URLs
+        // Get empty hash URLs
         this.get("", function() {});
 
 
@@ -116,9 +116,7 @@ import { constants } from "./common/constants.js";
 
 })();
 
-document.getElementById('sortOptions').addEventListener('change', () => {
+$("#sortOptions").on("change", () => {
     event.preventDefault();
-    //console.log('work');
     vehicleController.all();
-    // debugger;
 });
