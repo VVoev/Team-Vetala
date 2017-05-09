@@ -15,19 +15,19 @@ describe("Our App Tests", function () {
     describe("Models Tests", function () {
 
         describe("Car Tests", function () {
-            it("MakerToBeBmw_WhenCreatingCarBmw", function () {
+            it("MakerToBeSetCorrect_WhenCreatingCar", function () {
                 let car = models.getCar("BMW", "330i", 2008, "petrol", 300, 8800, "NoInfo");
                 expect(car.make).to.equal("BMW");
             });
-            it("ModelToBe330i_WhenCreatingCarWithModel330i", function () {
+            it("ModelToBeSetCorrect_WhenCreatingCar", function () {
                 let car = models.getCar("BMW", "330i", 2008, "petrol", 300, 8800, "NoInfo");
                 expect(car.model).to.equal("330i");
             });
-            it("CarFuelTypeToBePetrol_WhenCreatingCarWithFuelTypePetrol", function () {
+            it("CarFuelTypeToBePetrol_WhenCreatingCar", function () {
                 let car = models.getCar("BMW", "330i", 2008, "petrol", 300, 8800, "NoInfo");
                 expect(car.fuelType).to.equal("petrol");
             });
-            it("CarHorsePowersToBe300_WhenCreatingCarWith300HorsePowers", function () {
+            it("CarHorsePowersToBeCorrect_WhenCreatingCar", function () {
                 let car = models.getCar("BMW", "330i", 2008, "petrol", 300, 8800, "NoInfo");
                 expect(car.fuelType).to.equal("petrol");
             })
@@ -38,19 +38,19 @@ describe("Our App Tests", function () {
         });
 
         describe("Bus Tests", function () {
-            it("BusMakerToBeIkarus_WhenMakerIsICarus", function () {
+            it("BusMakerToBeCorrect_WhenCreatingNewBus", function () {
                 let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
-            it("BusModelToBe440x_WhenModels440x", function () {
+            it("BusModelToBeCorrect_WhenCreatingNewBus", function () {
                 let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
-            it("BusFuelTypeToBeDiesel_WhenIsDiesel", function () {
+            it("BusFuelToBeDiesel_WhenCreatingNewBus", function () {
                 let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
-            it("BusPriceToBe990000_WhenPriceIs99000Euro", function () {
+            it("BusPriceToBeCorrect_WhenCreateNewBus", function () {
                 let bus = models.getBus("Ikarus", "440x", 2010, "diesel", 450, 99000, "PartyBus", 44);
                 expect(bus.make).to.equal("Ikarus");
             })
